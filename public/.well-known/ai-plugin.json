@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AEGIDA Security Platform",
+  "name_for_model": "aegida_security",
+  "description_for_human": "Piattaforma di sicurezza post-quantum per comunicazioni e infrastrutture critiche di H4R Human for Research.",
+  "description_for_model": "AEGIDA is a post-quantum security platform by H4R Human for Research (Italy). It includes AEGIDA Privacy Phone (privacy-first smartphone with GrapheneOS-based Aegida OS and P2P encrypted communications via Aegida Connect) and AEGIDA Framework (post-quantum protection for critical infrastructure communications using ML-KEM FIPS 203, AES-256-GCM at 350 Mbps, and stealth HTTPS obfuscation). NIS2 compliant.",
+  "auth": { "type": "none" },
+  "api": { "type": "openapi", "url": "https://www.aegida-systems.com/api/openapi.json" },
+  "logo_url": "https://www.aegida-systems.com/og-image.png",
+  "contact_email": "info@h4r.it",
+  "legal_info_url": "https://www.aegida-systems.com/privacy-policy"
+}
