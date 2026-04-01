@@ -3,3 +3,6 @@ node_modules/
 out/
 .vercel
 *.tsbuildinfo
+public/api/contact.php
+public/api/telegram-bot.php
+key.telegram.txt
