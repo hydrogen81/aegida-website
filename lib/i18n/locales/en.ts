@@ -461,9 +461,14 @@ const en: Translations = {
       title: 'Downloads',
       items: [
         {
-          title: 'Complete Data Sheet',
+          title: 'Privacy Phone Brochure',
           description:
-            'Hardware specifications, Aegida OS features, and Aegida Connect architecture in a single PDF document.',
+            'Commercial overview and key features of AEGIDA Privacy Phone.',
+        },
+        {
+          title: 'Technical Document',
+          description:
+            'Hardware specifications, Aegida OS features, and Aegida Connect architecture in detail.',
         },
       ],
     },
@@ -688,12 +693,16 @@ const en: Translations = {
       title: 'Download Documentation',
       items: [
         {
+          title: 'Framework Brochure',
+          description: 'Commercial overview and advantages of AEGIDA Framework.',
+        },
+        {
           title: 'General Brief',
-          description: 'For the Security Officer',
+          description: 'For the Security Officer.',
         },
         {
           title: 'Technical Document',
-          description: 'Architecture and PoC',
+          description: 'Detailed architecture and Proof of Concept.',
         },
       ],
     },

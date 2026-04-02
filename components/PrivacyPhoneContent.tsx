@@ -59,7 +59,7 @@ export default function PrivacyPhoneContent() {
           <ScrollReveal delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center" style={{ gap: '1rem' }}>
               <a
-                href="/downloads/aegida-privacy-phone-scheda-tecnica.pdf"
+                href="/downloads/aegida-privacy-phone-brochure.pdf"
                 download
                 className="inline-flex items-center justify-center rounded bg-gold-500 px-7 py-3 font-display text-sm font-bold uppercase tracking-wider text-navy-950 transition-colors duration-200 hover:bg-gold-400"
               >
@@ -420,10 +420,13 @@ export default function PrivacyPhoneContent() {
 
           <ScrollReveal delay={0.1}>
             <DownloadSection
-              downloads={t.privacyPhone.download.items.map((item) => ({
+              downloads={t.privacyPhone.download.items.map((item, i) => ({
                 title: item.title,
                 description: item.description,
-                filename: 'aegida-privacy-phone-scheda-tecnica.pdf',
+                filename: [
+                  'aegida-privacy-phone-brochure.pdf',
+                  'aegida-privacy-phone-documento-tecnico.pdf',
+                ][i],
               }))}
             />
           </ScrollReveal>

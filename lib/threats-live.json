@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-04-01",
+    "cve": "CVE-2026-5281",
+    "vendor": "Google",
+    "product": "Dawn",
+    "name": "Google Dawn Use-After-Free Vulnerability",
+    "ransomware": false
+  },
+  {
     "date": "2026-03-30",
     "cve": "CVE-2026-3055",
     "vendor": "Citrix",
@@ -189,14 +197,6 @@
     "vendor": "Apple",
     "product": "iOS and iPadOS",
     "name": "Apple iOS and iPadOS Use-After-Free Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-03",
-    "cve": "CVE-2026-22719",
-    "vendor": "Broadcom",
-    "product": "VMware Aria Operations",
-    "name": "Broadcom VMware Aria Operations Command Injection Vulnerability",
     "ransomware": false
   }
 ]

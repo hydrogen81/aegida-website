@@ -23,6 +23,7 @@ const comparisonValues = [
 ]
 
 const downloadFilenames = [
+  'aegida-framework-brochure.pdf',
   'aegida-framework-brief-generale.pdf',
   'aegida-framework-documento-tecnico.pdf',
 ]
@@ -96,7 +97,7 @@ export default function FrameworkContent() {
           <ScrollReveal delay={0.25}>
             <div className="flex flex-wrap items-center" style={{ gap: '1rem' }}>
               <a
-                href="/downloads/aegida-framework-documento-tecnico.pdf"
+                href="/downloads/aegida-framework-brochure.pdf"
                 download
                 className="inline-flex items-center font-display text-sm font-bold uppercase tracking-wider px-7 py-3 rounded bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400"
                 style={{ gap: '0.5rem' }}
