@@ -8,6 +8,7 @@ import analisiColonialPipeline from './articles/2026-03-analisi-colonial-pipelin
 import geoOperationEpicFury from './articles/2026-04-01-geo-operation-epic-fury'
 import threatTempestaZeroDaySupplyChain from './articles/2026-04-01-threat-tempesta-zero-day-supply-chain'
 import geoSandwormEuropaGrid from './articles/2026-04-02-geo-sandworm-europa-grid'
+import threatAttaccoUffizi from './articles/2026-04-03-threat-attacco-uffizi'
 
 const ALL_ARTICLES: ArticleMeta[] = [
   analisiSolarwinds,
@@ -18,6 +19,7 @@ const ALL_ARTICLES: ArticleMeta[] = [
   geoOperationEpicFury,
   threatTempestaZeroDaySupplyChain,
   geoSandwormEuropaGrid,
+  threatAttaccoUffizi,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getAllArticles(): ArticleMeta[] {

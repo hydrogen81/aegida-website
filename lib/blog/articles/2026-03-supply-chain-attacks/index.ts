@@ -8,23 +8,23 @@ const article: ArticleMeta = {
   locales: {
     it: {
       title: 'Attacchi alla supply chain: il vettore preferito dai gruppi APT nel 2025-2026',
-      excerpt: 'Da SolarWinds a XZ Utils: perche gli attacchi alla supply chain sono diventati la minaccia numero uno per le infrastrutture critiche e come difendersi.',
+      excerpt: 'Da SolarWinds a XZ Utils: perché gli attacchi alla supply chain sono diventati la minaccia numero uno per le infrastrutture critiche e come difendersi.',
       body: [
-        { type: 'paragraph', text: 'Gli attacchi alla supply chain rappresentano oggi il vettore di compromissione piu efficace e piu difficile da rilevare. Invece di attaccare direttamente l\'obiettivo, gli aggressori compromettono un fornitore, un componente software o un servizio di terze parti, ottenendo accesso indiretto — e spesso privilegiato — all\'infrastruttura del bersaglio reale.' },
-        { type: 'heading', level: 2, text: 'I casi piu significativi' },
-        { type: 'quote', text: 'L\'attacco a SolarWinds nel 2020 ha dimostrato che anche le organizzazioni piu protette al mondo sono vulnerabili quando la minaccia arriva da un fornitore fidato.', author: 'CISA Advisory' },
+        { type: 'paragraph', text: 'Gli attacchi alla supply chain rappresentano oggi il vettore di compromissione più efficace e più difficile da rilevare. Invece di attaccare direttamente l\'obiettivo, gli aggressori compromettono un fornitore, un componente software o un servizio di terze parti, ottenendo accesso indiretto — e spesso privilegiato — all\'infrastruttura del bersaglio reale.' },
+        { type: 'heading', level: 2, text: 'I casi più significativi' },
+        { type: 'quote', text: 'L\'attacco a SolarWinds nel 2020 ha dimostrato che anche le organizzazioni più protette al mondo sono vulnerabili quando la minaccia arriva da un fornitore fidato.', author: 'CISA Advisory' },
         { type: 'list', ordered: false, items: [
           'SolarWinds SUNBURST (2020): backdoor inserita in un aggiornamento software legittimo, ha compromesso 18.000 organizzazioni incluse agenzie federali USA.',
           'Kaseya VSA (2021): ransomware REvil distribuito attraverso un tool di gestione remota, colpendo oltre 1.500 aziende.',
           'XZ Utils (2024): backdoor sofisticata inserita in una libreria open source dopo anni di social engineering contro i maintainer.',
           'Compromissione 3CX (2023): supply chain a cascata — un attacco a un fornitore di trading ha poi compromesso il software di comunicazione 3CX.',
         ]},
-        { type: 'heading', level: 2, text: 'Perche le infrastrutture critiche sono particolarmente vulnerabili' },
-        { type: 'paragraph', text: 'Le infrastrutture critiche (energia, acqua, trasporti, sanita) dipendono da numerosi fornitori OEM per la manutenzione e il monitoraggio remoto dei sistemi. Questi fornitori hanno spesso accesso privilegiato alle reti operative tramite VPN permanenti, con credenziali condivise e audit trail insufficienti. Un singolo fornitore compromesso puo aprire la porta all\'intera rete OT.' },
+        { type: 'heading', level: 2, text: 'Perché le infrastrutture critiche sono particolarmente vulnerabili' },
+        { type: 'paragraph', text: 'Le infrastrutture critiche (energia, acqua, trasporti, sanità) dipendono da numerosi fornitori OEM per la manutenzione e il monitoraggio remoto dei sistemi. Questi fornitori hanno spesso accesso privilegiato alle reti operative tramite VPN permanenti, con credenziali condivise e audit trail insufficienti. Un singolo fornitore compromesso può aprire la porta all\'intera rete OT.' },
         { type: 'callout', variant: 'tip', text: 'La NIS2 (Art. 21) impone esplicitamente la sicurezza della supply chain. Le organizzazioni devono implementare controlli zero-trust per gli accessi dei fornitori: autenticazione forte, autorizzazione granulare, sessioni temporizzate e logging completo.' },
         { type: 'heading', level: 2, text: 'L\'approccio zero-trust come difesa' },
-        { type: 'paragraph', text: 'L\'unica difesa efficace contro gli attacchi alla supply chain e un modello zero-trust applicato sistematicamente a tutti gli accessi di terze parti. Ogni sessione deve essere autenticata, autorizzata, temporizzata, monitorata e registrata. Nessun fornitore dovrebbe avere accesso permanente o non tracciato alla rete operativa.' },
-        { type: 'paragraph', text: 'AEGIDA Framework implementa questo modello con accessi zero-trust per fornitori OEM: ogni sessione e autenticata con certificati, limitata nel tempo, circoscritta ai soli asset autorizzati e completamente tracciata in un audit trail immutabile. In caso di compromissione del fornitore, l\'impatto e automaticamente contenuto.' },
+        { type: 'paragraph', text: 'L\'unica difesa efficace contro gli attacchi alla supply chain è un modello zero-trust applicato sistematicamente a tutti gli accessi di terze parti. Ogni sessione deve essere autenticata, autorizzata, temporizzata, monitorata e registrata. Nessun fornitore dovrebbe avere accesso permanente o non tracciato alla rete operativa.' },
+        { type: 'paragraph', text: 'AEGIDA Framework implementa questo modello con accessi zero-trust per fornitori OEM: ogni sessione è autenticata con certificati, limitata nel tempo, circoscritta ai soli asset autorizzati e completamente tracciata in un audit trail immutabile. In caso di compromissione del fornitore, l\'impatto è automaticamente contenuto.' },
       ],
     },
     en: {

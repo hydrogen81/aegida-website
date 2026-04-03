@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-04-02",
+    "cve": "CVE-2026-3502",
+    "vendor": "TrueConf",
+    "product": "Client",
+    "name": "TrueConf Client Download of Code Without Integrity Check Vulnerability",
+    "ransomware": false
+  },
+  {
     "date": "2026-04-01",
     "cve": "CVE-2026-5281",
     "vendor": "Google",
@@ -20,7 +28,7 @@
     "cve": "CVE-2025-53521",
     "vendor": "F5",
     "product": "BIG-IP",
-    "name": "F5 BIG-IP Unspecified Vulnerability",
+    "name": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
     "ransomware": false
   },
   {
@@ -189,14 +197,6 @@
     "vendor": "Apple",
     "product": "Multiple Products",
     "name": "Apple Multiple Products Integer Overflow or Wraparound Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-05",
-    "cve": "CVE-2023-41974",
-    "vendor": "Apple",
-    "product": "iOS and iPadOS",
-    "name": "Apple iOS and iPadOS Use-After-Free Vulnerability",
     "ransomware": false
   }
 ]
