@@ -32,7 +32,7 @@ function ScoreRing({ percentage }: { percentage: number }) {
 
   let ringColor = 'stroke-danger-red'
   if (percentage > 75) ringColor = 'stroke-success-green'
-  else if (percentage >= 50) ringColor = 'stroke-gold-400'
+  else if (percentage >= 50) ringColor = 'stroke-ink-400'
 
   const t = useTranslations()
 
@@ -95,8 +95,8 @@ function AreaBar({ area, index }: { area: AreaResult; index: number }) {
     barColor = 'bg-success-green'
     textColor = 'text-success-green'
   } else if (area.level === 'yellow') {
-    barColor = 'bg-gold-400'
-    textColor = 'text-gold-400'
+    barColor = 'bg-ink-400'
+    textColor = 'text-ink-400'
   }
 
   return (
@@ -228,13 +228,13 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
 
   let levelColor = 'text-danger-red'
   if (result.percentage > 75) levelColor = 'text-success-green'
-  else if (result.percentage >= 50) levelColor = 'text-gold-400'
+  else if (result.percentage >= 50) levelColor = 'text-ink-400'
 
   return (
     <div className="relative">
       {/* Overall Score */}
       <div className="text-center">
-        <p className="font-mono text-xs uppercase tracking-widest-mono text-gold-400 mb-6">
+        <p className="font-mono text-xs uppercase tracking-widest-mono text-ink-400 mb-6">
           {t.quiz.results.title}
         </p>
         <ScoreRing percentage={result.percentage} />
@@ -273,7 +273,7 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
       <div className="mt-8 rounded-lg border border-navy-700 bg-navy-800/50 px-6 py-4">
         <div className="flex items-start gap-3">
           <svg
-            className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold-400"
+            className="mt-0.5 h-5 w-5 flex-shrink-0 text-ink-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -309,9 +309,9 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
               return (
                 <div key={area.name} className="rounded-lg border border-navy-700 bg-navy-900/60 p-5">
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold-500/10">
+                    <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-ink-300/10">
                       <svg
-                        className="h-3.5 w-3.5 text-gold-400"
+                        className="h-3.5 w-3.5 text-ink-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -331,7 +331,7 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
                       <p className="mt-2 font-body text-sm text-slate-400 leading-relaxed">
                         {rec.text}
                       </p>
-                      <p className="mt-3 font-mono text-xs tracking-wider-mono text-gold-400">
+                      <p className="mt-3 font-mono text-xs tracking-wider-mono text-ink-400">
                         {t.quiz.results.recommendedSolution}: {rec.product}
                       </p>
                     </div>
@@ -344,7 +344,7 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
       )}
 
       {/* CTA */}
-      <div className="mt-14 rounded-xl border border-gold-500/20 bg-gradient-to-br from-navy-800 to-navy-900 p-8 text-center">
+      <div className="mt-14 rounded-xl border border-ink-300/20 bg-gradient-to-br from-navy-800 to-navy-900 p-8 text-center">
         <h3 className="font-display text-2xl font-bold uppercase tracking-wide-display text-slate-50">
           {t.quiz.results.ctaTitle}
         </h3>
@@ -354,7 +354,7 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href={`/${locale}/#contatti`}
-            className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-navy-950 transition-colors hover:bg-gold-400 shadow-lg shadow-gold-500/20"
+            className="inline-flex items-center gap-2 rounded-lg bg-ink-300 px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-navy-950 transition-colors hover:bg-ink-400 shadow-lg shadow-ink-300/20"
           >
             {t.quiz.results.ctaButton}
             <svg

@@ -146,13 +146,13 @@ export default function ComplianceQuiz() {
         <span className="font-mono text-xs tracking-wider-mono text-slate-500">
           {t.quiz.intro.questionLabel} {currentQuestion + 1} {t.quiz.intro.ofLabel} {totalQuestions}
         </span>
-        <span className="font-mono text-xs tracking-wider-mono text-gold-400">
+        <span className="font-mono text-xs tracking-wider-mono text-ink-400">
           {Math.round(progress)}%
         </span>
       </div>
       <div className="mb-8 h-1.5 w-full overflow-hidden rounded-full bg-navy-800">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-gold-500 to-gold-300"
+          className="h-full rounded-full bg-gradient-to-r from-ink-300 to-ink-200"
           initial={false}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
@@ -172,7 +172,7 @@ export default function ComplianceQuiz() {
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Area label */}
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest-mono text-gold-400">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest-mono text-ink-400">
               {question.area}
             </p>
 
@@ -192,15 +192,15 @@ export default function ComplianceQuiz() {
                     onClick={() => handleSelect(idx)}
                     className={`group relative w-full rounded-lg border px-5 py-4 text-left transition-all duration-200 ${
                       isSelected
-                        ? 'border-gold-500 bg-navy-800 shadow-[0_0_20px_rgba(184,150,12,0.1)]'
-                        : 'border-navy-700 bg-navy-900 hover:border-gold-500/50 hover:bg-navy-800/60'
+                        ? 'border-ink-300 bg-navy-800 shadow-[0_0_20px_rgba(184,150,12,0.1)]'
+                        : 'border-navy-700 bg-navy-900 hover:border-ink-300/50 hover:bg-navy-800/60'
                     }`}
                   >
                     <div className="flex items-start gap-4">
                       <span
                         className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border transition-colors ${
                           isSelected
-                            ? 'border-gold-500 bg-gold-500'
+                            ? 'border-ink-300 bg-ink-300'
                             : 'border-navy-600 bg-navy-900 group-hover:border-navy-500'
                         }`}
                       >
@@ -266,7 +266,7 @@ export default function ComplianceQuiz() {
                 disabled={selectedOption === undefined}
                 className={`flex items-center gap-2 rounded-lg px-6 py-2.5 font-display text-sm font-semibold uppercase tracking-wide-display transition-all duration-200 ${
                   selectedOption !== undefined
-                    ? 'bg-gold-500 text-navy-950 hover:bg-gold-400 shadow-lg shadow-gold-500/20'
+                    ? 'bg-ink-300 text-navy-950 hover:bg-ink-400 shadow-lg shadow-ink-300/20'
                     : 'cursor-not-allowed bg-navy-700 text-slate-500'
                 }`}
               >
