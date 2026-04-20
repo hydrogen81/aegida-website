@@ -19,9 +19,9 @@ function PdfIcon() {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <rect x="4" y="2" width="24" height="28" rx="2" stroke="#b8960c" strokeWidth="1.5" fill="none" />
-      <path d="M4 8h24" stroke="#1a2540" strokeWidth="1" />
-      <text x="16" y="21" textAnchor="middle" fill="#b8960c" fontSize="8" fontFamily="monospace" fontWeight="bold">
+      <rect x="4" y="2" width="24" height="28" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none" className="text-ink-400" />
+      <path d="M4 8h24" stroke="currentColor" strokeWidth="1" className="text-navy-line" />
+      <text x="16" y="21" textAnchor="middle" fill="currentColor" fontSize="8" fontFamily="monospace" fontWeight="bold">
         PDF
       </text>
     </svg>
@@ -37,17 +37,17 @@ export default function DownloadSection({
       {downloads.map((dl) => (
         <div
           key={dl.filename}
-          className="group rounded border border-navy-700 bg-navy-900 p-5 transition-colors duration-200 hover:border-gold-500"
+          className="group rounded border border-navy-line bg-navy-card p-5 transition-colors duration-200 hover:border-ink-400"
         >
-          <div className="flex items-start" style={{ gap: 0 }}>
-            <div className="shrink-0" style={{ marginRight: '1rem' }}>
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 text-ink-300">
               <PdfIcon />
             </div>
             <div className="min-w-0 flex-1">
-              <h3 className="font-display text-base font-semibold text-slate-100 uppercase tracking-wide mb-1">
+              <h3 className="text-[18px] font-display font-medium text-ink-100 mb-1">
                 {dl.title}
               </h3>
-              <p className="font-body text-sm text-slate-400 mb-3">
+              <p className="text-sm text-ink-300 mb-3">
                 {dl.description}
               </p>
               <a
@@ -55,8 +55,7 @@ export default function DownloadSection({
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-gold-500 transition-colors duration-200 hover:text-gold-300"
-                style={{ gap: 0 }}
+                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-steel-hi transition-colors duration-200 hover:text-ink-100"
               >
                 <svg
                   width="14"
@@ -65,7 +64,6 @@ export default function DownloadSection({
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
-                  style={{ marginRight: '0.5rem' }}
                 >
                   <path
                     d="M7 1v9m0 0L3.5 6.5M7 10l3.5-3.5M2 12h10"
