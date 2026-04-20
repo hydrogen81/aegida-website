@@ -18,14 +18,11 @@ export default function Navigation() {
   const { locale } = useLocale()
 
   const navLinks = [
-    { label: t.nav.prodotti, href: `/${locale}/#prodotti` },
     { label: t.nav.privacyPhone, href: `/${locale}/privacy-phone/` },
     { label: t.nav.framework, href: `/${locale}/framework/` },
-    // { label: t.nav.aegidaConnect, href: `/${locale}/aegida-connect/`, free: true },
-    { label: t.nav.settori, href: `/${locale}/#settori` },
-    { label: t.nav.conformita, href: `/${locale}/conformita/` },
     { label: t.nav.blog, href: `/${locale}/blog/`, highlight: true },
-    { label: t.nav.contatti, href: `/${locale}/#contatti` },
+    { label: t.nav.chiSiamo, href: `/${locale}/chi-siamo/` },
+    { label: t.nav.contatti, href: `/${locale}/contatti/` },
   ] as const
 
   useEffect(() => {
@@ -181,6 +178,11 @@ export default function Navigation() {
                           <span>{getLocaleName(loc)}</span>
                         </Link>
                       ))}
+                      {t.nav.langWarning && (
+                        <p className="px-3 py-2 border-t border-navy-700 text-xs text-slate-500">
+                          {t.nav.langWarning}
+                        </p>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -188,8 +190,8 @@ export default function Navigation() {
 
               {/* CTA */}
               <Link
-                href={`/${locale}/#contatti`}
-                onClick={(e) => handleNavClick(e, `/${locale}/#contatti`)}
+                href={`/${locale}/contatti/`}
+                onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center px-5 py-2 bg-gold-500 text-navy-950 font-display font-bold uppercase text-sm tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
               >
                 {t.nav.richiedi}
@@ -291,8 +293,8 @@ export default function Navigation() {
 
               <div className="shrink-0 p-6 border-t border-navy-700">
                 <Link
-                  href={`/${locale}/#contatti`}
-                  onClick={(e) => handleNavClick(e, `/${locale}/#contatti`)}
+                  href={`/${locale}/contatti/`}
+                  onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center w-full px-5 py-3 bg-gold-500 text-navy-950 font-display font-bold uppercase text-sm tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
                 >
                   {t.nav.richiedi}
