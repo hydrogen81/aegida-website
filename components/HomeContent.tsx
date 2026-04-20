@@ -1,214 +1,159 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import ShieldSVG from '@/components/ShieldSVG'
-import SectionLabel from '@/components/SectionLabel'
+import { useParams } from 'next/navigation'
+import { useTranslations } from '@/lib/i18n/context'
 import BlogStrip from '@/components/BlogStrip'
-import { useTranslations, useLocale } from '@/lib/i18n/context'
-
-/* ================================================================== */
-/*  HomeContent                                                        */
-/* ================================================================== */
 
 export default function HomeContent() {
+  const { locale } = useParams() as { locale: string }
   const t = useTranslations()
-  const { locale } = useLocale()
+  const home = t.home
 
   return (
-    <>
-      {/* ============================================================ */}
-      {/*  SECTION 1 — Hero                                            */}
-      {/* ============================================================ */}
-      <section
-        id="hero"
-        className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24"
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 60% at 50% 20%, rgba(26,37,64,0.7) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 80% 50%, rgba(184,150,12,0.06) 0%, transparent 70%), #0a0e1a',
-        }}
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left — copy */}
-            <div>
-              <motion.h1
-                className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight text-slate-100 tracking-wide-display"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-              >
-                {t.home.hero.title}
-              </motion.h1>
-
-              <motion.p
-                className="mt-6 text-slate-400 font-body text-lg leading-relaxed max-w-xl"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                {t.home.hero.subtitle}
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                className="mt-8 flex flex-wrap gap-4"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <Link
-                  href={`/${locale}/#contatti`}
-                  className="inline-flex items-center px-7 py-3.5 bg-gold-500 text-navy-950 font-display font-bold uppercase text-sm tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
-                >
-                  {t.home.hero.ctaPrimary}
-                </Link>
-                <a
-                  href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf"
-                  className="inline-flex items-center px-7 py-3.5 border border-gold-500 text-gold-400 font-display font-bold uppercase text-sm tracking-wide-display rounded hover:bg-gold-500/10 transition-colors duration-200"
-                >
-                  {t.home.hero.ctaSecondary}
-                </a>
-              </motion.div>
-            </div>
-
-            {/* Right — Shield */}
-            <motion.div
-              className="flex justify-center lg:justify-end"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <div className="block md:hidden">
-                <ShieldSVG size={180} animated />
-              </div>
-              <div className="hidden md:block">
-                <ShieldSVG size={280} animated />
-              </div>
-            </motion.div>
+    <main>
+      {/* HERO */}
+      <section className="px-6 md:px-10 pt-20 pb-16 md:pt-28 md:pb-20">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-mono text-[12px] tracking-[0.18em] text-steel-hi mb-6">
+            TEST FORENSE · 17 APRILE 2026
           </div>
-        </div>
-      </section>
-
-      <BlogStrip />
-
-      <hr className="divider mx-auto max-w-7xl" />
-
-      {/* ============================================================ */}
-      {/*  SECTION 2 — Istituzionale                                   */}
-      {/* ============================================================ */}
-      <section id="istituzionale" className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="font-body text-lg text-slate-400 leading-relaxed max-w-3xl">
-            {t.home.istituzionale.body}
+          <h1 className="text-[32px] md:text-[48px] font-display font-medium leading-[1.1] tracking-[-0.015em] text-ink-100 mb-6 max-w-[900px]">
+            {home.hero.title}
+          </h1>
+          <p className="text-[15px] md:text-[17px] text-ink-300 leading-relaxed max-w-[640px] mb-9">
+            {home.hero.subtitle}
           </p>
-        </div>
-      </section>
-
-      <hr className="divider mx-auto max-w-7xl" />
-
-      {/* ============================================================ */}
-      {/*  SECTION 3 — Prodotti (asimmetrica)                          */}
-      {/* ============================================================ */}
-      <section id="prodotti" className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionLabel>{t.home.prodotti.label}</SectionLabel>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Privacy Phone — occupa 2/3 */}
-            <div className="md:col-span-2">
-              <Link
-                href={`/${locale}/privacy-phone/`}
-                className="group relative block rounded-lg border border-navy-700 bg-navy-900 p-8 transition-colors duration-300 hover:border-gold-500 overflow-hidden h-full"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold-500 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="font-display text-2xl font-bold uppercase text-slate-100 tracking-wide-display">
-                  {t.home.prodotti.privacyPhone.name}
-                </h3>
-                <p className="mt-4 font-body text-slate-400 leading-relaxed">
-                  {t.home.prodotti.privacyPhone.claim}
-                </p>
-                <span className="mt-6 inline-flex items-center text-gold-400 font-display text-sm uppercase tracking-wide-display group-hover:text-gold-300 transition-colors duration-200">
-                  {t.home.prodotti.privacyPhone.cta} &rarr;
-                </span>
-              </Link>
-            </div>
-
-            {/* Framework — occupa 1/3 */}
-            <div>
-              <Link
-                href={`/${locale}/framework/`}
-                className="group relative block rounded-lg border border-navy-700 bg-navy-900 p-8 transition-colors duration-300 hover:border-gold-500 overflow-hidden h-full"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold-500 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="font-display text-xl font-bold uppercase text-slate-100 tracking-wide-display">
-                  {t.home.prodotti.framework.name}
-                </h3>
-                <p className="mt-4 font-body text-slate-400 leading-relaxed text-sm">
-                  {t.home.prodotti.framework.claim}
-                </p>
-                <span className="mt-6 inline-flex items-center text-gold-400 font-display text-sm uppercase tracking-wide-display group-hover:text-gold-300 transition-colors duration-200">
-                  {t.home.prodotti.framework.cta} &rarr;
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="divider mx-auto max-w-7xl" />
-
-      {/* ============================================================ */}
-      {/*  SECTION 4 — Proof UFED preview                              */}
-      {/* ============================================================ */}
-      <section id="proof" className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionLabel>{t.home.proofPreview.label}</SectionLabel>
-          <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
-            {t.home.proofPreview.title}
-          </h2>
-          <p className="mt-6 font-body text-slate-400 leading-relaxed max-w-3xl">
-            {t.home.proofPreview.body}
-          </p>
-          <Link
-            href={`/${locale}/privacy-phone/#proof`}
-            className="mt-6 inline-flex items-center text-gold-400 font-display text-sm uppercase tracking-wide-display hover:text-gold-300 transition-colors duration-200"
-          >
-            {t.home.proofPreview.cta} &rarr;
-          </Link>
-        </div>
-      </section>
-
-      <hr className="divider mx-auto max-w-7xl" />
-
-      {/* ============================================================ */}
-      {/*  SECTION 5 — CTA finale                                      */}
-      {/* ============================================================ */}
-      <section
-        id="cta-finale"
-        className="py-20 md:py-28"
-        style={{
-          background:
-            'linear-gradient(180deg, #0d1321 0%, #131b2e 50%, #0d1321 100%)',
-        }}
-      >
-        <div id="contatti" className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
-            {t.home.ctaFinale.title}
-          </h2>
-          <p className="mt-4 font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            {t.home.ctaFinale.subtitle}
-          </p>
-          <div className="mt-10">
+          <div className="flex flex-wrap gap-3">
             <Link
-              href={`/${locale}/#contatti`}
-              className="inline-flex items-center px-8 py-4 bg-gold-500 text-navy-950 font-display font-bold uppercase text-base tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
+              href={`/${locale}/contatti/`}
+              className="bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-100 hover:bg-ink-200 hover:border-ink-200 transition-colors"
             >
-              {t.home.ctaFinale.cta}
+              {home.hero.ctaPrimary}
+            </Link>
+            <a
+              href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf"
+              className="text-ink-100 text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-400 hover:border-ink-200 transition-colors"
+            >
+              {home.hero.ctaSecondary}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* PROOF STRIP */}
+      <section className="border-y border-navy-line">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-10 py-5 flex flex-wrap gap-x-12 gap-y-2 font-mono text-[11px] md:text-[12px] tracking-wide text-ink-300">
+          <span><b className="text-ink-100 font-medium">Strumento</b> · Cellebrite UFED 10.8.0.322 + Turbo Link</span>
+          <span><b className="text-ink-100 font-medium">Modalità</b> · BFU + AFU</span>
+          <span><b className="text-ink-100 font-medium">Esito</b> · 0 dati utente estratti</span>
+          <span><b className="text-ink-100 font-medium">Operatore</b> · IMCST certificato · società terza</span>
+        </div>
+      </section>
+
+      {/* ISTITUZIONALE */}
+      <section className="px-6 md:px-10 py-16 md:py-20">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">CHI SIAMO</div>
+          <p className="text-[16px] md:text-[17px] leading-[1.65] text-ink-200 max-w-[720px]">
+            {home.istituzionale.body}
+          </p>
+        </div>
+      </section>
+
+      {/* LINEA PRODOTTI (asimmetrica 2:1) */}
+      <section className="px-6 md:px-10 pb-16 md:pb-20">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="text-[22px] md:text-[24px] font-display font-medium text-ink-100 mb-6 tracking-[-0.01em]">
+            {home.prodotti.label}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {/* Privacy Phone (2/3) */}
+            <Link
+              href={`/${locale}/privacy-phone/`}
+              className="md:col-span-2 bg-navy-card border border-navy-line rounded p-8 hover:border-ink-400 transition-colors flex flex-col justify-between min-h-[220px] group"
+            >
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.15em] text-steel-hi mb-3">
+                  FLAGSHIP · 2026
+                </div>
+                <h3 className="text-[22px] font-display font-medium text-ink-100 mb-2.5 tracking-[-0.01em]">
+                  {home.prodotti.privacyPhone.name}
+                </h3>
+                <p className="text-sm text-ink-300 leading-relaxed max-w-[460px]">
+                  {home.prodotti.privacyPhone.claim}
+                </p>
+              </div>
+              <span className="text-[13px] text-ink-100 mt-5 border-b border-current pb-0.5 self-start">
+                {home.prodotti.privacyPhone.cta}
+              </span>
+            </Link>
+
+            {/* Framework (1/3) */}
+            <Link
+              href={`/${locale}/framework/`}
+              className="bg-navy-card border border-navy-line rounded p-8 hover:border-ink-400 transition-colors flex flex-col justify-between min-h-[220px]"
+            >
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.15em] text-steel-hi mb-3">
+                  IN PREPARAZIONE · 2027–2028
+                </div>
+                <h3 className="text-[18px] font-display font-medium text-ink-100 mb-2.5 tracking-[-0.01em]">
+                  {home.prodotti.framework.name}
+                </h3>
+                <p className="text-sm text-ink-300 leading-relaxed">
+                  {home.prodotti.framework.claim}
+                </p>
+              </div>
+              <span className="text-[13px] text-ink-100 mt-5 border-b border-current pb-0.5 self-start">
+                {home.prodotti.framework.cta}
+              </span>
             </Link>
           </div>
         </div>
       </section>
-    </>
+
+      {/* BLOG STRIP */}
+      <BlogStrip />
+
+      {/* PROOF PREVIEW */}
+      <section className="px-6 md:px-10 py-16 md:py-20 border-t border-navy-line">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">
+            {home.proofPreview.label}
+          </div>
+          <h2 className="text-[24px] md:text-[28px] font-display font-medium text-ink-100 mb-5 tracking-[-0.01em]">
+            {home.proofPreview.title}
+          </h2>
+          <p className="text-[16px] leading-[1.65] text-ink-200 max-w-[720px] mb-6">
+            {home.proofPreview.body}
+          </p>
+          <Link
+            href={`/${locale}/privacy-phone/#proof`}
+            className="text-[14px] text-ink-100 border-b border-current pb-0.5"
+          >
+            {home.proofPreview.cta}
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA FINALE */}
+      <section className="px-6 md:px-10 py-16 md:py-20 bg-navy-deep border-t border-navy-line">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="text-[28px] md:text-[32px] font-display font-medium text-ink-100 mb-4 tracking-[-0.01em]">
+            {home.ctaFinale.title}
+          </h2>
+          <p className="text-[16px] text-ink-300 leading-relaxed max-w-[640px] mb-8">
+            {home.ctaFinale.subtitle}
+          </p>
+          <Link
+            href={`/${locale}/contatti/`}
+            className="inline-block bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm hover:bg-ink-200 transition-colors"
+          >
+            {home.ctaFinale.cta}
+          </Link>
+        </div>
+      </section>
+    </main>
   )
 }
