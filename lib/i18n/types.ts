@@ -194,6 +194,41 @@ export interface Translations {
   }
 
   /* ================================================================ */
+  /*  About / Chi Siamo page                                           */
+  /* ================================================================ */
+  about: {
+    hero: {
+      title: string
+      subtitle: string
+    }
+    societa: {
+      title: string
+      body: string
+    }
+    missione: {
+      title: string
+      body: string
+    }
+    cosaProduciamo: {
+      title: string
+      items: {
+        name: string
+        status: string
+        body: string
+      }[]
+    }
+    team: {
+      title: string
+      body: string
+    }
+    ctaFinale: {
+      title: string
+      body: string
+      cta: string
+    }
+  }
+
+  /* ================================================================ */
   /*  Framework page                                                   */
   /* ================================================================ */
   framework: {

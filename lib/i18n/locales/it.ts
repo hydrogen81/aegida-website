@@ -244,6 +244,48 @@ const it: Translations = {
   },
 
   /* ================================================================ */
+  /*  About / Chi Siamo page                                           */
+  /* ================================================================ */
+  about: {
+    hero: {
+      title: 'Chi siamo',
+      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce strumenti per chi opera con informazioni sensibili.',
+    },
+    societa: {
+      title: 'La società',
+      body: 'H4R (Human for Research Srl) è una società italiana con sede a Roma, fondata nel [DA CONFERMARE: anno fondazione H4R]. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
+    },
+    missione: {
+      title: 'La missione',
+      body: 'Gli strumenti di comunicazione di uso comune non sono progettati per chi lavora con informazioni sensibili. Messaggistica sincronizzata in chiaro, backup cloud automatici, estrazione forense consentita. La nostra missione è colmare quella distanza con prodotti testati, documentati e costruiti in Italia, a un prezzo accessibile a professionisti che non sono enti di Stato.',
+    },
+    cosaProduciamo: {
+      title: 'Cosa produciamo',
+      items: [
+        {
+          name: 'AEGIDA Privacy Phone',
+          status: 'Prodotto commerciale 2026',
+          body: 'Smartphone rafforzato su base Pixel 10a. Testato con Cellebrite UFED il 17 aprile 2026: 0 dati utente estratti.',
+        },
+        {
+          name: 'AEGIDA Framework',
+          status: 'Piattaforma infrastrutture critiche — lancio 2027-2028',
+          body: 'Piattaforma di sicurezza per operatori di servizi essenziali sottoposti a NIS2, DORA o normative equivalenti.',
+        },
+      ],
+    },
+    team: {
+      title: 'Il team',
+      body: '[DA CONFERMARE: nomi e ruoli del team H4R/AEGIDA. Mantenere registro sobrio: niente claim motivazionali, solo nome, ruolo e, se utile, una riga di background professionale rilevante.]',
+    },
+    ctaFinale: {
+      title: 'Parliamone',
+      body: 'Se stai valutando AEGIDA per il tuo lavoro, la prima cosa da fare è un colloquio. Capiamo se siamo lo strumento giusto per il tuo caso.',
+      cta: 'Richiedi un colloquio',
+    },
+  },
+
+  /* ================================================================ */
   /*  Framework page                                                   */
   /* ================================================================ */
   framework: {
