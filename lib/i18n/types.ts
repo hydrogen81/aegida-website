@@ -120,6 +120,45 @@ export interface Translations {
   contactForm: ContactFormTranslations
 
   /* ================================================================ */
+  /*  Contact / Colloquio page                                         */
+  /* ================================================================ */
+  contact: {
+    page: {
+      title: string
+      subtitle: string
+    }
+    form: {
+      labels: {
+        nome: string
+        email: string
+        ruolo: string
+        motivo: string
+      }
+      placeholders: {
+        nome: string
+        email: string
+        ruolo: string
+        motivo: string
+      }
+      submit: string
+      consenso: string
+      success: {
+        title: string
+        body: string
+      }
+      error: {
+        generic: string
+      }
+    }
+    diretti: {
+      title: string
+      email: string
+      pec: string
+      legal: string
+    }
+  }
+
+  /* ================================================================ */
   /*  Privacy Phone page                                               */
   /* ================================================================ */
   privacyPhone: {

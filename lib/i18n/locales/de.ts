@@ -117,6 +117,45 @@ const de: Translations = {
   },
 
   /* ================================================================ */
+  /*  Contact / Colloquio page                                         */
+  /* ================================================================ */
+  contact: {
+    page: {
+      title: 'Richiedi un colloquio',
+      subtitle: 'Le decisioni sulla sicurezza del tuo lavoro non si prendono tramite un modulo generico. Raccontaci brevemente il tuo caso e fissiamo un colloquio.',
+    },
+    form: {
+      labels: {
+        nome: 'Nome e cognome',
+        email: 'Email',
+        ruolo: 'Ruolo professionale',
+        motivo: 'Motivo del contatto',
+      },
+      placeholders: {
+        nome: 'Mario Rossi',
+        email: 'nome@dominio.it',
+        ruolo: 'giornalista, avvocato, dirigente, altro',
+        motivo: 'Descrivi sinteticamente la tua situazione.',
+      },
+      submit: 'Invia richiesta',
+      consenso: 'Ho letto la Privacy Policy e acconsento al trattamento dei dati per essere ricontattato.',
+      success: {
+        title: 'Richiesta ricevuta',
+        body: "Ti risponderemo entro 2 giorni lavorativi all'indirizzo che hai indicato.",
+      },
+      error: {
+        generic: 'Non è stato possibile inviare la richiesta. Riprova tra qualche minuto o scrivi a info@aegida-systems.com.',
+      },
+    },
+    diretti: {
+      title: 'Oppure in modo diretto',
+      email: 'info@aegida-systems.com',
+      pec: '[DA CONFERMARE: PEC H4R se esiste]',
+      legal: 'legal@aegida-systems.com (per esercizio del diritto di replica)',
+    },
+  },
+
+  /* ================================================================ */
   /*  Privacy Phone page                                               */
   /* ================================================================ */
   privacyPhone: {
