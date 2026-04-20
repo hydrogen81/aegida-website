@@ -10,9 +10,9 @@ interface ContactFormProps {
 }
 
 const inputClasses =
-  'w-full bg-navy-900 border border-navy-700 rounded px-4 py-3 text-slate-200 font-body text-sm placeholder:text-slate-500 outline-none transition-colors duration-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500'
+  'w-full bg-navy-card border border-navy-line rounded px-4 py-3 text-ink-100 font-sans text-sm placeholder:text-ink-400 outline-none transition-colors duration-200 focus:border-ink-200 focus:ring-1 focus:ring-ink-200'
 
-const labelClasses = 'block text-sm font-body text-slate-300 mb-1.5'
+const labelClasses = 'block text-sm font-sans text-ink-300 mb-1.5'
 
 export default function ContactForm({
   defaultProduct = 'Privacy Phone',
@@ -77,12 +77,12 @@ export default function ContactForm({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="rounded border border-success-green/30 bg-success-green/10 px-6 py-8 text-center"
+            className="rounded bg-navy-card border border-navy-line px-6 py-8 text-center"
           >
-            <p className="text-success-green font-display text-xl uppercase tracking-wide mb-2">
+            <p className="text-ink-100 font-display text-xl uppercase tracking-wide mb-2">
               {form.success.title}
             </p>
-            <p className="text-slate-400 font-body text-sm">
+            <p className="text-ink-300 font-sans text-sm">
               {form.success.body}
             </p>
           </motion.div>
@@ -168,7 +168,7 @@ export default function ContactForm({
                 required
                 checked={consenso}
                 onChange={(e) => setConsenso(e.target.checked)}
-                className="mt-0.5 h-4 w-4 rounded border-navy-600 bg-navy-900 text-gold-500 focus:ring-gold-500"
+                className="accent-steel-hi mt-1"
               />
               <label htmlFor="cf-consenso" className="text-xs text-slate-400 font-body">
                 {form.consenso}
@@ -176,7 +176,7 @@ export default function ContactForm({
             </div>
 
             {error && (
-              <div className="rounded border border-danger-red/30 bg-danger-red/10 px-4 py-3 text-danger-red font-body text-sm">
+              <div className="bg-navy-card border-l-4 border-semantic-error pl-4 px-4 py-3 text-ink-200 font-sans text-sm">
                 {error}
               </div>
             )}
@@ -184,7 +184,7 @@ export default function ContactForm({
             <button
               type="submit"
               disabled={sending || !consenso}
-              className="w-full font-display uppercase tracking-wide text-sm font-semibold rounded px-6 py-3.5 bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-900 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-100 hover:bg-ink-200 hover:border-ink-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {sending ? '...' : form.submit}
             </button>
