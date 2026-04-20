@@ -24,11 +24,21 @@ const de: Translations = {
   /*  Footer                                                           */
   /* ================================================================ */
   footer: {
-    copyright: '\u00a9 2026 H4RESEARCH SRL. Alle Rechte vorbehalten.',
-    location: 'Rom, Italien \u2014 USt-IdNr. IT14765811006',
-    privacy: 'Datenschutzerklaerung',
-    cookie: 'Cookie-Richtlinie',
-    payoff: 'ENTWICKELT IN ITALIEN.',
+    istituzionale: 'AEGIDA è il brand di sicurezza di H4R (Human for Research Srl). Roma, Italia.',
+    payoff: 'PROGETTATO IN ITALIA.',
+    nav: {
+      privacyPhone: 'Privacy Phone',
+      framework: 'Framework',
+      chiSiamo: 'Chi siamo',
+      blog: 'Blog',
+      contatti: 'Contatti',
+    },
+    legale: {
+      privacyPolicy: 'Privacy Policy',
+      cookiePolicy: 'Cookie Policy',
+      conformita: 'Conformità normativa',
+    },
+    copyright: '© {year} H4R — Human for Research Srl. Tutti i diritti riservati.',
   },
 
   /* ================================================================ */

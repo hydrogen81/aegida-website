@@ -26,11 +26,25 @@ export interface Translations {
   /*  Footer                                                           */
   /* ================================================================ */
   footer: {
-    copyright: string
-    location: string
-    privacy: string
-    cookie: string
+    istituzionale: string
     payoff: string
+    nav: {
+      privacyPhone: string
+      framework: string
+      chiSiamo: string
+      blog: string
+      contatti: string
+    }
+    legale: {
+      privacyPolicy: string
+      cookiePolicy: string
+      conformita: string
+    }
+    copyright: string
+    // Legacy keys kept for Footer.tsx until Task 11 refactor
+    location?: string
+    privacy?: string
+    cookie?: string
   }
 
   /* ================================================================ */
