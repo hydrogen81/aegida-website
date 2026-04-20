@@ -19,3 +19,6 @@ security-reports/
 *.staged.deployed
 scripts/*.log
 
+.superpowers/
+.redesign-mockups/
+__pycache__/

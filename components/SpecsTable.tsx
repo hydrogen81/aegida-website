@@ -17,34 +17,22 @@ export default function SpecsTable({
   return (
     <div className={className}>
       {title && (
-        <h3 className="font-display text-lg font-bold text-slate-100 uppercase tracking-wide mb-4">
+        <h3 className="font-mono text-[11px] tracking-wide uppercase text-ink-100 bg-navy-card px-4 py-3 border border-navy-line rounded-t">
           {title}
         </h3>
       )}
-      <div className="overflow-x-auto rounded border border-navy-700">
+      <div className={`overflow-x-auto border border-navy-line ${title ? 'border-t-0' : 'rounded'}`}>
         <table className="w-full text-left">
-          <thead>
-            <tr className="border-b border-navy-700">
-              <th className="font-mono text-xs uppercase tracking-wider text-gold-500 bg-navy-800 px-4 py-3">
-                Specifica
-              </th>
-              <th className="font-mono text-xs uppercase tracking-wider text-gold-500 bg-navy-800 px-4 py-3">
-                Valore
-              </th>
-            </tr>
-          </thead>
           <tbody>
             {specs.map((spec, i) => (
               <tr
                 key={i}
-                className={`border-b border-navy-700 last:border-b-0 ${
-                  i % 2 === 0 ? 'bg-navy-900' : 'bg-navy-800'
-                }`}
+                className="border-b border-navy-line last:border-b-0"
               >
-                <td className="font-body text-sm text-slate-300 px-4 py-3">
+                <td className="font-mono text-xs text-ink-300 px-4 py-3 font-medium w-1/2">
                   {spec.label}
                 </td>
-                <td className="font-mono text-sm text-slate-200 px-4 py-3">
+                <td className="text-sm text-ink-200 px-4 py-3">
                   {spec.value}
                 </td>
               </tr>

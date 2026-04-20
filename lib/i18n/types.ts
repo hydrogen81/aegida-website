@@ -7,129 +7,154 @@ export interface Translations {
   /*  Navigation                                                       */
   /* ================================================================ */
   nav: {
-    prodotti: string
     privacyPhone: string
     framework: string
-    aegidaConnect: string
-    settori: string
-    conformita: string
     blog: string
+    chiSiamo: string
     contatti: string
     richiedi: string
+    // deprecated keys kept for transitional compatibility
+    prodotti: string
+    settori: string
+    conformita: string
+    aegidaConnect: string
     openMenu: string
     closeMenu: string
+    langWarning: string
   }
 
   /* ================================================================ */
   /*  Footer                                                           */
   /* ================================================================ */
   footer: {
-    copyright: string
-    location: string
-    privacy: string
-    cookie: string
+    istituzionale: string
     payoff: string
+    nav: {
+      privacyPhone: string
+      framework: string
+      chiSiamo: string
+      blog: string
+      contatti: string
+    }
+    legale: {
+      privacyPolicy: string
+      cookiePolicy: string
+      conformita: string
+    }
+    copyright: string
+    // Legacy keys kept for Footer.tsx until Task 11 refactor
+    location?: string
+    privacy?: string
+    cookie?: string
   }
 
   /* ================================================================ */
   /*  Home page                                                        */
   /* ================================================================ */
   home: {
+    // New keys (bonifica 2026)
     hero: {
-      classification: string
       title: string
       subtitle: string
-      description: string
       ctaPrimary: string
       ctaSecondary: string
-      stats: {
-        value: string
-        label: string
-      }[]
+      // Legacy keys — kept for HomeContent.tsx until Task 11 refactor
+      classification?: string
+      description?: string
+      stats?: { value: string; label: string }[]
     }
 
-    threatTicker: {
+    istituzionale: {
+      body: string
+    }
+
+    prodotti: {
       label: string
-    }
-
-    products: {
-      sectionLabel: string
-      title: string
-
-      card1: {
-        title: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-
-      card2: {
-        title: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-
-      card3: {
-        title: string
-        badge: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-    }
-
-    sectors: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
-      }[]
-    }
-
-    threats: {
-      sectionLabel: string
-      title: string
-      items: {
+      privacyPhone: {
         name: string
-        vector: string
-        countermeasure: string
-      }[]
+        claim: string
+        cta: string
+      }
+      framework: {
+        name: string
+        claim: string
+        cta: string
+      }
     }
 
-    compliance: {
-      sectionLabel: string
+    proofPreview: {
+      label: string
+      title: string
+      body: string
+      cta: string
+    }
+
+    ctaFinale: {
       title: string
       subtitle: string
       cta: string
-      badges: string[]
-      note: string
     }
 
-    contact: {
+    // Legacy sections — kept for HomeContent.tsx until Task 11 refactor
+    threatTicker?: { label: string }
+    products?: {
       sectionLabel: string
       title: string
-      info: {
-        companyName: string
-        productLabel: string
-        webLabel: string
-        sedeLabel: string
-        sedeValue: string
-        pivaLabel: string
-        briefingNote: string
-      }
+      card1: { title: string; specs: string; description: string; features: string[]; cta: string }
+      card2: { title: string; specs: string; description: string; features: string[]; cta: string }
+      card3: { title: string; badge: string; specs: string; description: string; features: string[]; cta: string }
+    }
+    sectors?: { sectionLabel: string; title: string; items: { title: string; description: string }[] }
+    threats?: { sectionLabel: string; title: string; items: { name: string; vector: string; countermeasure: string }[] }
+    compliance?: { sectionLabel: string; title: string; subtitle: string; cta: string; badges: string[]; note: string }
+    contact?: {
+      sectionLabel: string
+      title: string
+      info: { companyName: string; productLabel: string; webLabel: string; sedeLabel: string; sedeValue: string; pivaLabel: string; briefingNote: string }
       form: ContactFormTranslations
     }
   }
 
   /* ================================================================ */
-  /*  Contact Form (shared)                                            */
+  /*  Contact / Colloquio page                                         */
   /* ================================================================ */
-  contactForm: ContactFormTranslations
+  contact: {
+    page: {
+      title: string
+      subtitle: string
+    }
+    form: {
+      labels: {
+        nome: string
+        email: string
+        ruolo: string
+        motivo: string
+        tipoRichiesta: string
+      }
+      placeholders: {
+        nome: string
+        email: string
+        ruolo: string
+        motivo: string
+      }
+      motivoOptions: string[]
+      submit: string
+      consenso: string
+      success: {
+        title: string
+        body: string
+      }
+      error: {
+        generic: string
+      }
+    }
+    diretti: {
+      title: string
+      email: string
+      pec: string
+      legal: string
+    }
+  }
 
   /* ================================================================ */
   /*  Privacy Phone page                                               */
@@ -138,90 +163,23 @@ export interface Translations {
     hero: {
       title: string
       tagline: string
-      description: string
-      ctaDownload: string
-      ctaContact: string
+      claim: string
+      ctaPrimary: string
+      ctaSecondary: string
     }
 
-    pillars: {
-      sectionLabel: string
+    cosaE: {
+      label: string
+      body: string
+    }
+
+    cosaInclude: {
+      label: string
       title: string
       items: {
-        num: string
+        key: string
         title: string
-        subtitle: string
-        desc: string
-      }[]
-    }
-
-    hardware: {
-      sectionLabel: string
-      title: string
-      specs: {
-        label: string
-        value: string
-      }[]
-      whyTitle: string
-      whyPoints: string[]
-    }
-
-    os: {
-      sectionLabel: string
-      title: string
-      description: string
-      features: {
-        title: string
-        description: string
-      }[]
-      privacyByDesignTitle: string
-      privacyByDesignItems: string[]
-      zeroGoogleTitle: string
-      zeroGoogleDescription: string
-    }
-
-    connect: {
-      sectionLabel: string
-      title: string
-      description: string
-      transportTitle: string
-      transportChannels: {
-        label: string
-        value: string
-      }[]
-      secureRelayTitle: string
-      secureRelayDescription: string
-      cryptoStackTitle: string
-      cryptoStack: {
-        name: string
-        role: string
-      }[]
-      identityTitle: string
-      identityDescription: string
-      featuresTitle: string
-      features: string[]
-    }
-
-    integration: {
-      sectionLabel: string
-      title: string
-      tableHeaders: {
-        from: string
-        to: string
-        synergy: string
-      }
-      rows: {
-        from: string
-        to: string
-        synergy: string
-      }[]
-    }
-
-    download: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
+        body: string
       }[]
     }
 
@@ -253,29 +211,77 @@ export interface Translations {
     }
 
     pricing: {
-      sectionLabel: string
+      label: string
       title: string
-      subtitle: string
-      bundle: {
-        label: string
+      packages: {
+        name: string
         price: string
-        period: string
-        items: string[]
+        description: string
+        highlighted: boolean
+      }[]
+      business: {
+        title: string
+        body: string
+        cta: string
       }
-      renewal: {
-        label: string
-        price: string
-        period: string
-        items: string[]
-      }
-      note: string
-      cta: string
     }
 
-    cta: {
+    metodologia: {
+      label: string
       title: string
-      description: string
-      button: string
+      body: string
+    }
+
+    tempest: {
+      title: string
+      body: string
+    }
+
+    disclaimer: {
+      // preserved from original — flexible shape
+      [key: string]: string
+    }
+
+    ctaFinale: {
+      title: string
+      body: string
+      cta: string
+    }
+  }
+
+  /* ================================================================ */
+  /*  About / Chi Siamo page                                           */
+  /* ================================================================ */
+  about: {
+    hero: {
+      title: string
+      subtitle: string
+    }
+    societa: {
+      title: string
+      body: string
+    }
+    missione: {
+      title: string
+      body: string
+    }
+    cosaProduciamo: {
+      title: string
+      items: {
+        name: string
+        status: string
+        body: string
+      }[]
+    }
+    team: {
+      title: string
+      body: string
+      members: Array<{ name: string; role: string }>
+    }
+    ctaFinale: {
+      title: string
+      body: string
+      cta: string
     }
   }
 
@@ -284,130 +290,34 @@ export interface Translations {
   /* ================================================================ */
   framework: {
     hero: {
-      sectionLabel: string
       title: string
       tagline: string
-      description: string
-      ctaDownload: string
-      ctaContact: string
     }
 
-    problem: {
-      sectionLabel: string
+    cosaE: {
       title: string
-      description: string
-      threats: {
-        type: string
-        detail: string
-      }[]
-      tableHeaders: {
-        threat: string
-        detail: string
-      }
+      body: string
     }
 
-    layers: {
-      sectionLabel: string
+    perChi: {
       title: string
-      layerA: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
-      layerB: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
-      layerC: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
+      body: string
     }
 
-    stats: {
-      items: {
-        value: string
-        unit: string
-        label: string
-      }[]
-    }
-
-    comparison: {
-      sectionLabel: string
+    stato: {
       title: string
-      headers: string[]
-      rows: {
-        label: string
-      }[]
-      note: string
-    }
-
-    threats: {
-      sectionLabel: string
-      title: string
-      cards: {
-        year: string
-        name: string
-        location: string
-        description: string
-      }[]
-    }
-
-    nis2: {
-      sectionLabel: string
-      title: string
-      badgeTitle: string
-      badgeSubtitle: string
-      tableHeaders: {
-        requirement: string
-        coverage: string
-      }
-      rows: {
-        article: string
-        mapping: string
-      }[]
+      body: string
     }
 
     roadmap: {
-      sectionLabel: string
       title: string
-      items: {
-        label: string
-        status: string
-      }[]
-      statusImplemented: string
-      statusInProgress: string
+      body: string
     }
 
-    poc: {
-      sectionLabel: string
+    ctaFinale: {
       title: string
-      description: string
-      phases: {
-        phase: string
-        title: string
-        description: string
-      }[]
-    }
-
-    download: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
-      }[]
-    }
-
-    cta: {
-      title: string
-      description: string
-      button: string
+      body: string
+      cta: string
     }
   }
 

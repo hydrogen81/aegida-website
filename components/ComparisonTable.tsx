@@ -15,7 +15,7 @@ function CheckIcon() {
       aria-label="Sì"
       role="img"
     >
-      <circle cx="9" cy="9" r="8" fill="rgba(34,197,94,0.15)" />
+      <circle cx="9" cy="9" r="8" fill="rgba(34,197,94,0.12)" />
       <path
         d="M5.5 9.5L7.5 11.5L12.5 6.5"
         stroke="#22c55e"
@@ -37,10 +37,10 @@ function CrossIcon() {
       aria-label="No"
       role="img"
     >
-      <circle cx="9" cy="9" r="8" fill="rgba(220,38,38,0.15)" />
+      <circle cx="9" cy="9" r="8" fill="rgba(148,163,184,0.08)" />
       <path
         d="M6.5 6.5L11.5 11.5M11.5 6.5L6.5 11.5"
-        stroke="#dc2626"
+        stroke="#475569"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -55,22 +55,22 @@ export default function ComparisonTable({
   className = '',
 }: ComparisonTableProps) {
   return (
-    <div className={`overflow-x-auto ${className}`}>
-      <table className="w-full text-left border-collapse">
+    <div className={`overflow-x-auto border border-navy-line rounded ${className}`}>
+      <table className="w-full">
         <thead>
-          <tr>
+          <tr className="bg-navy-card">
             {headers.map((header, colIdx) => {
               const isHighlight = highlightColumn !== undefined && colIdx === highlightColumn
               return (
                 <th
                   key={colIdx}
-                  className={`font-mono text-xs uppercase tracking-wider px-4 py-3 border-b-2 ${
-                    isHighlight
-                      ? 'border-b-gold-500 bg-navy-800 text-gold-400'
-                      : 'border-b-navy-700 bg-navy-900 text-slate-400'
-                  } ${colIdx === 0 ? 'text-left' : 'text-center'}`}
+                  className={`px-4 py-3 text-left font-mono text-[11px] tracking-[0.15em] uppercase text-ink-300 border-b border-navy-line ${
+                    isHighlight ? 'border-l-2 border-l-steel' : ''
+                  } ${colIdx !== 0 ? 'text-center' : ''}`}
                 >
-                  {header}
+                  {isHighlight ? (
+                    <span className="text-ink-100 font-medium">{header}</span>
+                  ) : header}
                 </th>
               )
             })}
@@ -80,11 +80,9 @@ export default function ComparisonTable({
           {rows.map((row, rowIdx) => (
             <tr
               key={rowIdx}
-              className={`border-b border-navy-700 last:border-b-0 ${
-                rowIdx % 2 === 0 ? 'bg-navy-900' : 'bg-navy-800'
-              }`}
+              className="border-b border-navy-line last:border-b-0 hover:bg-navy-card/30"
             >
-              <td className="font-body text-sm text-slate-300 px-4 py-3">
+              <td className="px-4 py-3 border-b border-navy-line text-sm text-ink-200 align-top">
                 {row.label}
               </td>
               {row.values.map((val, colIdx) => {
@@ -93,8 +91,8 @@ export default function ComparisonTable({
                 return (
                   <td
                     key={colIdx}
-                    className={`px-4 py-3 text-center ${
-                      isHighlight ? 'bg-gold-500/5' : ''
+                    className={`px-4 py-3 border-b border-navy-line text-sm text-ink-200 align-top text-center ${
+                      isHighlight ? 'border-l-2 border-l-steel text-ink-100 font-medium' : ''
                     }`}
                   >
                     {typeof val === 'boolean' ? (
@@ -102,7 +100,7 @@ export default function ComparisonTable({
                         {val ? <CheckIcon /> : <CrossIcon />}
                       </span>
                     ) : (
-                      <span className="font-mono text-sm text-slate-200">
+                      <span className="font-mono text-sm">
                         {val}
                       </span>
                     )}

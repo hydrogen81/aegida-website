@@ -5,28 +5,41 @@ const en: Translations = {
   /*  Navigation                                                       */
   /* ================================================================ */
   nav: {
-    prodotti: 'Products',
     privacyPhone: 'Privacy Phone',
     framework: 'Framework',
-    aegidaConnect: 'Connect',
+    blog: 'Blog',
+    chiSiamo: 'About us',
+    contatti: 'Contact',
+    richiedi: 'Request a meeting',
+    // deprecated keys kept for transitional compatibility
+    prodotti: 'Products',
     settori: 'Sectors',
     conformita: 'Compliance',
-    blog: 'Blog',
-    contatti: 'Contact',
-    richiedi: 'Request Briefing',
+    aegidaConnect: 'Connect',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
+    langWarning: '',
   },
 
   /* ================================================================ */
   /*  Footer                                                           */
   /* ================================================================ */
   footer: {
-    copyright: '\u00a9 2026 H4RESEARCH SRL. All rights reserved.',
-    location: 'Rome, Italy \u2014 VAT IT14765811006',
-    privacy: 'Privacy Policy',
-    cookie: 'Cookie Policy',
-    payoff: 'DESIGNED IN ITALY.',
+    istituzionale: 'AEGIDA è il brand di sicurezza di H4R (Human for Research Srl). Roma, Italia.',
+    payoff: 'PROGETTATO IN ITALIA.',
+    nav: {
+      privacyPhone: 'Privacy Phone',
+      framework: 'Framework',
+      chiSiamo: 'Chi siamo',
+      blog: 'Blog',
+      contatti: 'Contatti',
+    },
+    legale: {
+      privacyPolicy: 'Privacy Policy',
+      cookiePolicy: 'Cookie Policy',
+      conformita: 'Conformità normativa',
+    },
+    copyright: '© {year} H4R — Human for Research Srl. Tutti i diritti riservati.',
   },
 
   /* ================================================================ */
@@ -34,254 +47,86 @@ const en: Translations = {
   /* ================================================================ */
   home: {
     hero: {
-      classification: 'AEGIDA \u00b7 H4RESEARCH SRL \u00b7 ROME',
-      title: 'Cellebrite UFED, April 17, 2026:\nno user data extracted.',
-      subtitle: 'AEGIDA Privacy Phone.',
-      description:
-        'A hardened smartphone developed in Rome. An independent Italian firm specialised in technical electronic countermeasures subjected the device to Cellebrite Inseyets UFED 10.8.0.322 with Turbo Link, both in Locked mode and in Unlocked mode with the unlock code provided to the tool. No user data was extracted. Built for those who work under targeted threat: investigative reporters, criminal defence lawyers, exposed executives.',
-      ctaPrimary: 'Specifications and test evidence',
-      ctaSecondary: 'AEGIDA Framework',
-      stats: [
-        { value: '0 user data', label: 'extracted in UFED test 17/04/2026' },
-        { value: 'ML-KEM', label: 'FIPS 203 \u2014 Aegida Connect' },
-        { value: 'Rome', label: 'design and support' },
-        { value: '7 years', label: 'security updates' },
-      ],
+      title: 'Cellebrite UFED, 17 aprile 2026: nessun dato utente estratto.',
+      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce strumenti per chi opera con informazioni sensibili.',
+      ctaPrimary: 'Richiedi un colloquio',
+      ctaSecondary: 'Scarica il white paper UFED',
     },
-
-    threatTicker: {
-      label: 'LIVE THREAT FEED',
+    istituzionale: {
+      body: 'AEGIDA è il brand di sicurezza di H4R (Human for Research Srl). Progetta e produce strumenti per chi opera con informazioni sensibili: giornalisti, avvocati, dirigenti, figure pubbliche esposte. I prodotti sono testati con metodologia documentata e costruiti in Italia.',
     },
-
-    products: {
-      sectionLabel: 'PRODUCTS',
-      title: 'Two products, two perimeters.',
-
-      card1: {
-        title: 'AEGIDA Privacy Phone',
-        specs: '\u20ac3,900 \u2014 device, services and support for the first year',
-        description:
-          'Hardened smartphone built on Pixel 10a + Aegida OS (based on GrapheneOS). Forensic test of April 17, 2026 with Cellebrite Inseyets UFED 10.8.0.322: no user data extracted. Aegida Connect with post-quantum ML-KEM (FIPS 203) cryptography, hardware attestation via AEGIDA Inspector, Italian-language support.',
-        features: [
-          '0 user data extracted in UFED test (17/04/2026)',
-          'Aegida Connect \u2014 post-quantum P2P messaging (ML-KEM)',
-          'AEGIDA Inspector \u2014 hardware integrity attestation',
-          'Aegida OS based on GrapheneOS',
-          'Italian-language support via encrypted channel',
-        ],
-        cta: 'See price and specs \u2192',
+    prodotti: {
+      label: 'Cosa produciamo',
+      privacyPhone: {
+        name: 'AEGIDA Privacy Phone',
+        claim: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
+        cta: 'Scopri Privacy Phone',
       },
-
-      card2: {
-        title: 'AEGIDA Framework',
-        specs: 'WAN Infrastructure \u00b7 NIS2 / DORA \u00b7 Post-Quantum',
-        description:
-          'Post-quantum communication infrastructure for NIS2 and DORA operators. Stealth anti-DPI, zero-trust vendor access, redundant mesh. Custom projects: energy, utility, telco, finance, defense.',
-        features: [
-          'ML-KEM FIPS 203 Post-Quantum',
-          'AES-256-GCM 350 Mbps',
-          'Stealth anti-DPI',
-          'Zero-Trust OEM Access',
-          'Redundant 24/7 mesh',
-        ],
-        cta: 'Explore Framework \u2192',
-      },
-
-      card3: {
-        title: 'AEGIDA Connect',
-        badge: 'FREE',
-        specs: 'Linux Desktop \u00b7 E2E Encryption \u00b7 P2P',
-        description:
-          'Free encrypted messaging app for Linux. End-to-end protected communications with no intermediary servers. Your first step towards AEGIDA security.',
-        features: [
-          'E2E encrypted messaging',
-          'Peer-to-peer architecture',
-          'No central servers',
-          'Open source',
-          'Free download for Linux',
-        ],
-        cta: 'Learn more \u2192',
+      framework: {
+        name: 'AEGIDA Framework',
+        claim: 'Piattaforma di sicurezza per infrastrutture critiche. In preparazione per il lancio commerciale 2027-2028.',
+        cta: 'Stato del progetto',
       },
     },
-
-    sectors: {
-      sectionLabel: 'SECTORS',
-      title: 'Who We Protect',
-      items: [
-        {
-          title: 'Energy & Utilities',
-          description:
-            'SCADA/ICS protection, communications between power plants and control centers, OEM maintenance access.',
-        },
-        {
-          title: 'Healthcare',
-          description:
-            'Encryption of patient data in transit, protection of connected medical devices, enhanced GDPR compliance.',
-        },
-        {
-          title: 'Legal & Compliance',
-          description:
-            'Encrypted attorney-client communications, protection of confidential case files, legal privilege guaranteed.',
-        },
-        {
-          title: 'Transportation',
-          description:
-            'Protection of rail, port, and airport operational communications, resilient multi-link mesh.',
-        },
-        {
-          title: 'Journalism & NGOs',
-          description:
-            'Source protection, communications in hostile environments, resistance to state surveillance and censorship.',
-        },
-        {
-          title: 'Government & Intelligence',
-          description:
-            'Classified communications, critical national infrastructure, technological sovereignty.',
-        },
-      ],
+    proofPreview: {
+      label: 'Test forense',
+      title: 'La verifica forense indipendente',
+      body: 'Una società italiana di analisi forense indipendente ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED 10.8.0.322 e modulo Turbo Link. Il test è stato condotto sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Esito: 0 dati utente estratti.',
+      cta: 'Leggi il test completo',
     },
-
-    threats: {
-      sectionLabel: 'THREATS',
-      title: 'Threat Model',
-      items: [
-        {
-          name: 'Metadata Surveillance',
-          vector:
-            'Analysis of communication patterns, timing, frequency, and contacts \u2014 even without reading message content.',
-          countermeasure:
-            'Aegida Connect: P2P via Tor, no intermediary servers, no centralized metadata.',
-        },
-        {
-          name: 'Deep Packet Inspection',
-          vector:
-            'Network traffic inspection to identify and block VPNs, Tor, and non-standard protocols.',
-          countermeasure:
-            'AEGIDA Framework Layer C: traffic indistinguishable from standard HTTPS on port 443/TCP.',
-        },
-        {
-          name: 'Store-Now-Decrypt-Later',
-          vector:
-            'Intercept today, decrypt tomorrow with quantum computers (within 10\u201315 years).',
-          countermeasure:
-            'ML-KEM (FIPS 203): post-quantum key exchange, immediate protection against future threats.',
-        },
-        {
-          name: 'Vendor Compromise',
-          vector:
-            'Lateral access through vendor/maintenance credentials with permanent VPN connections.',
-          countermeasure:
-            'Zero-trust access control: time-limited, audited, revocable sessions for every OEM access.',
-        },
-        {
-          name: 'Physical Compromise',
-          vector:
-            'Data extraction from a seized or stolen device using forensic tools (Cellebrite, GrayKey).',
-          countermeasure:
-            'Aegida OS: USB lockdown, hardware-backed AES-256 encryption, remote wipe.',
-        },
-        {
-          name: 'Blackout / Censorship',
-          vector:
-            'Internet connectivity disruption to prevent operational communications.',
-          countermeasure:
-            'Aegida Connect: communication via local Wi-Fi, Bluetooth, and physical media. Resilient mesh.',
-        },
-      ],
-    },
-
-    compliance: {
-      sectionLabel: 'COMPLIANCE',
-      title: 'Check Your Compliance',
-      subtitle:
-        'Find out in 5 minutes whether your organization meets NIS2, GDPR, and NIST security requirements.',
-      cta: 'Start Free Self-Assessment \u2192',
-      badges: ['NIS2 / EU Directive 2022/2555', 'GDPR', 'NIST FIPS 203'],
-      note: 'Indicative results \u2014 this does not constitute legal advice',
-    },
-
-    contact: {
-      sectionLabel: 'CONTACT',
-      title: 'Request a Briefing',
-      info: {
-        companyName: 'H4RESEARCH SRL',
-        productLabel: 'AEGIDA Product',
-        webLabel: 'Web',
-        sedeLabel: 'HQ',
-        sedeValue: 'Rome, Italy',
-        pivaLabel: 'VAT',
-        briefingNote:
-          'Fill out the form to request a confidential technical briefing. Our team will contact you within 24 business hours to schedule a dedicated session.',
-      },
-      form: {
-        nameLabel: 'Name',
-        namePlaceholder: 'Your full name',
-        organizationLabel: 'Organization',
-        organizationPlaceholder: 'Organization name',
-        emailLabel: 'Email',
-        emailPlaceholder: 'email@organization.com',
-        roleLabel: 'Role',
-        rolePlaceholder: 'Your position',
-        productLabel: 'Product of interest',
-        productPlaceholder: 'Select a product',
-        productOptions: ['Privacy Phone', 'Framework', 'Both'],
-        sectorLabel: 'Sector',
-        sectorPlaceholder: 'Select your sector',
-        sectorOptions: [
-          'Energy',
-          'Healthcare',
-          'Legal',
-          'Transportation',
-          'Journalism',
-          'Government',
-          'Other',
-        ],
-        messageLabel: 'Message',
-        messagePlaceholder: 'Describe your security requirements...',
-        submitButton: 'Submit Briefing Request',
-        sending: 'Sending...',
-        successTitle: 'Request submitted',
-        successMessage:
-          'Our team will contact you within 24 business hours.',
-        errorDefault: 'An error occurred while sending. Please try again later.',
-      },
+    ctaFinale: {
+      title: 'Parla con chi ha progettato AEGIDA.',
+      subtitle: 'Le decisioni sulla sicurezza del tuo lavoro richiedono un colloquio, non un modulo generico.',
+      cta: 'Scopri AEGIDA Privacy Phone',
     },
   },
 
   /* ================================================================ */
-  /*  Contact Form (shared)                                            */
+  /*  Contact / Colloquio page                                         */
   /* ================================================================ */
-  contactForm: {
-    nameLabel: 'Name',
-    namePlaceholder: 'Your full name',
-    organizationLabel: 'Organization',
-    organizationPlaceholder: 'Organization name',
-    emailLabel: 'Email',
-    emailPlaceholder: 'email@organization.com',
-    roleLabel: 'Role',
-    rolePlaceholder: 'Your position',
-    productLabel: 'Product of interest',
-    productPlaceholder: 'Select a product',
-    productOptions: ['Privacy Phone', 'Framework', 'Both'],
-    sectorLabel: 'Sector',
-    sectorPlaceholder: 'Select your sector',
-    sectorOptions: [
-      'Energy',
-      'Healthcare',
-      'Legal',
-      'Transportation',
-      'Journalism',
-      'Government',
-      'Other',
-    ],
-    messageLabel: 'Message',
-    messagePlaceholder: 'Describe your security requirements...',
-    submitButton: 'Submit Briefing Request',
-    sending: 'Sending...',
-    successTitle: 'Request submitted',
-    successMessage:
-      'Our team will contact you within 24 business hours.',
-    errorDefault: 'An error occurred while sending. Please try again later.',
+  contact: {
+    page: {
+      title: 'Richiedi un colloquio',
+      subtitle: 'Le decisioni sulla sicurezza del tuo lavoro non si prendono tramite un modulo generico. Raccontaci brevemente il tuo caso e fissiamo un colloquio.',
+    },
+    form: {
+      labels: {
+        nome: 'Nome e cognome',
+        email: 'Email',
+        ruolo: 'Ruolo professionale',
+        motivo: 'Motivo del contatto',
+        tipoRichiesta: 'Tipo di richiesta',
+      },
+      placeholders: {
+        nome: 'Mario Rossi',
+        email: 'nome@dominio.it',
+        ruolo: 'giornalista, avvocato, dirigente, altro',
+        motivo: 'Descrivi sinteticamente la tua situazione.',
+      },
+      motivoOptions: [
+        'Valutazione Privacy Phone per il mio caso',
+        'Preventivo per team / studio legale / redazione',
+        'Formazione e supporto',
+        'Informazioni tecniche sul test UFED',
+        'Programma pilot Framework (2026-2028)',
+        'Altro',
+      ],
+      submit: 'Invia richiesta',
+      consenso: 'Ho letto la Privacy Policy e acconsento al trattamento dei dati per essere ricontattato.',
+      success: {
+        title: 'Richiesta ricevuta',
+        body: "Ti risponderemo entro 2 giorni lavorativi all'indirizzo che hai indicato.",
+      },
+      error: {
+        generic: 'Non è stato possibile inviare la richiesta. Riprova tra qualche minuto o scrivi a info@aegida-systems.com.',
+      },
+    },
+    diretti: {
+      title: 'Oppure in modo diretto',
+      email: 'info@aegida-systems.com',
+      pec: 'PEC: h4-researchsrl@legalmail.it',
+      legal: 'legal@aegida-systems.com (per esercizio del diritto di replica)',
+    },
   },
 
   /* ================================================================ */
@@ -290,302 +135,173 @@ const en: Translations = {
   privacyPhone: {
     hero: {
       title: 'AEGIDA Privacy Phone',
-      tagline: 'Cellebrite UFED, April 17, 2026: no user data extracted.',
-      description:
-        'Hardened smartphone built on Pixel 10a, with Aegida OS (based on GrapheneOS), Aegida Connect post-quantum messaging (ML-KEM, FIPS 203), and hardware integrity attestation via AEGIDA Inspector. Developed and supported in Rome. \u20ac3,900 covers device, services and support for the first year; renewal \u20ac690/year for updates and continued assistance.',
-      ctaDownload: 'Download data sheet',
-      ctaContact: 'Check availability',
+      tagline: 'Smartphone rafforzato su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
+      claim: 'Cellebrite UFED 10.8.0.322 — verifica documentata: 0 dati utente estratti.',
+      ctaPrimary: 'Richiedi un colloquio',
+      ctaSecondary: 'Scarica il white paper UFED',
     },
-
-    pillars: {
-      sectionLabel: 'Architecture',
-      title: 'Three Pillars, One Goal',
+    cosaE: {
+      label: 'Cos\'è',
+      body: 'Il Privacy Phone è pensato per chi lavora con informazioni sensibili e non può accettare che il dispositivo sia un punto debole: giornalisti investigativi, avvocati che trattano dossier delicati, dirigenti che viaggiano in contesti ostili, figure pubbliche esposte, dirigenti di ONG. Non è un «telefono sicuro» generico: è uno strumento operativo, con metodologia di test documentata e supporto dedicato.',
+    },
+    cosaInclude: {
+      label: 'Cosa include',
+      title: 'Il pacchetto AEGIDA Privacy Phone',
       items: [
         {
-          num: '01',
-          title: 'Hardware',
-          subtitle: 'Google Pixel 10a',
-          desc: 'Titan M2 Secure Enclave, relockable bootloader, 7 years of updates. The physical foundation upon which every security layer is built.',
+          key: 'hardware',
+          title: 'Hardware rafforzato',
+          body: 'Base Pixel 10a (Google Tensor G4, 8 GB RAM). Firmware originale rimosso; installato sistema operativo derivato, indurito da AEGIDA, con verified boot e chiavi proprietarie. Il dispositivo arriva al cliente già configurato e sigillato.',
         },
         {
-          num: '02',
-          title: 'Aegida OS',
-          subtitle: 'GrapheneOS',
-          desc: 'Hardened operating system, 100% open-source, zero Google telemetry. Every permission, every sensor, every byte under your control.',
+          key: 'connect',
+          title: 'Connect — messaggistica cifrata',
+          body: 'Comunicazione diretta tra dispositivi AEGIDA con cifratura post-quantum (ML-KEM FIPS 203). Nessun server centrale di instradamento: i messaggi passano solo tra i dispositivi coinvolti.',
         },
         {
-          num: '03',
-          title: 'Aegida Connect',
-          subtitle: 'P2P Comms',
-          desc: 'Encrypted peer-to-peer communications via Tor, local Wi-Fi, and Bluetooth. No central server, no intermediaries, no metadata.',
+          key: 'inspector',
+          title: 'Inspector — attestazione integrità',
+          body: 'App di verifica dell\'integrità hardware, basata su fork di GrapheneOS Auditor. Permette di confermare crittograficamente che il dispositivo non sia stato manomesso dall\'ultima verifica. Un secondo dispositivo di fiducia funge da verificatore.',
+        },
+        {
+          key: 'supporto',
+          title: 'Supporto e formazione',
+          body: '12 mesi di supporto via canale cifrato con tempi di risposta definiti. Formazione utente remota (in sede per ordini multi-dispositivo). Re-hardening annuale nel pacchetto di rinnovo.',
         },
       ],
     },
-
-    hardware: {
-      sectionLabel: 'Hardware',
-      title: 'Google Pixel 10a',
-      specs: [
-        { label: 'Processor', value: 'Google Tensor G4 (4 nm), custom SoC with dedicated NPU, Exynos 5400 modem with satellite SOS' },
-        { label: 'RAM / Storage', value: '8 GB LPDDR5 / 128\u2013256 GB UFS' },
-        { label: 'Display', value: '6.3" P-OLED, 120 Hz, 3,000 nit, Gorilla Glass 7i' },
-        { label: 'Camera', value: '48 MP f/1.7 + 13 MP ultrawide, 13 MP front, 4K@60fps' },
-        { label: 'Battery', value: '5,100 mAh, 30 W wired, 18 W wireless' },
-        { label: 'Connectivity', value: '5G, Wi-Fi 7, Bluetooth 6, NFC, Satellite SOS' },
-        { label: 'HW Security', value: 'Titan M2 Secure Enclave' },
-        { label: 'Durability', value: 'IP68' },
-        { label: 'Dimensions', value: '153.9 x 73 x 9 mm, 183 g' },
-        { label: 'Updates', value: '7 years OS + security (through 2033)' },
-      ],
-      whyTitle: 'Why the Pixel 10a',
-      whyPoints: [
-        'Relockable bootloader after flashing: the only Android smartphone that allows re-lock with a custom OS, preserving the Verified Boot chain.',
-        'Titan M2 Secure Enclave: dedicated chip for cryptographic keys, hardware anti-tampering, and PIN attempt rate-limiting.',
-        'Timely kernel patches: Google releases monthly patches with a public SLA; GrapheneOS integrates them within 24\u201348 hours.',
-      ],
-    },
-
-    os: {
-      sectionLabel: 'Operating System',
-      title: 'Aegida OS',
-      description:
-        'Based on GrapheneOS, the privacy-focused mobile operating system with over 300,000 active users, founded in 2014 and developed as a 100% open-source project. Aegida OS inherits all its protections and adds enterprise-specific deployment configurations.',
-      features: [
-        {
-          title: 'Storage Scopes',
-          description:
-            'Each app sees only its own storage sandbox, with no access to other applications\u2019 files or the global file system.',
-        },
-        {
-          title: 'Network Permission Toggle',
-          description:
-            'Per-app network permission: revocable at any time, silently blocking all outbound connections.',
-        },
-        {
-          title: 'Sensors Permission',
-          description:
-            'Accelerometer, gyroscope, barometer, and other sensors require explicit permission, preventing hardware fingerprinting.',
-        },
-        {
-          title: 'Hardened Memory Allocator',
-          description:
-            'Custom memory allocator (hardened_malloc) with guard pages, canary randomization, and use-after-free protection.',
-        },
-        {
-          title: 'Vanadium Browser',
-          description:
-            'Hardened Chromium with per-site isolation, disableable JIT, WebRTC blocked by default, and restrictive Content Security Policies.',
-        },
-        {
-          title: 'Secure App Spawning',
-          description:
-            'Secure process forking with ASLR re-randomization at every launch, eliminating attacks based on predictable memory layout.',
-        },
-      ],
-      privacyByDesignTitle: 'Privacy by Design',
-      privacyByDesignItems: [
-        'MAC randomization for every Wi-Fi network',
-        'PIN scrambling: numeric keypad with randomized layout',
-        'Automatic EXIF removal from photos and screenshots',
-        'Hardware identifier isolation across profiles',
-        'Clipboard notification: alert on every clipboard access',
-        'Multiple isolated profiles with separate encryption',
-        'USB lockdown: peripherals blocked when screen is off',
-      ],
-      zeroGoogleTitle: 'Zero Google',
-      zeroGoogleDescription:
-        'No Google Play Services. Zero telemetry. Zero bloatware. Compatible apps can be installed via an optional sandbox without any special privileges, keeping the system completely isolated from the Google ecosystem.',
-    },
-
-    connect: {
-      sectionLabel: 'Communications',
-      title: 'Aegida Connect',
-      description:
-        'Pure peer-to-peer architecture: every device is an autonomous node. Messages travel directly between sender and recipient through multiple channels \u2014 Tor, local Wi-Fi, Bluetooth \u2014 without ever passing through a central server. No intermediary knows who communicates with whom.',
-      transportTitle: 'Transport Channels',
-      transportChannels: [
-        { label: 'Tor / Internet', value: 'Onion Service v3 ED25519 \u2014 anonymous global communication' },
-        { label: 'Local Wi-Fi', value: 'LAN / hotspot 802.11 \u2014 zero Internet dependency' },
-        { label: 'Bluetooth', value: 'BT Classic / BLE, 10\u2013100 m \u2014 proximity without network' },
-        { label: 'Physical media', value: 'MicroSD / USB \u2014 delay-tolerant, air-gapped transfer' },
-      ],
-      secureRelayTitle: 'Aegida Secure Relay',
-      secureRelayDescription:
-        'When the recipient is offline, messages are temporarily held on distributed relays, encrypted end-to-end with the recipient\u2019s public key. The relay cannot read the content or metadata. As soon as the recipient comes back online, messages are delivered and deleted from the relay. A delay-tolerant architecture that does not sacrifice security.',
-      cryptoStackTitle: 'Cryptographic Stack',
-      cryptoStack: [
-        { name: 'Curva25519', role: 'ECDH Key Exchange' },
-        { name: 'ChaCha20-Poly1305', role: 'AEAD Encryption' },
-        { name: 'BLAKE2', role: 'Hashing' },
-        { name: 'PFS', role: 'Perfect Forward Secrecy' },
-        { name: 'AES-256-GCM', role: 'Symmetric Encryption' },
-        { name: 'Scrypt KDF', role: 'Key Derivation' },
-        { name: 'Onion Service v3', role: 'Anonymous Transport' },
-      ],
-      identityTitle: 'Identity Management',
-      identityDescription:
-        'No centralized PKI, no Certificate Authority. Each device generates an ED25519 key pair directly in the Titan M2. Identity exchange occurs via proximity QR pairing: two users scan each other\u2019s QR code, verify the fingerprint, and establish a permanent encrypted channel. Simple, verifiable, MITM-resistant.',
-      featuresTitle: 'Features',
-      features: [
-        'End-to-end encrypted 1:1 messaging',
-        'Private groups with shared key',
-        'Distributed and moderatable forums',
-        'Broadcast feeds and updates',
-        'Aegida Secure Relay for offline users',
-        'Secure Pairing via QR Code',
-      ],
-    },
-
-    integration: {
-      sectionLabel: 'Synergy',
-      title: 'Layer Integration',
-      tableHeaders: {
-        from: 'From',
-        to: 'To',
-        synergy: 'Synergy',
-      },
-      rows: [
-        {
-          from: 'Hardware',
-          to: 'OS',
-          synergy: 'Verified Boot + Titan M2 ensure that only signed Aegida OS can boot. Cryptographic keys are protected in hardware.',
-        },
-        {
-          from: 'OS',
-          to: 'App',
-          synergy: 'Reinforced sandbox, granular permissions, and hardened_malloc protect Aegida Connect from system-level exploits.',
-        },
-        {
-          from: 'App',
-          to: 'Hardware',
-          synergy: 'Aegida Connect generates and stores ED25519 keys directly in the Titan M2, never exposing them in RAM.',
-        },
-        {
-          from: 'OS',
-          to: 'Communications',
-          synergy: 'Network Permission Toggle and OS-level firewall prevent data leaks outside authorized encrypted channels.',
-        },
-        {
-          from: 'Hardware',
-          to: 'Communications',
-          synergy: 'Hardware-accelerated Bluetooth 6 and Wi-Fi 7 provide low-latency P2P channels with transport-layer encryption.',
-        },
-      ],
-    },
-
-    download: {
-      sectionLabel: 'Documentation',
-      title: 'Downloads',
-      items: [
-        {
-          title: 'UFED test white paper \u2014 April 17, 2026',
-          description:
-            'Forensic evidence of the Cellebrite Inseyets UFED 10.8.0.322 test on AEGIDA Privacy Phone: methodology, screenshots, conclusions and legal disclaimer (PDF, 12 pages, in Italian).',
-        },
-        {
-          title: 'Privacy Phone Brochure',
-          description:
-            'Commercial overview and key features of AEGIDA Privacy Phone.',
-        },
-        {
-          title: 'Technical Document',
-          description:
-            'Hardware specifications, Aegida OS features, and Aegida Connect architecture in detail.',
-        },
-      ],
-    },
-
     proof: {
-      sectionLabel: 'Forensic Evidence',
-      title: 'Cellebrite UFED Test \u2014 April 17, 2026',
-      intro:
-        'On April 17, 2026 an independent Italian firm specialised in technical electronic countermeasures and counter-surveillance subjected AEGIDA Privacy Phone to forensic extraction with Cellebrite Inseyets UFED 10.8.0.322 and the Turbo Link module \u2014 the international reference tool of law-enforcement agencies. The test was conducted both in Locked mode (BFU \u2014 Before First Unlock) and in Unlocked mode (AFU \u2014 After First Unlock) with the unlock code known and provided to the tool. In neither scenario did UFED extract any user data.',
+      sectionLabel: 'Riscontri forensi',
+      title: 'Test Cellebrite UFED — 17 aprile 2026',
+      intro: 'Il 17 aprile 2026 una società italiana indipendente specializzata in bonifica tecnica elettronica e contro-sorveglianza ha sottoposto AEGIDA Privacy Phone a estrazione forense con Cellebrite Inseyets UFED 10.8.0.322 e modulo Turbo Link. Il test è stato condotto sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco noto e fornito allo strumento. In nessuno dei due scenari UFED ha estratto dati utente.',
       testCard: {
-        operator: 'Third-party operator',
-        operatorValue: 'Independent Italian firm certified in technical electronic countermeasures and counter-surveillance',
+        operator: 'Operatore terzo',
+        operatorValue: 'Società italiana indipendente certificata in bonifica elettronica e contro-sorveglianza',
         software: 'Software',
-        softwareValue: 'Cellebrite Inseyets UFED 10.8.0.322 + Turbo Link module',
-        date: 'Date',
-        dateValue: 'April 17, 2026',
-        duration: 'Modes tested',
-        durationValue: 'BFU (Locked) and AFU (Unlocked) with code provided \u2014 14 minutes total',
-        device: 'Device',
-        deviceValue: 'AEGIDA Privacy Phone on Pixel 10a, Aegida OS based on GrapheneOS, Android 16, FBE encryption',
+        softwareValue: 'Cellebrite Inseyets UFED 10.8.0.322 + modulo Turbo Link',
+        date: 'Data',
+        dateValue: '17 aprile 2026',
+        duration: 'Modalità',
+        durationValue: 'BFU (Locked) e AFU (Unlocked) con codice fornito — 14 minuti totali',
+        device: 'Dispositivo',
+        deviceValue: 'AEGIDA Privacy Phone su base Pixel 10a, Aegida OS basato su GrapheneOS, Android 16, cifratura FBE',
       },
       timeline: [
         {
-          time: '16:00 \u2014 Locked mode (BFU)',
-          caption:
-            'UFED exhausts the BFU methods available for Pixel 10a and returns "Access attempt failed \u2014 No suitable method found". The only remaining path proposed is the Recovery procedure, which would however cause the device to lose its AFU state.',
+          time: '16:00 — Modalità Locked (BFU)',
+          caption: 'UFED esaurisce i metodi BFU disponibili per Pixel 10a e restituisce "Access attempt failed — No suitable method found".',
           image: '/proof/ufed-test/01-locked-no-method-found.jpg',
-          alt: 'UFED screen showing Access attempt failed and No suitable method found in Locked mode',
+          alt: 'Schermata UFED che mostra Access attempt failed in modalità Locked',
         },
         {
-          time: '16:04 \u2014 Unlocked (AFU) with code provided',
-          caption:
-            'The operator re-runs the flow in Unlocked mode and supplies the unlock code. UFED reads device identifiers (vendor, model, chipset, OS, kernel, patch level, encryption type, battery) \u2014 fields accessible via ADB and fastboot, not user content.',
+          time: '16:04 — Modalità Unlocked (AFU) con codice fornito',
+          caption: 'UFED legge gli identificatori di dispositivo — campi accessibili via ADB e fastboot, non contenuto utente.',
           image: '/proof/ufed-test/02-metadata-only.jpg',
-          alt: 'UFED Quick view screen showing only device identifiers for Pixel 10a',
+          alt: 'Schermata UFED Quick view che mostra solo identificatori di dispositivo',
         },
         {
-          time: '16:07 \u2014 User data extraction',
-          caption:
-            'After three minutes of multiple attempts ("Method failed, starting next attempt..."), UFED concludes: "Access attempt failed for Google Pixel 10a \u2014 No suitable method found". No messages, no photos, no contacts, no user files were extracted.',
+          time: '16:07 — Estrazione dati utente',
+          caption: 'UFED conclude: "Access attempt failed for Google Pixel 10a — No suitable method found". Nessun dato utente estratto.',
           image: '/proof/ufed-test/03-unlocked-passcode-failed.jpg',
-          alt: 'UFED screen showing Access attempt failed for Google Pixel 10a in Unlocked mode with code',
+          alt: 'Schermata UFED che mostra Access attempt failed for Google Pixel 10a',
         },
         {
-          time: 'Test workstation',
-          caption:
-            'Laptop running Cellebrite Inseyets UFED, Cellebrite Turbo Link hardware connected via proprietary cable, AEGIDA Privacy Phone with Aegida Connect and AEGIDA Inspector visible on the home screen. The operator\u2019s International Master Counter Surveillance Technical certification is visible at the workstation.',
+          time: 'Postazione del test',
+          caption: 'Laptop con Cellebrite Inseyets UFED, hardware Cellebrite Turbo Link, AEGIDA Privacy Phone.',
           image: '/proof/ufed-test/04-setup-fisico.jpg',
-          alt: 'Photo of test workstation: laptop running UFED, Cellebrite Turbo Link hardware, AEGIDA Privacy Phone',
+          alt: 'Foto della postazione del test',
         },
       ],
-      conclusionLabel: 'Conclusion',
-      conclusionText:
-        'In the April 17, 2026 test, Cellebrite Inseyets UFED 10.8.0.322 with Turbo Link extracted no user data from AEGIDA Privacy Phone, neither in BFU (Locked) nor in AFU (Unlocked) mode with the unlock code provided to the tool. Only device identifiers accessible via ADB and fastboot were read. Results refer to the version and configuration indicated, on the date of the test.',
-      disclaimer:
-        'Test conducted by an independent certified Italian firm. Cellebrite, Inseyets, UFED and Turbo Link are registered trademarks of Cellebrite DI Ltd. AEGIDA is not affiliated with, sponsored by, or connected to Cellebrite DI Ltd; references serve technical comparative documentation purposes pursuant to Italian D.Lgs. 145/2007. Reproduced screenshots constitute citation under art. 70 of Italian L. 633/1941, for criticism and scientific discussion. Results refer to the software/firmware version and hardware configuration indicated, on the date of the test; AEGIDA does not warrant that future releases of the cited forensic tools will produce the same results, and undertakes to publish periodic re-tests. The test measures interoperability with a specific AEGIDA Privacy Phone configuration; it expresses no overall judgement on Cellebrite products. Right of reply: legal@aegida-systems.com.',
+      conclusionLabel: 'Conclusione',
+      conclusionText: 'Nel corso del test, Cellebrite Inseyets UFED 10.8.0.322 con Turbo Link non ha estratto alcun dato utente da AEGIDA Privacy Phone, né in modalità BFU (Locked) né in modalità AFU (Unlocked) con codice di sblocco fornito allo strumento. 0 contenuto applicativo (messaggi, contatti, foto, documenti) su entrambe le modalità. I metadati di sistema non contengono informazioni dell\'utente.',
+      disclaimer: 'Cellebrite, UFED, Turbo Link sono marchi di Cellebrite DI Ltd. Google, Pixel, Tensor sono marchi di Google LLC. GrapheneOS è marchio del GrapheneOS Project. AEGIDA non ha alcun rapporto commerciale con queste entità. Diritto di replica: legal@aegida-systems.com.',
     },
-
     pricing: {
-      sectionLabel: 'Price list',
-      title: 'Price and package',
-      subtitle:
-        'A single price covering device, services and support for the first year.',
-      bundle: {
-        label: 'First-year package',
-        price: '\u20ac3,900',
-        period: 'included in the price',
-        items: [
-          'Hardware device (Google Pixel 10a)',
-          'Aegida Connect configured with post-quantum cryptography',
-          'AEGIDA Inspector for hardware integrity attestation',
-          '12 months of assistance via encrypted channel',
-          'User training (remote; on-site for multi-device orders)',
-        ],
+      label: 'Prezzi',
+      title: 'Pacchetto primo anno e rinnovi',
+      packages: [
+        {
+          name: 'Pacchetto primo anno',
+          price: '3.900 €',
+          description: 'Hardware + configurazione AEGIDA Connect + Inspector + 12 mesi supporto + formazione utente',
+          highlighted: true,
+        },
+        {
+          name: 'Rinnovo annuale',
+          price: '690 € / anno',
+          description: 'Aggiornamenti sicurezza, supporto cifrato continuato, re-hardening annuale, incident response entry-level',
+          highlighted: false,
+        },
+      ],
+      business: {
+        title: 'Ordini multi-dispositivo',
+        body: 'Per studi legali, redazioni, ONG e team aziendali con 5 o più dispositivi sono disponibili condizioni dedicate.',
+        cta: 'Richiedi preventivo',
       },
-      renewal: {
-        label: 'Annual renewal',
-        price: '\u20ac690',
-        period: 'from the second year',
-        items: [
-          'Security updates for the full device lifecycle',
-          'Continued technical assistance via encrypted channel',
-          'Annual configuration review',
-          'Basic incident response (within 4 hours)',
-        ],
-      },
-      note: 'Prices include VAT for private buyers, exclude VAT for business. A dedicated package is available for orders of 5+ devices (law firms, newsrooms, NGOs, internal security teams): contact us for a quote.',
-      cta: 'Check availability',
     },
+    metodologia: {
+      label: 'Metodologia',
+      title: 'Come testiamo ciò che dichiariamo',
+      body: 'Il test è stato condotto da una società italiana di analisi forense certificata con un operatore con certificazione ASIS IMCST (International Master Counter Surveillance Technical). Lo strumento utilizzato è Cellebrite Inseyets UFED 10.8.0.322 con modulo Turbo Link.',
+    },
+    tempest: {
+      title: 'Resistenza alle emissioni compromettenti (TEMPEST)',
+      body: 'Il dispositivo è stato sottoposto a test secondo metodologia TEMPEST per la verifica della resistenza a compromissioni tramite intercettazione di emissioni elettromagnetiche, acustiche e ottiche non intenzionali. I test sono stati condotti da società italiana indipendente secondo protocolli documentati. Non costituiscono certificazione SDIP-27 né accreditamento da ente terzo, ma verifica metodologica.',
+    },
+    disclaimer: {
+      text: 'Cellebrite, UFED, Turbo Link sono marchi di Cellebrite DI Ltd. Google, Pixel, Tensor sono marchi di Google LLC. GrapheneOS è marchio del GrapheneOS Project. AEGIDA non ha alcun rapporto commerciale con queste entità. Diritto di replica: legal@aegida-systems.com.',
+    },
+    ctaFinale: {
+      title: 'Richiedi un colloquio',
+      body: 'Per scegliere un AEGIDA Privacy Phone non serve un carrello. Serve un colloquio.',
+      cta: 'Richiedi un colloquio',
+    },
+  },
 
-    cta: {
-      title: 'Purchase AEGIDA Privacy Phone',
-      description:
-        '\u20ac3,900 first-year package. Includes device, Aegida Connect with post-quantum cryptography, AEGIDA Inspector, 12 months of encrypted assistance, and training. Contact us for availability and shipping.',
-      button: 'Check availability',
+  /* ================================================================ */
+  /*  About / Chi Siamo page                                           */
+  /* ================================================================ */
+  about: {
+    hero: {
+      title: 'Chi siamo',
+      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce strumenti per chi opera con informazioni sensibili.',
+    },
+    societa: {
+      title: 'La società',
+      body: 'H4R (Human for Research Srl) è una società italiana con sede a Roma, fondata nel 2018. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
+    },
+    missione: {
+      title: 'La missione',
+      body: 'Gli strumenti di comunicazione di uso comune non sono progettati per chi lavora con informazioni sensibili. Messaggistica sincronizzata in chiaro, backup cloud automatici, estrazione forense consentita. La nostra missione è colmare quella distanza con prodotti testati, documentati e costruiti in Italia, a un prezzo accessibile a professionisti che non sono enti di Stato.',
+    },
+    cosaProduciamo: {
+      title: 'Cosa produciamo',
+      items: [
+        {
+          name: 'AEGIDA Privacy Phone',
+          status: 'Prodotto commerciale 2026',
+          body: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
+        },
+        {
+          name: 'AEGIDA Framework',
+          status: 'Piattaforma infrastrutture critiche — lancio 2027-2028',
+          body: 'Piattaforma di sicurezza per operatori di servizi essenziali sottoposti a NIS2, DORA o normative equivalenti.',
+        },
+      ],
+    },
+    team: {
+      title: 'Il team',
+      body: 'Il team operativo di H4R.',
+      members: [
+        { name: 'Giuseppe Savio', role: 'CEO' },
+        { name: 'Daniele Fabro', role: 'CTO' },
+        { name: 'Fabrizio Mariani', role: 'COO' },
+      ],
+    },
+    ctaFinale: {
+      title: 'Parliamone',
+      body: 'Se stai valutando AEGIDA per il tuo lavoro, la prima cosa da fare è un colloquio. Capiamo se siamo lo strumento giusto per il tuo caso.',
+      cta: 'Richiedi un colloquio',
     },
   },
 
@@ -594,232 +310,34 @@ const en: Translations = {
   /* ================================================================ */
   framework: {
     hero: {
-      sectionLabel: 'FRAMEWORK',
       title: 'AEGIDA Framework',
-      tagline: 'Post-Quantum Security for Critical Infrastructure',
-      description:
-        'AEGIDA Framework protects WAN communications for critical infrastructure with post-quantum cryptography (ML-KEM, NIST FIPS 203), a stealth layer that makes traffic indistinguishable from normal HTTPS sessions, and zero-trust access control for OEM vendors. Designed for energy, healthcare, transportation, and government sectors.',
-      ctaDownload: 'Download Technical Document',
-      ctaContact: 'Request PoC',
+      tagline: 'Piattaforma di sicurezza per le reti di comunicazione di infrastrutture critiche.',
     },
 
-    problem: {
-      sectionLabel: 'THE PROBLEM',
-      title: 'Communication networks are the attack surface',
-      description:
-        'Critical infrastructure depends on WAN networks for remote control, telemetry, and maintenance. These connections traverse the public Internet and are exposed to interception, targeting, and disruption. Traditional solutions (IPSec VPN, WireGuard) do not offer post-quantum protection, do not conceal traffic, and do not manage vendor access.',
-      threats: [
-        {
-          type: 'Interception',
-          detail: 'Store-now-decrypt-later: data encrypted today, decryptable tomorrow with quantum computers.',
-        },
-        {
-          type: 'Vendor compromise',
-          detail: 'Ukraine 2015, Colonial Pipeline 2021, Synnovis UK 2024, SolarWinds 2020.',
-        },
-        {
-          type: 'Identification & targeting',
-          detail: 'Detectable VPN patterns: IKEv2 port 500/4500, WireGuard fixed UDP, TLS fingerprint.',
-        },
-        {
-          type: 'Targeted disruption',
-          detail: 'NATO/ENISA/CISA scenarios: coordinated attacks on energy, water, and transportation.',
-        },
-      ],
-      tableHeaders: {
-        threat: 'Threat',
-        detail: 'Detail',
-      },
+    cosaE: {
+      title: "Cos'è",
+      body: "AEGIDA Framework è una piattaforma pensata per le reti di comunicazione di infrastrutture critiche. Combina crittografia post-quantum (ML-KEM, NIST FIPS 203), offuscamento del traffico e controllo accessi zero-trust per fornitori OEM. Progettato per energia, sanità, trasporti e pubblica amministrazione.",
     },
 
-    layers: {
-      sectionLabel: 'ARCHITECTURE',
-      title: 'Three Layers of Protection',
-      layerA: {
-        label: 'Layer A',
-        name: 'ML-KEM (FIPS 203)',
-        subtitle: 'Post-Quantum Key Exchange',
-        details: [
-          'NIST FIPS 203 standard (August 2024)',
-          'ML-KEM ex Kyber-768',
-          'Classical security equivalent to AES-192',
-          "Resistant to Shor's algorithm",
-        ],
-      },
-      layerB: {
-        label: 'Layer B',
-        name: 'AES-256-GCM',
-        subtitle: 'Symmetric Authenticated Encryption',
-        details: [
-          'Authenticated AES-256-GCM',
-          'Throughput: 350 Mbps',
-          'Key derivation from Layer A',
-          'Automatic rotation, forward secrecy',
-        ],
-      },
-      layerC: {
-        label: 'Layer C',
-        name: 'Stealth HTTPS Obfuscation',
-        subtitle: 'Anti-DPI Traffic Camouflage',
-        details: [
-          'Port 443/TCP, identical to HTTPS',
-          'Bypasses Deep Packet Inspection',
-          'No traffic analysis possible',
-          'Invisible to firewalls and IDS',
-        ],
-      },
+    perChi: {
+      title: 'A chi serve',
+      body: 'Agli operatori di servizi essenziali che devono rispondere a NIS2, DORA e ai requisiti ACN, e proteggere le reti WAN di controllo e telemetria da compromissione remota.',
     },
 
-    stats: {
-      items: [
-        { value: '350', unit: 'Mbps', label: 'Encrypted throughput' },
-        { value: '24/7', unit: '', label: 'Fanless, zero maintenance' },
-        { value: '0%', unit: '', label: 'DPI detection rate' },
-        { value: '<5', unit: 'ms', label: 'Overhead on fiber' },
-      ],
-    },
-
-    comparison: {
-      sectionLabel: 'COMPARISON',
-      title: 'AEGIDA vs Existing Solutions',
-      headers: ['', 'IPSec/IKEv2', 'WireGuard', 'ZTNA', 'SD-WAN', 'AEGIDA'],
-      rows: [
-        { label: 'Symmetric encryption' },
-        { label: 'PQC Key Exchange' },
-        { label: 'Traffic Obfuscation / DPI Resistance' },
-        { label: 'Zero-Trust OEM Access' },
-        { label: 'No fingerprint' },
-        { label: 'Forward Secrecy with PQC' },
-      ],
-      note: 'AEGIDA does not replace \u2014 it integrates. It operates at the WAN transport layer without modifications to the internal network.',
-    },
-
-    threats: {
-      sectionLabel: 'THREAT LANDSCAPE',
-      title: 'Documented Attacks on Critical Infrastructure',
-      cards: [
-        {
-          year: '2016',
-          name: 'INDUSTROYER / CRASHOVERRIDE',
-          location: 'Ukraine',
-          description:
-            'First malware designed to attack power grids. Power outage in Kyiv through manipulated ICS protocols.',
-        },
-        {
-          year: '2017',
-          name: 'TRITON / TRISIS',
-          location: 'Petrochemical',
-          description:
-            'Attack on Triconex SIS safety systems. Goal: disable physical protections in a petrochemical plant.',
-        },
-        {
-          year: '2022',
-          name: 'PIPEDREAM / INCONTROLLER',
-          location: 'Sandworm / GRU',
-          description:
-            'Modular toolkit for attacks on Schneider PLCs, OMRON, and OPC UA servers. Large-scale disruption capability.',
-        },
-        {
-          year: 'Ongoing',
-          name: 'Store-Now-Decrypt-Later',
-          location: 'NSA, NCSC UK, BSI',
-          description:
-            'Mass interception of encrypted traffic for future decryption with quantum computers. Threat confirmed by intelligence agencies.',
-        },
-      ],
-    },
-
-    nis2: {
-      sectionLabel: 'NIS2',
-      title: 'NIS2 Compliance',
-      badgeTitle: 'NIS2 Directive \u2014 EU Directive 2022/2555',
-      badgeSubtitle:
-        'Penalties of up to 2% of annual global turnover for non-compliance.',
-      tableHeaders: {
-        requirement: 'NIS2 Requirement',
-        coverage: 'AEGIDA Coverage',
-      },
-      rows: [
-        {
-          article: 'Art. 21 Cryptography',
-          mapping: 'ML-KEM (FIPS 203) + AES-256-GCM with forward secrecy and automatic key rotation.',
-        },
-        {
-          article: 'Art. 21 Risk management',
-          mapping: 'Redundant mesh, automatic failover, no Single Point of Failure.',
-        },
-        {
-          article: 'Art. 21 Supply chain',
-          mapping: 'Zero-trust OEM access: authentication, authorization, and logging for every session.',
-        },
-        {
-          article: 'Art. 20\u201323 Governance',
-          mapping: 'Structured logging, complete audit trail, automated reporting.',
-        },
-      ],
+    stato: {
+      title: 'Stato 2026',
+      body: "Il Framework è in fase di qualificazione presso l'Agenzia per la Cybersicurezza Nazionale. Sono in corso test con un numero limitato di organizzazioni selezionate. Non è ancora disponibile per l'acquisto diretto.",
     },
 
     roadmap: {
-      sectionLabel: 'CERTIFICATIONS',
-      title: 'Certification Roadmap',
-      items: [
-        { label: 'NIST FIPS 203', status: 'Implemented' },
-        { label: 'FIPS 140-3', status: 'In progress' },
-        { label: 'Common Criteria EAL4+', status: 'In progress' },
-        { label: 'ACN Qualification', status: 'In progress' },
-      ],
-      statusImplemented: 'Implemented',
-      statusInProgress: 'In progress',
+      title: 'Roadmap 2027-2028',
+      body: 'Il lancio commerciale è previsto nel biennio 2027-2028, a seguito del completamento del percorso di qualificazione e delle certificazioni FIPS 140-3 e Common Criteria EAL4+.',
     },
 
-    poc: {
-      sectionLabel: 'PROOF OF CONCEPT',
-      title: 'Proof of Concept',
-      description:
-        'The PoC process is structured in three phases to validate performance and integration of AEGIDA within your infrastructure.',
-      phases: [
-        {
-          phase: '1',
-          title: 'Setup',
-          description: 'Requirements analysis, appliance configuration, and baseline definition.',
-        },
-        {
-          phase: '2',
-          title: 'Deployment',
-          description: 'Installation in production environment and integration with existing infrastructure.',
-        },
-        {
-          phase: '3',
-          title: 'Analysis',
-          description: 'Metrics collection, complete technical report, and recommendations for roll-out.',
-        },
-      ],
-    },
-
-    download: {
-      sectionLabel: 'DOCUMENTATION',
-      title: 'Download Documentation',
-      items: [
-        {
-          title: 'Framework Brochure',
-          description: 'Commercial overview and advantages of AEGIDA Framework.',
-        },
-        {
-          title: 'General Brief',
-          description: 'For the Security Officer.',
-        },
-        {
-          title: 'Technical Document',
-          description: 'Detailed architecture and Proof of Concept.',
-        },
-      ],
-    },
-
-    cta: {
-      title: 'Ready for a technical assessment?',
-      description:
-        'Contact our team for a free technical assessment of your infrastructure and discover how AEGIDA Framework can protect your critical communications.',
-      button: 'Request Technical Assessment',
+    ctaFinale: {
+      title: 'Interessato a un pilot?',
+      body: "Se la tua organizzazione rientra fra gli operatori di servizi essenziali e vuole valutare AEGIDA Framework in anticipo rispetto al lancio, contattaci per discutere le condizioni di un programma pilot riservato.",
+      cta: 'Richiedi contatto per un pilot',
     },
   },
 

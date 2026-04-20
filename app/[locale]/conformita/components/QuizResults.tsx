@@ -3,7 +3,6 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import ScrollReveal from '@/components/ScrollReveal'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
 import { QUIZ_QUESTIONS } from '@/lib/quiz-data'
 import { generateReportPdf } from '@/lib/generate-report-pdf'
@@ -33,7 +32,7 @@ function ScoreRing({ percentage }: { percentage: number }) {
 
   let ringColor = 'stroke-danger-red'
   if (percentage > 75) ringColor = 'stroke-success-green'
-  else if (percentage >= 50) ringColor = 'stroke-gold-400'
+  else if (percentage >= 50) ringColor = 'stroke-ink-400'
 
   const t = useTranslations()
 
@@ -96,13 +95,12 @@ function AreaBar({ area, index }: { area: AreaResult; index: number }) {
     barColor = 'bg-success-green'
     textColor = 'text-success-green'
   } else if (area.level === 'yellow') {
-    barColor = 'bg-gold-400'
-    textColor = 'text-gold-400'
+    barColor = 'bg-ink-400'
+    textColor = 'text-ink-400'
   }
 
   return (
-    <ScrollReveal delay={0.1 * index}>
-      <div className="rounded-lg border border-navy-700 bg-navy-900/60 p-5">
+    <div className="rounded-lg border border-navy-700 bg-navy-900/60 p-5">
         <div className="flex items-start justify-between gap-4">
           <h3 className="font-display text-base font-semibold uppercase tracking-wide-display text-slate-200">
             {area.name}
@@ -132,7 +130,6 @@ function AreaBar({ area, index }: { area: AreaResult; index: number }) {
           </span>
         </div>
       </div>
-    </ScrollReveal>
   )
 }
 
@@ -231,44 +228,40 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
 
   let levelColor = 'text-danger-red'
   if (result.percentage > 75) levelColor = 'text-success-green'
-  else if (result.percentage >= 50) levelColor = 'text-gold-400'
+  else if (result.percentage >= 50) levelColor = 'text-ink-400'
 
   return (
     <div className="relative">
       {/* Overall Score */}
-      <ScrollReveal>
-        <div className="text-center">
-          <p className="font-mono text-xs uppercase tracking-widest-mono text-gold-400 mb-6">
-            {t.quiz.results.title}
-          </p>
-          <ScoreRing percentage={result.percentage} />
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
+      <div className="text-center">
+        <p className="font-mono text-xs uppercase tracking-widest-mono text-ink-400 mb-6">
+          {t.quiz.results.title}
+        </p>
+        <ScoreRing percentage={result.percentage} />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <h2
+            className={`mt-6 font-display text-2xl font-bold uppercase tracking-wide-display sm:text-3xl ${levelColor}`}
           >
-            <h2
-              className={`mt-6 font-display text-2xl font-bold uppercase tracking-wide-display sm:text-3xl ${levelColor}`}
-            >
-              {result.overallLevel}
-            </h2>
-            <p className="mt-3 mx-auto max-w-lg font-body text-slate-300 leading-relaxed">
-              {result.overallDescription}
-            </p>
-            <p className="mt-2 font-mono text-sm tracking-wider-mono text-slate-500">
-              {t.quiz.results.scoreLabel}: {result.totalScore}/{result.maxScore}
-            </p>
-          </motion.div>
-        </div>
-      </ScrollReveal>
+            {result.overallLevel}
+          </h2>
+          <p className="mt-3 mx-auto max-w-lg font-body text-slate-300 leading-relaxed">
+            {result.overallDescription}
+          </p>
+          <p className="mt-2 font-mono text-sm tracking-wider-mono text-slate-500">
+            {t.quiz.results.scoreLabel}: {result.totalScore}/{result.maxScore}
+          </p>
+        </motion.div>
+      </div>
 
       {/* Area Breakdown */}
       <div className="mt-12">
-        <ScrollReveal>
-          <h3 className="font-display text-xl font-bold uppercase tracking-wide-display text-slate-100 mb-6">
-            {t.quiz.results.analysisTitle}
-          </h3>
-        </ScrollReveal>
+        <h3 className="font-display text-xl font-bold uppercase tracking-wide-display text-slate-100 mb-6">
+          {t.quiz.results.analysisTitle}
+        </h3>
         <div className="space-y-4">
           {result.areas.map((area, i) => (
             <AreaBar key={area.name} area={area} index={i} />
@@ -277,11 +270,95 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
       </div>
 
       {/* Classification */}
-      <ScrollReveal delay={0.2}>
-        <div className="mt-8 rounded-lg border border-navy-700 bg-navy-800/50 px-6 py-4">
-          <div className="flex items-start gap-3">
+      <div className="mt-8 rounded-lg border border-navy-700 bg-navy-800/50 px-6 py-4">
+        <div className="flex items-start gap-3">
+          <svg
+            className="mt-0.5 h-5 w-5 flex-shrink-0 text-ink-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <div>
+            <p className="font-display text-sm font-semibold uppercase tracking-wide-display text-slate-200">
+              {t.quiz.results.classificationType}
+            </p>
+            <p className="mt-1 font-body text-sm text-slate-400">
+              {result.classification}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Recommendations */}
+      {weakAreas.length > 0 && (
+        <div className="mt-12">
+          <h3 className="font-display text-xl font-bold uppercase tracking-wide-display text-slate-100 mb-6">
+            {t.quiz.results.recommendationsTitle}
+          </h3>
+          <div className="space-y-4">
+            {weakAreas.map((area, i) => {
+              const rec = t.quiz.recommendations[area.originalIndex]
+              if (!rec) return null
+              return (
+                <div key={area.name} className="rounded-lg border border-navy-700 bg-navy-900/60 p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-ink-300/10">
+                      <svg
+                        className="h-3.5 w-3.5 text-ink-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <h4 className="font-display text-sm font-semibold uppercase tracking-wide-display text-slate-200">
+                        {area.name}
+                      </h4>
+                      <p className="mt-2 font-body text-sm text-slate-400 leading-relaxed">
+                        {rec.text}
+                      </p>
+                      <p className="mt-3 font-mono text-xs tracking-wider-mono text-ink-400">
+                        {t.quiz.results.recommendedSolution}: {rec.product}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* CTA */}
+      <div className="mt-14 rounded-xl border border-ink-300/20 bg-gradient-to-br from-navy-800 to-navy-900 p-8 text-center">
+        <h3 className="font-display text-2xl font-bold uppercase tracking-wide-display text-slate-50">
+          {t.quiz.results.ctaTitle}
+        </h3>
+        <p className="mt-3 mx-auto max-w-lg font-body text-slate-300 leading-relaxed">
+          {t.quiz.results.ctaDescription}
+        </p>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <Link
+            href={`/${locale}/#contatti`}
+            className="inline-flex items-center gap-2 rounded-lg bg-ink-300 px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-navy-950 transition-colors hover:bg-ink-400 shadow-lg shadow-ink-300/20"
+          >
+            {t.quiz.results.ctaButton}
             <svg
-              className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold-400"
+              className="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -290,124 +367,32 @@ export default function QuizResults({ answers, onRestart }: QuizResultsProps) {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-            <div>
-              <p className="font-display text-sm font-semibold uppercase tracking-wide-display text-slate-200">
-                {t.quiz.results.classificationType}
-              </p>
-              <p className="mt-1 font-body text-sm text-slate-400">
-                {result.classification}
-              </p>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* Recommendations */}
-      {weakAreas.length > 0 && (
-        <div className="mt-12">
-          <ScrollReveal>
-            <h3 className="font-display text-xl font-bold uppercase tracking-wide-display text-slate-100 mb-6">
-              {t.quiz.results.recommendationsTitle}
-            </h3>
-          </ScrollReveal>
-          <div className="space-y-4">
-            {weakAreas.map((area, i) => {
-              const rec = t.quiz.recommendations[area.originalIndex]
-              if (!rec) return null
-              return (
-                <ScrollReveal key={area.name} delay={0.1 * i}>
-                  <div className="rounded-lg border border-navy-700 bg-navy-900/60 p-5">
-                    <div className="flex items-start gap-3">
-                      <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold-500/10">
-                        <svg
-                          className="h-3.5 w-3.5 text-gold-400"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </span>
-                      <div>
-                        <h4 className="font-display text-sm font-semibold uppercase tracking-wide-display text-slate-200">
-                          {area.name}
-                        </h4>
-                        <p className="mt-2 font-body text-sm text-slate-400 leading-relaxed">
-                          {rec.text}
-                        </p>
-                        <p className="mt-3 font-mono text-xs tracking-wider-mono text-gold-400">
-                          {t.quiz.results.recommendedSolution}: {rec.product}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              )
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* CTA */}
-      <ScrollReveal delay={0.2}>
-        <div className="mt-14 rounded-xl border border-gold-500/20 bg-gradient-to-br from-navy-800 to-navy-900 p-8 text-center">
-          <h3 className="font-display text-2xl font-bold uppercase tracking-wide-display text-slate-50">
-            {t.quiz.results.ctaTitle}
-          </h3>
-          <p className="mt-3 mx-auto max-w-lg font-body text-slate-300 leading-relaxed">
-            {t.quiz.results.ctaDescription}
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href={`/${locale}/#contatti`}
-              className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-8 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-navy-950 transition-colors hover:bg-gold-400 shadow-lg shadow-gold-500/20"
+          </Link>
+          <button
+            type="button"
+            onClick={handleDownload}
+            className="inline-flex items-center gap-2 rounded-lg border border-navy-600 bg-navy-800 px-6 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-slate-300 transition-colors hover:border-navy-500 hover:text-slate-100"
+          >
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-              {t.quiz.results.ctaButton}
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
-            <button
-              type="button"
-              onClick={handleDownload}
-              className="inline-flex items-center gap-2 rounded-lg border border-navy-600 bg-navy-800 px-6 py-3 font-display text-sm font-semibold uppercase tracking-wide-display text-slate-300 transition-colors hover:border-navy-500 hover:text-slate-100"
-            >
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              {t.quiz.results.downloadReport}
-            </button>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            {t.quiz.results.downloadReport}
+          </button>
         </div>
-      </ScrollReveal>
+      </div>
 
       {/* Restart */}
       <div className="mt-8 text-center">

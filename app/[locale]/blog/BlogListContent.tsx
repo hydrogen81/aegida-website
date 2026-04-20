@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useLocale } from '@/lib/i18n/context'
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import BlogCard from '@/components/blog/BlogCard'
 import { getAllArticles } from '@/lib/blog/registry'
@@ -22,23 +21,15 @@ export default function BlogListContent() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative pt-28 pb-12 md:pt-36 md:pb-16"
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 60% at 50% 20%, rgba(26,37,64,0.7) 0%, transparent 60%), #0a0e1a',
-        }}
-      >
+      <section className="pt-28 pb-12 md:pt-36 md:pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel className="justify-center">{BLOG_UI.heroLabel[locale]}</SectionLabel>
-            <h1 className="mt-4 text-center font-display text-3xl md:text-5xl font-bold uppercase text-slate-100 tracking-wide-display">
-              {BLOG_UI.heroTitle[locale]}
-            </h1>
-            <p className="mt-4 text-center font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              {BLOG_UI.heroDescription[locale]}
-            </p>
-          </ScrollReveal>
+          <SectionLabel className="justify-center">{BLOG_UI.heroLabel[locale]}</SectionLabel>
+          <h1 className="mt-4 text-center text-[36px] md:text-[48px] font-display font-medium leading-[1.1] tracking-[-0.015em] text-ink-100">
+            {BLOG_UI.heroTitle[locale]}
+          </h1>
+          <p className="mt-4 text-center text-base text-ink-300 leading-[1.55] max-w-2xl mx-auto">
+            {BLOG_UI.heroDescription[locale]}
+          </p>
         </div>
       </section>
 
@@ -49,10 +40,10 @@ export default function BlogListContent() {
           <div className="flex flex-wrap gap-2 mb-12 justify-center">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`font-mono text-xs uppercase tracking-wider-mono px-4 py-2 rounded border transition-colors duration-200 ${
+              className={`font-mono text-[11px] tracking-[0.15em] uppercase px-4 py-2 rounded-sm border transition-colors duration-200 ${
                 activeCategory === 'all'
-                  ? 'border-gold-500 text-gold-400 bg-gold-500/10'
-                  : 'border-navy-700 text-slate-400 hover:border-slate-500'
+                  ? 'border-ink-300 text-ink-100 bg-navy-card'
+                  : 'border-navy-line text-ink-400 hover:border-ink-400 hover:text-ink-200'
               }`}
             >
               {BLOG_UI.allCategories[locale]}
@@ -61,10 +52,10 @@ export default function BlogListContent() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-mono text-xs uppercase tracking-wider-mono px-4 py-2 rounded border transition-colors duration-200 ${
+                className={`font-mono text-[11px] tracking-[0.15em] uppercase px-4 py-2 rounded-sm border transition-colors duration-200 ${
                   activeCategory === cat
-                    ? 'border-gold-500 text-gold-400 bg-gold-500/10'
-                    : 'border-navy-700 text-slate-400 hover:border-slate-500'
+                    ? 'border-ink-300 text-ink-100 bg-navy-card'
+                    : 'border-navy-line text-ink-400 hover:border-ink-400 hover:text-ink-200'
                 }`}
               >
                 {CATEGORY_LABELS[cat][locale]}
@@ -74,10 +65,8 @@ export default function BlogListContent() {
 
           {/* Articles grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((article, i) => (
-              <ScrollReveal key={article.slug} delay={i * 0.08}>
-                <BlogCard article={article} locale={locale} />
-              </ScrollReveal>
+            {filtered.map((article) => (
+              <BlogCard key={article.slug} article={article} locale={locale} />
             ))}
           </div>
         </div>

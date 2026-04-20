@@ -1,28 +1,21 @@
 import type { Metadata, Viewport } from 'next'
-import { Barlow_Condensed, Source_Sans_3, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import '@/styles/globals.css'
 import { LOCALES, getTranslations } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n'
 import LocaleLayoutClient from './LocaleLayoutClient'
 
-const barlow = Barlow_Condensed({
-  weight: ['600', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-barlow',
+const inter = Inter({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-inter',
+  weight: ['400', '500', '600'],
   display: 'swap',
 })
 
-const sourceSans = Source_Sans_3({
-  weight: ['300', '400', '600'],
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-source-sans',
-  display: 'swap',
-})
-
-const jetbrains = JetBrains_Mono({
-  weight: ['400', '600'],
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
+  variable: '--font-jetbrains-mono',
+  weight: ['400', '500'],
   display: 'swap',
 })
 
@@ -59,7 +52,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${barlow.variable} ${sourceSans.variable} ${jetbrains.variable}`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-navy-ink text-ink-100`}
       >
         <LocaleLayoutClient locale={locale} translations={translations}>
           {children}

@@ -10,32 +10,36 @@ interface ContactFormProps {
 }
 
 const inputClasses =
-  'w-full bg-navy-900 border border-navy-700 rounded px-4 py-3 text-slate-200 font-body text-sm placeholder:text-slate-500 outline-none transition-colors duration-200 focus:border-gold-500 focus:ring-1 focus:ring-gold-500'
+  'w-full bg-navy-card border border-navy-line rounded px-4 py-3 text-ink-100 font-sans text-sm placeholder:text-ink-400 outline-none transition-colors duration-200 focus:border-ink-200 focus:ring-1 focus:ring-ink-200'
 
-const labelClasses = 'block text-sm font-body text-slate-300 mb-1.5'
+const labelClasses = 'block text-sm font-sans text-ink-300 mb-1.5'
 
 export default function ContactForm({
-  defaultProduct = '',
+  defaultProduct = 'Privacy Phone',
   className = '',
 }: ContactFormProps) {
   const t = useTranslations()
-  const form = t.contactForm
+  const form = t.contact.form
 
   const [formData, setFormData] = useState({
     nome: '',
-    organizzazione: '',
     email: '',
     ruolo: '',
-    prodotto: defaultProduct,
-    settore: '',
+    // PHP-required fields — sent as hidden defaults
+    prodotto: defaultProduct || 'Privacy Phone',
+    settore: 'Altro',
+    // 'messaggio' is what PHP reads; visible as 'motivo' to the user
     messaggio: '',
+    tipoRichiesta: '',
+    // consenso is UI-only, not sent to backend
   })
+  const [consenso, setConsenso] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -46,20 +50,23 @@ export default function ContactForm({
     setError('')
 
     try {
+      const combinedMessage = formData.tipoRichiesta
+        ? `[${formData.tipoRichiesta}]\n\n${formData.messaggio || ''}`
+        : formData.messaggio
       const res = await fetch('/api/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, messaggio: combinedMessage }),
       })
 
       if (!res.ok) {
         const data = await res.json()
-        throw new Error(data.error || form.errorDefault)
+        throw new Error(data.error || form.error.generic)
       }
 
       setSubmitted(true)
     } catch (err) {
-      setError(err instanceof Error ? err.message : form.errorDefault)
+      setError(err instanceof Error ? err.message : form.error.generic)
     } finally {
       setSending(false)
     }
@@ -74,13 +81,13 @@ export default function ContactForm({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="rounded border border-success-green/30 bg-success-green/10 px-6 py-8 text-center"
+            className="rounded bg-navy-card border border-navy-line px-6 py-8 text-center"
           >
-            <p className="text-success-green font-display text-xl uppercase tracking-wide mb-2">
-              {form.successTitle}
+            <p className="text-ink-100 font-display text-xl uppercase tracking-wide mb-2">
+              {form.success.title}
             </p>
-            <p className="text-slate-400 font-body text-sm">
-              {form.successMessage}
+            <p className="text-ink-300 font-sans text-sm">
+              {form.success.body}
             </p>
           </motion.div>
         ) : (
@@ -94,142 +101,114 @@ export default function ContactForm({
           >
             <div>
               <label htmlFor="cf-nome" className={labelClasses}>
-                {form.nameLabel}
+                {form.labels.nome}
               </label>
               <input
                 id="cf-nome"
                 name="nome"
                 type="text"
                 required
-                aria-label={form.nameLabel}
+                aria-label={form.labels.nome}
                 value={formData.nome}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.namePlaceholder}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="cf-org" className={labelClasses}>
-                {form.organizationLabel}
-              </label>
-              <input
-                id="cf-org"
-                name="organizzazione"
-                type="text"
-                aria-label={form.organizationLabel}
-                value={formData.organizzazione}
-                onChange={handleChange}
-                className={inputClasses}
-                placeholder={form.organizationPlaceholder}
+                placeholder={form.placeholders.nome}
               />
             </div>
 
             <div>
               <label htmlFor="cf-email" className={labelClasses}>
-                {form.emailLabel}
+                {form.labels.email}
               </label>
               <input
                 id="cf-email"
                 name="email"
                 type="email"
                 required
-                aria-label={form.emailLabel}
+                aria-label={form.labels.email}
                 value={formData.email}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.emailPlaceholder}
+                placeholder={form.placeholders.email}
               />
             </div>
 
             <div>
               <label htmlFor="cf-ruolo" className={labelClasses}>
-                {form.roleLabel}
+                {form.labels.ruolo}
               </label>
               <input
                 id="cf-ruolo"
                 name="ruolo"
                 type="text"
-                aria-label={form.roleLabel}
+                aria-label={form.labels.ruolo}
                 value={formData.ruolo}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.rolePlaceholder}
+                placeholder={form.placeholders.ruolo}
               />
             </div>
 
             <div>
-              <label htmlFor="cf-prodotto" className={labelClasses}>
-                {form.productLabel}
+              <label htmlFor="cf-tipo-richiesta" className={labelClasses}>
+                {form.labels.tipoRichiesta}
               </label>
               <select
-                id="cf-prodotto"
-                name="prodotto"
-                required
-                aria-label={form.productLabel}
-                value={formData.prodotto}
-                onChange={handleChange}
+                id="cf-tipo-richiesta"
+                name="tipoRichiesta"
                 className={inputClasses}
-              >
-                <option value="">{form.productPlaceholder}</option>
-                {form.productOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="cf-settore" className={labelClasses}>
-                {form.sectorLabel}
-              </label>
-              <select
-                id="cf-settore"
-                name="settore"
-                required
-                aria-label={form.sectorLabel}
-                value={formData.settore}
+                value={formData.tipoRichiesta}
                 onChange={handleChange}
-                className={inputClasses}
               >
-                <option value="">{form.sectorPlaceholder}</option>
-                {form.sectorOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
+                <option value="">— Seleziona —</option>
+                {form.motivoOptions.map((opt: string) => (
+                  <option key={opt} value={opt}>{opt}</option>
                 ))}
               </select>
             </div>
 
             <div>
               <label htmlFor="cf-messaggio" className={labelClasses}>
-                {form.messageLabel}
+                {form.labels.motivo}
               </label>
               <textarea
                 id="cf-messaggio"
                 name="messaggio"
                 rows={5}
-                aria-label={form.messageLabel}
+                aria-label={form.labels.motivo}
                 value={formData.messaggio}
                 onChange={handleChange}
                 className={`${inputClasses} resize-y`}
-                placeholder={form.messagePlaceholder}
+                placeholder={form.placeholders.motivo}
               />
             </div>
 
+            <div className="flex items-start gap-3">
+              <input
+                id="cf-consenso"
+                type="checkbox"
+                required
+                checked={consenso}
+                onChange={(e) => setConsenso(e.target.checked)}
+                className="accent-steel-hi mt-1"
+              />
+              <label htmlFor="cf-consenso" className="text-xs text-slate-400 font-body">
+                {form.consenso}
+              </label>
+            </div>
+
             {error && (
-              <div className="rounded border border-danger-red/30 bg-danger-red/10 px-4 py-3 text-danger-red font-body text-sm">
+              <div className="bg-navy-card border-l-4 border-semantic-error pl-4 px-4 py-3 text-ink-200 font-sans text-sm">
                 {error}
               </div>
             )}
 
             <button
               type="submit"
-              disabled={sending}
-              className="w-full font-display uppercase tracking-wide text-sm font-semibold rounded px-6 py-3.5 bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-900 disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={sending || !consenso}
+              className="w-full bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-100 hover:bg-ink-200 hover:border-ink-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {sending ? form.sending : form.submitButton}
+              {sending ? '...' : form.submit}
             </button>
           </motion.form>
         )}

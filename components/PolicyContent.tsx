@@ -1,6 +1,5 @@
 'use client'
 
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 
 interface PolicySection {
@@ -32,15 +31,13 @@ export default function PolicyContent({
         }}
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel className="justify-center">{label}</SectionLabel>
-            <h1 className="mt-4 text-center font-display text-3xl md:text-5xl font-bold uppercase text-slate-100 tracking-wide-display">
-              {title}
-            </h1>
-            <p className="mt-4 text-center font-mono text-xs text-slate-500 tracking-wider-mono">
-              {lastUpdated}
-            </p>
-          </ScrollReveal>
+          <SectionLabel className="justify-center">{label}</SectionLabel>
+          <h1 className="mt-4 text-center font-display text-3xl md:text-5xl font-bold uppercase text-slate-100 tracking-wide-display">
+            {title}
+          </h1>
+          <p className="mt-4 text-center font-mono text-xs text-slate-500 tracking-wider-mono">
+            {lastUpdated}
+          </p>
         </div>
       </section>
 
@@ -49,23 +46,21 @@ export default function PolicyContent({
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-10">
             {sections.map((section) => (
-              <ScrollReveal key={section.title}>
-                <div className="rounded-lg border border-navy-700 bg-navy-900 p-6 md:p-8">
-                  <h2 className="font-display text-lg md:text-xl font-bold uppercase text-slate-100 tracking-wide-display mb-4">
-                    {section.title}
-                  </h2>
-                  <div className="space-y-3">
-                    {section.content.map((paragraph, i) => (
-                      <p
-                        key={i}
-                        className="font-body text-sm md:text-base text-slate-400 leading-relaxed"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
+              <div key={section.title} className="rounded-lg border border-navy-700 bg-navy-900 p-6 md:p-8">
+                <h2 className="font-display text-lg md:text-xl font-bold uppercase text-slate-100 tracking-wide-display mb-4">
+                  {section.title}
+                </h2>
+                <div className="space-y-3">
+                  {section.content.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="font-body text-sm md:text-base text-slate-400 leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>
