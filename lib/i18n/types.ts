@@ -129,6 +129,7 @@ export interface Translations {
         email: string
         ruolo: string
         motivo: string
+        tipoRichiesta: string
       }
       placeholders: {
         nome: string
@@ -136,6 +137,7 @@ export interface Translations {
         ruolo: string
         motivo: string
       }
+      motivoOptions: string[]
       submit: string
       consenso: string
       success: {
@@ -226,6 +228,11 @@ export interface Translations {
 
     metodologia: {
       label: string
+      title: string
+      body: string
+    }
+
+    tempest: {
       title: string
       body: string
     }

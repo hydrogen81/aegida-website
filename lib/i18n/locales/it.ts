@@ -59,7 +59,7 @@ const it: Translations = {
       label: 'Cosa produciamo',
       privacyPhone: {
         name: 'AEGIDA Privacy Phone',
-        claim: 'Smartphone rafforzato su base Pixel 10a. Testato con Cellebrite UFED il 17 aprile 2026: 0 dati utente estratti.',
+        claim: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
         cta: 'Scopri Privacy Phone',
       },
       framework: {
@@ -70,14 +70,14 @@ const it: Translations = {
     },
     proofPreview: {
       label: 'Test forense',
-      title: 'Il test UFED del 17 aprile 2026',
-      body: 'Una società italiana di analisi forense ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED 10.8.0.322 e modulo Turbo Link. Il test è stato condotto sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Esito: 0 dati utente estratti.',
+      title: 'La verifica forense indipendente',
+      body: 'Una società italiana di analisi forense indipendente ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED 10.8.0.322 e modulo Turbo Link. Il test è stato condotto sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Esito: 0 dati utente estratti.',
       cta: 'Leggi il test completo',
     },
     ctaFinale: {
       title: 'Parla con chi ha progettato AEGIDA.',
-      subtitle: 'Le decisioni importanti sulla sicurezza del tuo lavoro non si prendono tramite un modulo di contatto generico. Richiedi un colloquio.',
-      cta: 'Richiedi un colloquio',
+      subtitle: 'Le decisioni sulla sicurezza del tuo lavoro richiedono un colloquio, non un modulo generico.',
+      cta: 'Scopri AEGIDA Privacy Phone',
     },
   },
 
@@ -95,6 +95,7 @@ const it: Translations = {
         email: 'Email',
         ruolo: 'Ruolo professionale',
         motivo: 'Motivo del contatto',
+        tipoRichiesta: 'Tipo di richiesta',
       },
       placeholders: {
         nome: 'Mario Rossi',
@@ -102,6 +103,14 @@ const it: Translations = {
         ruolo: 'giornalista, avvocato, dirigente, altro',
         motivo: 'Descrivi sinteticamente la tua situazione.',
       },
+      motivoOptions: [
+        'Valutazione Privacy Phone per il mio caso',
+        'Preventivo per team / studio legale / redazione',
+        'Formazione e supporto',
+        'Informazioni tecniche sul test UFED',
+        'Programma pilot Framework (2026-2028)',
+        'Altro',
+      ],
       submit: 'Invia richiesta',
       consenso: 'Ho letto la Privacy Policy e acconsento al trattamento dei dati per essere ricontattato.',
       success: {
@@ -127,7 +136,7 @@ const it: Translations = {
     hero: {
       title: 'AEGIDA Privacy Phone',
       tagline: 'Smartphone rafforzato su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
-      claim: 'Cellebrite UFED 10.8.0.322, 17 aprile 2026: nessun dato utente estratto.',
+      claim: 'Cellebrite UFED 10.8.0.322 — verifica documentata: 0 dati utente estratti.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
     },
@@ -211,7 +220,7 @@ const it: Translations = {
       ],
       conclusionLabel: 'Conclusione',
       conclusionText:
-        'Nel test del 17 aprile 2026, Cellebrite Inseyets UFED 10.8.0.322 con Turbo Link non ha estratto alcun dato utente da AEGIDA Privacy Phone, n\u00e9 in modalit\u00e0 BFU (Locked) n\u00e9 in modalit\u00e0 AFU (Unlocked) con codice di sblocco fornito allo strumento. Sono stati letti unicamente gli identificatori di dispositivo accessibili via ADB e fastboot. I risultati si riferiscono alla versione e configurazione indicate, alla data del test.',
+        'Nel corso del test, Cellebrite Inseyets UFED 10.8.0.322 con Turbo Link non ha estratto alcun dato utente da AEGIDA Privacy Phone, né in modalità BFU (Locked) né in modalità AFU (Unlocked) con codice di sblocco fornito allo strumento. Sono stati letti unicamente gli identificatori di dispositivo accessibili via ADB e fastboot: 0 contenuto applicativo (messaggi, contatti, foto, documenti) su entrambe le modalità. I metadati di sistema (build ID, versione OS, stato verified boot) restano accessibili come normale per qualsiasi dispositivo Android; non contengono informazioni dell\'utente. I risultati si riferiscono alla versione e configurazione indicate, alla data del test.',
       disclaimer:
         'Test condotto da societ\u00e0 italiana indipendente certificata. Cellebrite, Inseyets, UFED e Turbo Link sono marchi registrati di Cellebrite DI Ltd. AEGIDA non \u00e8 affiliata, sponsorizzata o collegata a Cellebrite DI Ltd; i riferimenti hanno finalit\u00e0 di documentazione tecnica comparativa ai sensi del D.Lgs. 145/2007. Gli screenshot riprodotti costituiscono citazione ex art. 70 L. 633/1941 a fini di critica e discussione scientifica. I risultati si riferiscono alla versione software/firmware e alla configurazione hardware indicate, alla data del test; AEGIDA non garantisce che release future degli strumenti forensi citati producano gli stessi risultati e si impegna a pubblicare re-test periodici. Il test misura l\u2019interoperabilit\u00e0 con una specifica configurazione AEGIDA Privacy Phone, non esprime giudizio complessivo sui prodotti Cellebrite. Diritto di replica: legal@aegida-systems.com.',
     },
@@ -243,11 +252,16 @@ const it: Translations = {
     metodologia: {
       label: 'Metodologia',
       title: 'Come testiamo ciò che dichiariamo',
-      body: 'Il test del 17 aprile 2026 è stato condotto da una società italiana di analisi forense certificata con un operatore con certificazione International Master Counter Surveillance Technical. Lo strumento utilizzato è Cellebrite Inseyets UFED 10.8.0.322 con modulo Turbo Link. Il dispositivo è stato testato sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Il test non ha estratto dati utente in nessuna delle due modalità. La metodologia completa, gli screenshot del software e la timeline sono nel white paper PDF in download.',
+      body: 'Il test è stato condotto da una società italiana di analisi forense certificata con un operatore con certificazione ASIS IMCST (International Master Counter Surveillance Technical). Lo strumento utilizzato è Cellebrite Inseyets UFED 10.8.0.322 con modulo Turbo Link. Il dispositivo è stato testato sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Il test non ha estratto dati utente in nessuna delle due modalità. La metodologia completa, gli screenshot del software e la timeline sono nel white paper PDF in download.',
+    },
+
+    tempest: {
+      title: 'Resistenza alle emissioni compromettenti (TEMPEST)',
+      body: 'Il dispositivo è stato sottoposto a test secondo metodologia TEMPEST per la verifica della resistenza a compromissioni tramite intercettazione di emissioni elettromagnetiche, acustiche e ottiche non intenzionali. I test sono stati condotti da società italiana indipendente secondo protocolli documentati. Non costituiscono certificazione SDIP-27 né accreditamento da ente terzo, ma verifica metodologica.',
     },
 
     disclaimer: {
-      text: 'Cellebrite, Inseyets, UFED e Turbo Link sono marchi registrati di Cellebrite DI Ltd. AEGIDA non è affiliata, sponsorizzata o collegata a Cellebrite DI Ltd; i riferimenti hanno finalità di documentazione tecnica comparativa ai sensi del D.Lgs. 145/2007. Diritto di replica: legal@aegida-systems.com.',
+      text: 'Cellebrite, UFED, Turbo Link sono marchi di Cellebrite DI Ltd. Google, Pixel, Tensor sono marchi di Google LLC. GrapheneOS è marchio del GrapheneOS Project. AEGIDA non ha alcun rapporto commerciale con queste entità; i riferimenti hanno finalità identificativa ai sensi del D.Lgs. 145/2007 e dell\'art. 70 L. 633/1941. Per l\'esercizio del diritto di replica: legal@aegida-systems.com.',
     },
 
     ctaFinale: {
@@ -279,7 +293,7 @@ const it: Translations = {
         {
           name: 'AEGIDA Privacy Phone',
           status: 'Prodotto commerciale 2026',
-          body: 'Smartphone rafforzato su base Pixel 10a. Testato con Cellebrite UFED il 17 aprile 2026: 0 dati utente estratti.',
+          body: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
         },
         {
           name: 'AEGIDA Framework',
@@ -315,7 +329,7 @@ const it: Translations = {
 
     perChi: {
       title: 'A chi serve',
-      body: 'Agli operatori di servizi essenziali che devono rispondere a NIS2, DORA e ai requisiti ACN, e che non possono permettersi superfici di attacco sulle reti WAN di controllo e telemetria.',
+      body: 'Agli operatori di servizi essenziali che devono rispondere a NIS2, DORA e ai requisiti ACN, e proteggere le reti WAN di controllo e telemetria da compromissione remota.',
     },
 
     stato: {
