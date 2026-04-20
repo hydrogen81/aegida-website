@@ -17,7 +17,7 @@ export default function HomeContent() {
       <section className="px-6 md:px-10 pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="max-w-[1100px] mx-auto">
           <div className="font-mono text-[12px] tracking-[0.18em] text-steel-hi mb-6">
-            TEST FORENSE · 17 APRILE 2026
+            UFED 10.8 · 17 APRILE 2026
           </div>
           <h1 className="text-[32px] md:text-[48px] font-display font-medium leading-[1.1] tracking-[-0.015em] text-ink-100 mb-6 max-w-[900px]">
             {home.hero.title}
@@ -47,14 +47,14 @@ export default function HomeContent() {
           <span><b className="text-ink-100 font-medium">Metodologia</b> · UFED 10.8.0.322 + TEMPEST (emissioni)</span>
           <span><b className="text-ink-100 font-medium">Modalità</b> · BFU + AFU</span>
           <span><b className="text-ink-100 font-medium">Esito</b> · 0 dati utente estratti</span>
-          <span><b className="text-ink-100 font-medium">Operatore</b> · IMCST certificato · società terza</span>
+          <span><b className="text-ink-100 font-medium">Operatore</b> · Laboratorio forense italiano · IMCST certificato</span>
         </div>
       </section>
 
       {/* ISTITUZIONALE */}
       <section className="px-6 md:px-10 py-16 md:py-20">
         <div className="max-w-[1100px] mx-auto">
-          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">CHI SIAMO</div>
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">PERCHÉ ESISTIAMO</div>
           <p className="text-[16px] md:text-[17px] leading-[1.65] text-ink-200 max-w-[720px]">
             {home.istituzionale.body}
           </p>

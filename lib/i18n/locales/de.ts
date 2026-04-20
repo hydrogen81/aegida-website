@@ -47,36 +47,36 @@ const de: Translations = {
   /* ================================================================ */
   home: {
     hero: {
-      title: 'Smartphone rafforzato. Zero dati estratti in test forense.',
-      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce smartphone e piattaforme per chi lavora con informazioni sensibili — giornalisti investigativi, avvocati, dirigenti esposti. Ogni strumento è testato in laboratorio forense indipendente e costruito in Italia.',
+      title: 'Smartphone indurito. Zero dati estratti in test forense.',
+      subtitle: 'Il 17 aprile 2026 un laboratorio italiano di digital forensics ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED. I dettagli del test sono in questa pagina. La metodologia completa è nel white paper.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
     },
     istituzionale: {
-      body: 'AEGIDA è il brand di sicurezza di H4R (Human for Research Srl). Progetta e produce strumenti per chi opera con informazioni sensibili: giornalisti, avvocati, dirigenti, figure pubbliche esposte. I prodotti sono testati con metodologia documentata e costruiti in Italia.',
+      body: 'AEGIDA nasce dentro H4R (Human for Research Srl), laboratorio italiano attivo dal 2018 nella ricerca applicata alla sicurezza. Abbiamo costruito questo brand perché il mercato offriva due alternative insufficienti: soluzioni militari inaccessibili a un professionista, oppure app «privacy» di consumo che crollano al primo test serio. AEGIDA colma quel vuoto con strumenti progettati, assemblati e verificati in Italia, pensati per chi — giornalisti, avvocati, dirigenti — lavora con informazioni la cui compromissione ha un costo reale.',
     },
     prodotti: {
       label: 'Cosa produciamo',
       privacyPhone: {
         name: 'AEGIDA Privacy Phone',
-        claim: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
+        claim: 'Hardware Pixel 10a con sistema AEGIDA indurito. Include Connect (messaggistica cifrata), Inspector (attestazione integrità), 12 mesi di supporto. Per giornalisti, avvocati, dirigenti.',
         cta: 'Scopri Privacy Phone',
       },
       framework: {
         name: 'AEGIDA Framework',
-        claim: 'Piattaforma di sicurezza per infrastrutture critiche. In preparazione per il lancio commerciale 2027-2028.',
+        claim: 'Piattaforma di sicurezza per reti di operatori di servizi essenziali sottoposti a NIS2 e DORA. In qualificazione presso ACN.',
         cta: 'Stato del progetto',
       },
     },
     proofPreview: {
       label: 'Test forense',
-      title: 'La verifica forense indipendente',
-      body: 'Una società italiana di analisi forense indipendente ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED 10.8.0.322 e modulo Turbo Link. Il test è stato condotto sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Esito: 0 dati utente estratti.',
+      title: 'Perché il test è credibile',
+      body: 'Il test non è stato commissionato a un fornitore amico. L\'ha condotto un laboratorio italiano di digital forensics certificato. L\'operatore è certificato ASIS IMCST (International Master Counter Surveillance Technical). Lo strumento è lo stesso utilizzato quotidianamente dalle forze dell\'ordine. Gli screenshot e la metodologia completa sono nel white paper.',
       cta: 'Leggi il test completo',
     },
     ctaFinale: {
-      title: 'Parla con chi ha progettato AEGIDA.',
-      subtitle: 'Le decisioni sulla sicurezza del tuo lavoro richiedono un colloquio, non un modulo generico.',
+      title: 'AEGIDA Privacy Phone — scheda completa',
+      subtitle: 'Specifiche tecniche, metodologia di test, pacchetto, pricing e processo d\'acquisto. Tutto in un\'unica pagina.',
       cta: 'Scopri AEGIDA Privacy Phone',
     },
   },
@@ -135,7 +135,7 @@ const de: Translations = {
   privacyPhone: {
     hero: {
       title: 'AEGIDA Privacy Phone',
-      tagline: 'Smartphone rafforzato su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
+      tagline: 'Smartphone ad alta sicurezza su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
       claim: 'Cellebrite UFED 10.8.0.322 — verifica documentata: 0 dati utente estratti.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
@@ -148,7 +148,7 @@ const de: Translations = {
       label: 'Cosa include',
       title: 'Il pacchetto AEGIDA Privacy Phone',
       items: [
-        { key: 'hardware', title: 'Hardware rafforzato', body: 'Base Pixel 10a. Firmware originale rimosso; sistema operativo indurito da AEGIDA.' },
+        { key: 'hardware', title: 'Hardware con hardening AEGIDA', body: 'Base Pixel 10a. Firmware originale rimosso; sistema operativo indurito da AEGIDA.' },
         { key: 'connect', title: 'Connect — messaggistica cifrata', body: 'Cifratura post-quantum (ML-KEM FIPS 203). Nessun server centrale.' },
         { key: 'inspector', title: 'Inspector — attestazione integrità', body: 'Verifica crittografica dell\'integrità hardware.' },
         { key: 'supporto', title: 'Supporto e formazione', body: '12 mesi di supporto via canale cifrato.' },
@@ -235,7 +235,7 @@ const de: Translations = {
         {
           name: 'AEGIDA Privacy Phone',
           status: 'Prodotto commerciale 2026',
-          body: 'Smartphone rafforzato su base Pixel 10a. Testato in verifica forense indipendente: 0 dati utente estratti.',
+          body: 'Hardware Pixel 10a con sistema AEGIDA indurito. Testato in verifica forense indipendente: 0 dati utente estratti.',
         },
         {
           name: 'AEGIDA Framework',
