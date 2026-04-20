@@ -124,7 +124,7 @@ const en: Translations = {
     diretti: {
       title: 'Oppure in modo diretto',
       email: 'info@aegida-systems.com',
-      pec: '[DA CONFERMARE: PEC H4R se esiste]',
+      pec: 'PEC: h4-researchsrl@legalmail.it',
       legal: 'legal@aegida-systems.com (per esercizio del diritto di replica)',
     },
   },
@@ -268,7 +268,7 @@ const en: Translations = {
     },
     societa: {
       title: 'La società',
-      body: 'H4R (Human for Research Srl) è una società italiana con sede a Roma, fondata nel [DA CONFERMARE: anno fondazione H4R]. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
+      body: 'H4R (Human for Research Srl) è una società italiana con sede a Roma, fondata nel 2018. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
     },
     missione: {
       title: 'La missione',
