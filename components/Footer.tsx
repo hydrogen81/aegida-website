@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-deep border-t border-navy-line px-6 md:px-10 pt-12 pb-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="grid md:grid-cols-3 gap-10 pb-8 border-b border-navy-line">
+        <div className="grid md:grid-cols-4 gap-10 pb-8 border-b border-navy-line">
           <div>
             <div className="font-mono font-semibold tracking-[0.15em] text-[16px] text-ink-100 mb-3">AEGIDA</div>
             <p className="text-[13px] text-ink-300 leading-[1.55] max-w-[420px]">
@@ -30,6 +30,13 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <div className="font-mono text-[11px] tracking-[0.18em] text-ink-400 mb-3">MATERIALI</div>
+            <ul className="space-y-2.5">
+              <li><a href="/downloads/aegida-privacy-phone-dossier.pdf" className="text-[13px] text-ink-200 hover:text-ink-100">Dossier Privacy Phone</a></li>
+              <li><a href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf" className="text-[13px] text-ink-200 hover:text-ink-100">White paper UFED</a></li>
+            </ul>
+          </div>
+          <div>
             <div className="font-mono text-[11px] tracking-[0.18em] text-ink-400 mb-3">LEGALE</div>
             <ul className="space-y-2.5">
               <li><Link href={`/${locale}/privacy-policy/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.legale.privacyPolicy}</Link></li>
@@ -41,6 +48,9 @@ export default function Footer() {
         <div className="pt-5 flex flex-wrap justify-between gap-3 font-mono text-[11px] tracking-[0.12em] text-ink-400">
           <span>{f.copyright.replace('{year}', year.toString())}</span>
           <span>{f.payoff}</span>
+        </div>
+        <div className="pt-3 font-mono text-[10px] tracking-[0.08em] text-ink-400 opacity-60">
+          Cellebrite, Google, Pixel, Tensor e GrapheneOS sono marchi dei rispettivi proprietari.
         </div>
       </div>
     </footer>
