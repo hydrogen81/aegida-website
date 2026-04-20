@@ -37,93 +37,65 @@ export interface Translations {
   /*  Home page                                                        */
   /* ================================================================ */
   home: {
+    // New keys (bonifica 2026)
     hero: {
-      classification: string
       title: string
       subtitle: string
-      description: string
       ctaPrimary: string
       ctaSecondary: string
-      stats: {
-        value: string
-        label: string
-      }[]
+      // Legacy keys — kept for HomeContent.tsx until Task 11 refactor
+      classification?: string
+      description?: string
+      stats?: { value: string; label: string }[]
     }
 
-    threatTicker: {
+    istituzionale: {
+      body: string
+    }
+
+    prodotti: {
       label: string
-    }
-
-    products: {
-      sectionLabel: string
-      title: string
-
-      card1: {
-        title: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-
-      card2: {
-        title: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-
-      card3: {
-        title: string
-        badge: string
-        specs: string
-        description: string
-        features: string[]
-        cta: string
-      }
-    }
-
-    sectors: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
-      }[]
-    }
-
-    threats: {
-      sectionLabel: string
-      title: string
-      items: {
+      privacyPhone: {
         name: string
-        vector: string
-        countermeasure: string
-      }[]
+        claim: string
+        cta: string
+      }
+      framework: {
+        name: string
+        claim: string
+        cta: string
+      }
     }
 
-    compliance: {
-      sectionLabel: string
+    proofPreview: {
+      label: string
+      title: string
+      body: string
+      cta: string
+    }
+
+    ctaFinale: {
       title: string
       subtitle: string
       cta: string
-      badges: string[]
-      note: string
     }
 
-    contact: {
+    // Legacy sections — kept for HomeContent.tsx until Task 11 refactor
+    threatTicker?: { label: string }
+    products?: {
       sectionLabel: string
       title: string
-      info: {
-        companyName: string
-        productLabel: string
-        webLabel: string
-        sedeLabel: string
-        sedeValue: string
-        pivaLabel: string
-        briefingNote: string
-      }
+      card1: { title: string; specs: string; description: string; features: string[]; cta: string }
+      card2: { title: string; specs: string; description: string; features: string[]; cta: string }
+      card3: { title: string; badge: string; specs: string; description: string; features: string[]; cta: string }
+    }
+    sectors?: { sectionLabel: string; title: string; items: { title: string; description: string }[] }
+    threats?: { sectionLabel: string; title: string; items: { name: string; vector: string; countermeasure: string }[] }
+    compliance?: { sectionLabel: string; title: string; subtitle: string; cta: string; badges: string[]; note: string }
+    contact?: {
+      sectionLabel: string
+      title: string
+      info: { companyName: string; productLabel: string; webLabel: string; sedeLabel: string; sedeValue: string; pivaLabel: string; briefingNote: string }
       form: ContactFormTranslations
     }
   }
