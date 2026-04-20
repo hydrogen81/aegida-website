@@ -112,212 +112,38 @@ const it: Translations = {
   privacyPhone: {
     hero: {
       title: 'AEGIDA Privacy Phone',
-      tagline: 'Cellebrite UFED, 17 aprile 2026: nessun dato utente estratto.',
-      description:
-        'Smartphone hardened su base Pixel 10a, sistema operativo Aegida OS basato su GrapheneOS, comunicazioni Aegida Connect con cifratura post-quantum ML-KEM (FIPS 203), attestazione integrit\u00e0 hardware tramite AEGIDA Inspector. Sviluppato e assistito a Roma. 3.900 \u20ac comprensivi di dispositivo, servizi e assistenza per il primo anno; rinnovo 690 \u20ac/anno per gli aggiornamenti.',
-      ctaDownload: 'Scarica scheda tecnica',
-      ctaContact: 'Verifica disponibilit\u00e0',
+      tagline: 'Smartphone rafforzato su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
+      claim: 'Cellebrite UFED 10.8.0.322, 17 aprile 2026: nessun dato utente estratto.',
+      ctaPrimary: 'Richiedi un colloquio',
+      ctaSecondary: 'Scarica il white paper UFED',
     },
-
-    pillars: {
-      sectionLabel: 'Architettura',
-      title: 'Tre Pilastri, Un Solo Obiettivo',
+    cosaE: {
+      label: 'Cos\'è',
+      body: 'Il Privacy Phone è pensato per chi lavora con informazioni sensibili e non può accettare che il dispositivo sia un punto debole: giornalisti investigativi, avvocati che trattano dossier delicati, dirigenti che viaggiano in contesti ostili, figure pubbliche esposte, dirigenti di ONG. Non è un «telefono sicuro» generico: è uno strumento operativo, con metodologia di test documentata e supporto dedicato.',
+    },
+    cosaInclude: {
+      label: 'Cosa include',
+      title: 'Il pacchetto AEGIDA Privacy Phone',
       items: [
         {
-          num: '01',
-          title: 'Hardware',
-          subtitle: 'Google Pixel 10a',
-          desc: 'Titan M2 Secure Enclave, bootloader ribloccabile, 7 anni di aggiornamenti. La base fisica su cui si fonda ogni livello di sicurezza.',
+          key: 'hardware',
+          title: 'Hardware rafforzato',
+          body: 'Base Pixel 10a (Google Tensor G4, 8 GB RAM). Firmware originale rimosso; installato sistema operativo derivato, indurito da AEGIDA, con verified boot e chiavi proprietarie. Il dispositivo arriva al cliente già configurato e sigillato.',
         },
         {
-          num: '02',
-          title: 'Aegida OS',
-          subtitle: 'GrapheneOS',
-          desc: 'Sistema operativo hardened, 100 % open-source, zero telemetria Google. Ogni permesso, ogni sensore, ogni byte sotto il tuo controllo.',
+          key: 'connect',
+          title: 'Connect — messaggistica cifrata',
+          body: 'Comunicazione diretta tra dispositivi AEGIDA con cifratura post-quantum (ML-KEM FIPS 203). Nessun server centrale di instradamento: i messaggi passano solo tra i dispositivi coinvolti.',
         },
         {
-          num: '03',
-          title: 'Aegida Connect',
-          subtitle: 'P2P Comms',
-          desc: 'Comunicazioni cifrate peer-to-peer via Tor, Wi-Fi locale e Bluetooth. Nessun server centrale, nessun intermediario, nessun metadato.',
-        },
-      ],
-    },
-
-    hardware: {
-      sectionLabel: 'Hardware',
-      title: 'Google Pixel 10a',
-      specs: [
-        { label: 'Processore', value: 'Google Tensor G4 (4 nm), SoC custom con NPU dedicata, modem Exynos 5400 con satellite SOS' },
-        { label: 'RAM / Storage', value: '8 GB LPDDR5 / 128-256 GB UFS' },
-        { label: 'Display', value: '6.3" P-OLED, 120 Hz, 3.000 nit, Gorilla Glass 7i' },
-        { label: 'Fotocamera', value: '48 MP f/1.7 + 13 MP ultrawide, 13 MP selfie, 4K@60fps' },
-        { label: 'Batteria', value: '5.100 mAh, 30 W cablata, 18 W wireless' },
-        { label: 'Connettivita', value: '5G, Wi-Fi 7, Bluetooth 6, NFC, Satellite SOS' },
-        { label: 'Sicurezza HW', value: 'Titan M2 Secure Enclave' },
-        { label: 'Resistenza', value: 'IP68' },
-        { label: 'Dimensioni', value: '153.9 x 73 x 9 mm, 183 g' },
-        { label: 'Aggiornamenti', value: '7 anni OS + sicurezza (fino al 2033)' },
-      ],
-      whyTitle: 'Perche il Pixel 10a',
-      whyPoints: [
-        'Bootloader ribloccabile dopo il flash: unico smartphone Android a consentire re-lock con OS custom, preservando la catena di Verified Boot.',
-        'Titan M2 Secure Enclave: chip dedicato per chiavi crittografiche, anti-tampering hardware e rate-limiting dei tentativi PIN.',
-        'Kernel patches tempestivi: Google rilascia patch mensili con SLA pubblico; GrapheneOS le integra entro 24-48 h.',
-      ],
-    },
-
-    os: {
-      sectionLabel: 'Sistema Operativo',
-      title: 'Aegida OS',
-      description:
-        'Basato su GrapheneOS, il sistema operativo mobile privacy-focused con oltre 300.000 utenti attivi, fondato nel 2014 e sviluppato come progetto 100 % open-source. Aegida OS ne eredita tutte le protezioni e aggiunge configurazioni specifiche per il deployment enterprise.',
-      features: [
-        {
-          title: 'Storage Scopes',
-          description:
-            'Ogni app vede solo la propria sandbox di storage, senza accesso ai file di altre applicazioni o al file-system globale.',
+          key: 'inspector',
+          title: 'Inspector — attestazione integrità',
+          body: 'App di verifica dell\'integrità hardware, basata su fork di GrapheneOS Auditor. Permette di confermare crittograficamente che il dispositivo non sia stato manomesso dall\'ultima verifica. Un secondo dispositivo di fiducia funge da verificatore.',
         },
         {
-          title: 'Network Permission Toggle',
-          description:
-            'Permesso di rete per singola app: revocabile in qualsiasi momento, bloccando silenziosamente ogni connessione in uscita.',
-        },
-        {
-          title: 'Sensors Permission',
-          description:
-            'Accelerometro, giroscopio, barometro e altri sensori richiedono un permesso esplicito, prevenendo fingerprinting hardware.',
-        },
-        {
-          title: 'Hardened Memory Allocator',
-          description:
-            'Allocatore di memoria custom (hardened_malloc) con guard pages, randomizzazione canary e protezione use-after-free.',
-        },
-        {
-          title: 'Vanadium Browser',
-          description:
-            'Chromium hardened con isolamento per-site, JIT disabilitabile, WebRTC bloccato di default e Content Security Policy restrittive.',
-        },
-        {
-          title: 'Secure App Spawning',
-          description:
-            'Fork sicuro dei processi app con re-randomizzazione ASLR ad ogni avvio, eliminando attacchi basati su layout di memoria predicibile.',
-        },
-      ],
-      privacyByDesignTitle: 'Privacy by Design',
-      privacyByDesignItems: [
-        'MAC randomization per ogni rete Wi-Fi',
-        'PIN scrambling: tastierino numerico con layout casuale',
-        'Rimozione automatica EXIF da foto e screenshot',
-        'Hardware identifier isolation tra profili',
-        'Clipboard notification: avviso ad ogni accesso alla clipboard',
-        'Profili multipli isolati con crittografia separata',
-        'USB lockdown: periferiche bloccate a schermo spento',
-      ],
-      zeroGoogleTitle: 'Zero Google',
-      zeroGoogleDescription:
-        'Nessun Google Play Services. Zero telemetria. Zero bloatware. Le app compatibili possono essere installate tramite sandbox opzionale senza alcun privilegio speciale, mantenendo il sistema completamente isolato dall\'ecosistema Google.',
-    },
-
-    connect: {
-      sectionLabel: 'Comunicazioni',
-      title: 'Aegida Connect',
-      description:
-        'Architettura peer-to-peer pura: ogni dispositivo e un nodo autonomo. I messaggi viaggiano direttamente tra mittente e destinatario attraverso canali multipli \u2014 Tor, Wi-Fi locale, Bluetooth \u2014 senza mai transitare da un server centrale. Nessun intermediario conosce chi comunica con chi.',
-      transportTitle: 'Canali di Trasporto',
-      transportChannels: [
-        { label: 'Tor / Internet', value: 'Onion Service v3 ED25519 \u2014 comunicazione anonima globale' },
-        { label: 'Wi-Fi locale', value: 'LAN / hotspot 802.11 \u2014 zero dipendenza da Internet' },
-        { label: 'Bluetooth', value: 'BT Classic / BLE, 10-100 m \u2014 prossimita senza rete' },
-        { label: 'Supporti fisici', value: 'MicroSD / USB \u2014 delay-tolerant, air-gapped transfer' },
-      ],
-      secureRelayTitle: 'Aegida Secure Relay',
-      secureRelayDescription:
-        'Quando il destinatario e offline, i messaggi vengono temporaneamente custoditi su relay distribuiti, cifrati end-to-end con la chiave pubblica del destinatario. Il relay non puo leggere il contenuto ne i metadati. Appena il destinatario torna online, i messaggi vengono recapitati e cancellati dal relay. Un\'architettura delay-tolerant che non sacrifica la sicurezza.',
-      cryptoStackTitle: 'Stack Crittografico',
-      cryptoStack: [
-        { name: 'Curva25519', role: 'ECDH Key Exchange' },
-        { name: 'ChaCha20-Poly1305', role: 'AEAD Encryption' },
-        { name: 'BLAKE2', role: 'Hashing' },
-        { name: 'PFS', role: 'Perfect Forward Secrecy' },
-        { name: 'AES-256-GCM', role: 'Symmetric Encryption' },
-        { name: 'Scrypt KDF', role: 'Key Derivation' },
-        { name: 'Onion Service v3', role: 'Anonymous Transport' },
-      ],
-      identityTitle: 'Gestione Identita',
-      identityDescription:
-        'Nessuna PKI centralizzata, nessuna Certificate Authority. Ogni dispositivo genera una coppia di chiavi ED25519 direttamente nel Titan M2. Lo scambio di identita avviene tramite QR pairing in prossimita: due utenti si inquadrano reciprocamente il codice QR, verificano il fingerprint e stabiliscono un canale cifrato permanente. Semplice, verificabile, resistente a MITM.',
-      featuresTitle: 'Funzionalita',
-      features: [
-        'Messaggistica 1:1 cifrata end-to-end',
-        'Gruppi privati con chiave condivisa',
-        'Forum distribuiti e moderabili',
-        'Feed e aggiornamenti broadcast',
-        'Aegida Secure Relay per utenti offline',
-        'Secure Pairing via QR Code',
-      ],
-    },
-
-    integration: {
-      sectionLabel: 'Sinergia',
-      title: 'Integrazione dei Livelli',
-      tableHeaders: {
-        from: 'Da',
-        to: 'A',
-        synergy: 'Sinergia',
-      },
-      rows: [
-        {
-          from: 'Hardware',
-          to: 'OS',
-          synergy:
-            'Verified Boot + Titan M2 garantiscono che solo Aegida OS firmato possa avviarsi. Chiavi crittografiche protette in hardware.',
-        },
-        {
-          from: 'OS',
-          to: 'App',
-          synergy:
-            'Sandbox rinforzata, permessi granulari e hardened_malloc proteggono Aegida Connect da exploit a livello di sistema.',
-        },
-        {
-          from: 'App',
-          to: 'Hardware',
-          synergy:
-            'Aegida Connect genera e custodisce le chiavi ED25519 direttamente nel Titan M2, senza mai esporle in RAM.',
-        },
-        {
-          from: 'OS',
-          to: 'Comunicazioni',
-          synergy:
-            'Network Permission Toggle e firewall OS-level prevengono leak di dati al di fuori dei canali cifrati autorizzati.',
-        },
-        {
-          from: 'Hardware',
-          to: 'Comunicazioni',
-          synergy:
-            'Bluetooth 6 e Wi-Fi 7 hardware-accelerati offrono canali P2P a bassa latenza con crittografia a livello di trasporto.',
-        },
-      ],
-    },
-
-    download: {
-      sectionLabel: 'Documentazione',
-      title: 'Download',
-      items: [
-        {
-          title: 'White paper test UFED \u2014 17 aprile 2026',
-          description:
-            'Riscontri forensi del test Cellebrite Inseyets UFED 10.8.0.322 su AEGIDA Privacy Phone: metodologia, screenshot, conclusioni e disclaimer legale (PDF, 12 pagine).',
-        },
-        {
-          title: 'Brochure Privacy Phone',
-          description:
-            'Panoramica commerciale e caratteristiche principali di AEGIDA Privacy Phone.',
-        },
-        {
-          title: 'Documento tecnico',
-          description:
-            'Specifiche hardware, funzionalit\u00e0 Aegida OS e architettura Aegida Connect in dettaglio.',
+          key: 'supporto',
+          title: 'Supporto e formazione',
+          body: '12 mesi di supporto via canale cifrato con tempi di risposta definiti. Formazione utente remota (in sede per ordini multi-dispositivo). Re-hardening annuale nel pacchetto di rinnovo.',
         },
       ],
     },
@@ -377,42 +203,43 @@ const it: Translations = {
     },
 
     pricing: {
-      sectionLabel: 'Listino',
-      title: 'Prezzo e pacchetto',
-      subtitle:
-        'Un prezzo unico comprensivo di dispositivo, servizi e assistenza per il primo anno.',
-      bundle: {
-        label: 'Pacchetto primo anno',
-        price: '3.900 \u20ac',
-        period: 'compreso nel prezzo',
-        items: [
-          'Dispositivo hardware (Google Pixel 10a)',
-          'Aegida Connect configurato con cifratura post-quantum',
-          'AEGIDA Inspector per attestazione integrit\u00e0 hardware',
-          '12 mesi di assistenza via canale cifrato',
-          'Formazione utente (remota; in sede per ordini multi-dispositivo)',
-        ],
+      label: 'Prezzi',
+      title: 'Pacchetto primo anno e rinnovi',
+      packages: [
+        {
+          name: 'Pacchetto primo anno',
+          price: '3.900 €',
+          description: 'Hardware + configurazione AEGIDA Connect + Inspector + 12 mesi supporto + formazione utente',
+          highlighted: true,
+        },
+        {
+          name: 'Rinnovo annuale',
+          price: '690 € / anno',
+          description: 'Aggiornamenti sicurezza, supporto cifrato continuato, re-hardening annuale, incident response entry-level',
+          highlighted: false,
+        },
+      ],
+      business: {
+        title: 'Ordini multi-dispositivo',
+        body: 'Per studi legali, redazioni, ONG e team aziendali con 5 o più dispositivi sono disponibili condizioni dedicate. Il preventivo è personalizzato in base al numero di dispositivi, alle esigenze di MDM e alla formazione richiesta.',
+        cta: 'Richiedi preventivo',
       },
-      renewal: {
-        label: 'Rinnovo annuale',
-        price: '690 \u20ac',
-        period: 'dal secondo anno',
-        items: [
-          'Aggiornamenti di sicurezza per l\u2019intero ciclo del dispositivo',
-          'Assistenza tecnica continuata via canale cifrato',
-          'Verifica annuale della configurazione',
-          'Risposta a incidenti di base (entro 4 ore)',
-        ],
-      },
-      note: 'Prezzi IVA inclusa per privati, IVA esclusa per aziende. Per ordini di 5+ dispositivi (studi legali, redazioni, ONG, team interni di sicurezza) \u00e8 disponibile un pacchetto dedicato: scrivici per un preventivo.',
-      cta: 'Verifica disponibilit\u00e0',
     },
 
-    cta: {
-      title: 'Acquista AEGIDA Privacy Phone',
-      description:
-        '3.900 \u20ac pacchetto primo anno. Include dispositivo, Aegida Connect con cifratura post-quantum, AEGIDA Inspector, 12 mesi di assistenza cifrata e formazione. Contattaci per disponibilit\u00e0 e spedizione.',
-      button: 'Verifica disponibilit\u00e0',
+    metodologia: {
+      label: 'Metodologia',
+      title: 'Come testiamo ciò che dichiariamo',
+      body: 'Il test del 17 aprile 2026 è stato condotto da una società italiana di analisi forense certificata con un operatore con certificazione International Master Counter Surveillance Technical. Lo strumento utilizzato è Cellebrite Inseyets UFED 10.8.0.322 con modulo Turbo Link. Il dispositivo è stato testato sia in modalità Locked (BFU — Before First Unlock) sia in modalità Unlocked (AFU — After First Unlock) con codice di sblocco fornito. Il test non ha estratto dati utente in nessuna delle due modalità. La metodologia completa, gli screenshot del software e la timeline sono nel white paper PDF in download.',
+    },
+
+    disclaimer: {
+      text: 'Cellebrite, Inseyets, UFED e Turbo Link sono marchi registrati di Cellebrite DI Ltd. AEGIDA non è affiliata, sponsorizzata o collegata a Cellebrite DI Ltd; i riferimenti hanno finalità di documentazione tecnica comparativa ai sensi del D.Lgs. 145/2007. Diritto di replica: legal@aegida-systems.com.',
+    },
+
+    ctaFinale: {
+      title: 'Richiedi un colloquio',
+      body: 'Per scegliere un AEGIDA Privacy Phone non serve un carrello. Serve un colloquio in cui capire se è lo strumento giusto per il tuo caso, in che configurazione, con quale formazione. Scriviamoci.',
+      cta: 'Richiedi un colloquio',
     },
   },
 

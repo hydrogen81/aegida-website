@@ -112,307 +112,77 @@ const de: Translations = {
   privacyPhone: {
     hero: {
       title: 'AEGIDA Privacy Phone',
-      tagline: 'Cellebrite UFED, 17. April 2026: keine Benutzerdaten extrahiert.',
-      description:
-        'Geh\u00e4rtetes Smartphone auf Pixel 10a, mit Aegida OS (basierend auf GrapheneOS), Aegida Connect Post-Quantum-Messaging (ML-KEM, FIPS 203) und Hardware-Integrit\u00e4tsattestierung via AEGIDA Inspector. In Rom entwickelt und unterst\u00fctzt. 3.900 \u20ac umfassen Ger\u00e4t, Dienste und Support f\u00fcr das erste Jahr; Verl\u00e4ngerung 690 \u20ac/Jahr f\u00fcr Updates und fortgesetzte Unterst\u00fctzung.',
-      ctaDownload: 'Datenblatt herunterladen',
-      ctaContact: 'Verf\u00fcgbarkeit pr\u00fcfen',
+      tagline: 'Smartphone rafforzato su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
+      claim: 'Cellebrite UFED 10.8.0.322, 17 aprile 2026: nessun dato utente estratto.',
+      ctaPrimary: 'Richiedi un colloquio',
+      ctaSecondary: 'Scarica il white paper UFED',
     },
-
-    pillars: {
-      sectionLabel: 'Architektur',
-      title: 'Drei Saeulen, ein Ziel',
+    cosaE: {
+      label: 'Cos\'è',
+      body: 'Il Privacy Phone è pensato per chi lavora con informazioni sensibili.',
+    },
+    cosaInclude: {
+      label: 'Cosa include',
+      title: 'Il pacchetto AEGIDA Privacy Phone',
       items: [
-        {
-          num: '01',
-          title: 'Hardware',
-          subtitle: 'Google Pixel 10a',
-          desc: 'Titan M2 Secure Enclave, wieder sperrbarer Bootloader, 7 Jahre Updates. Die physische Basis, auf der jede Sicherheitsebene aufbaut.',
-        },
-        {
-          num: '02',
-          title: 'Aegida OS',
-          subtitle: 'GrapheneOS',
-          desc: 'Gehaertetes Betriebssystem, 100 % Open-Source, keine Google-Telemetrie. Jede Berechtigung, jeder Sensor, jedes Byte unter Ihrer Kontrolle.',
-        },
-        {
-          num: '03',
-          title: 'Aegida Connect',
-          subtitle: 'P2P Comms',
-          desc: 'Verschluesselte Peer-to-Peer-Kommunikation ueber Tor, lokales Wi-Fi und Bluetooth. Kein zentraler Server, kein Vermittler, keine Metadaten.',
-        },
-      ],
-    },
-
-    hardware: {
-      sectionLabel: 'Hardware',
-      title: 'Google Pixel 10a',
-      specs: [
-        { label: 'Prozessor', value: 'Google Tensor G4 (4 nm), Custom-SoC mit dedizierter NPU, Exynos 5400 Modem mit Satelliten-SOS' },
-        { label: 'RAM / Speicher', value: '8 GB LPDDR5 / 128\u2013256 GB UFS' },
-        { label: 'Display', value: '6,3" P-OLED, 120 Hz, 3.000 nit, Gorilla Glass 7i' },
-        { label: 'Kamera', value: '48 MP f/1.7 + 13 MP Ultraweitwinkel, 13 MP Frontkamera, 4K@60fps' },
-        { label: 'Akku', value: '5.100 mAh, 30 W kabelgebunden, 18 W kabellos' },
-        { label: 'Konnektivitaet', value: '5G, Wi-Fi 7, Bluetooth 6, NFC, Satelliten-SOS' },
-        { label: 'HW-Sicherheit', value: 'Titan M2 Secure Enclave' },
-        { label: 'Schutzklasse', value: 'IP68' },
-        { label: 'Abmessungen', value: '153,9 x 73 x 9 mm, 183 g' },
-        { label: 'Updates', value: '7 Jahre OS + Sicherheit (bis 2033)' },
-      ],
-      whyTitle: 'Warum das Pixel 10a',
-      whyPoints: [
-        'Wieder sperrbarer Bootloader nach dem Flash: einziges Android-Smartphone, das ein Re-Lock mit benutzerdefiniertem OS erlaubt und damit die Verified-Boot-Kette bewahrt.',
-        'Titan M2 Secure Enclave: dedizierter Chip fuer kryptografische Schluessel, Hardware-Anti-Tampering und Rate-Limiting der PIN-Versuche.',
-        'Zeitnahe Kernel-Patches: Google veroeffentlicht monatliche Patches mit oeffentlichem SLA; GrapheneOS integriert diese innerhalb von 24\u201348 Stunden.',
-      ],
-    },
-
-    os: {
-      sectionLabel: 'Betriebssystem',
-      title: 'Aegida OS',
-      description:
-        'Basierend auf GrapheneOS, dem datenschutzorientierten mobilen Betriebssystem mit ueber 300.000 aktiven Nutzern, gegruendet 2014 und als 100 % Open-Source-Projekt entwickelt. Aegida OS erbt alle Schutzfunktionen und ergaenzt spezifische Konfigurationen fuer den Enterprise-Einsatz.',
-      features: [
-        {
-          title: 'Storage Scopes',
-          description:
-            'Jede App sieht nur ihre eigene Speicher-Sandbox, ohne Zugriff auf Dateien anderer Anwendungen oder das globale Dateisystem.',
-        },
-        {
-          title: 'Network Permission Toggle',
-          description:
-            'Netzwerkberechtigung pro App: jederzeit widerrufbar, blockiert stillschweigend jede ausgehende Verbindung.',
-        },
-        {
-          title: 'Sensors Permission',
-          description:
-            'Beschleunigungssensor, Gyroskop, Barometer und andere Sensoren erfordern eine explizite Berechtigung, um Hardware-Fingerprinting zu verhindern.',
-        },
-        {
-          title: 'Hardened Memory Allocator',
-          description:
-            'Benutzerdefinierter gehaerteter Speicher-Allokator (hardened_malloc) mit Guard Pages, Canary-Randomisierung und Use-after-free-Schutz.',
-        },
-        {
-          title: 'Vanadium Browser',
-          description:
-            'Gehaertetes Chromium mit Per-Site-Isolierung, deaktivierbarem JIT, standardmaessig blockiertem WebRTC und restriktiven Content Security Policies.',
-        },
-        {
-          title: 'Secure App Spawning',
-          description:
-            'Sicheres Forking von App-Prozessen mit ASLR-Re-Randomisierung bei jedem Start, um Angriffe auf vorhersagbare Speicherlayouts zu eliminieren.',
-        },
-      ],
-      privacyByDesignTitle: 'Privacy by Design',
-      privacyByDesignItems: [
-        'MAC-Randomisierung fuer jedes Wi-Fi-Netzwerk',
-        'PIN Scrambling: Ziffernblock mit zufaelligem Layout',
-        'Automatische EXIF-Entfernung bei Fotos und Screenshots',
-        'Hardware-Identifier-Isolierung zwischen Profilen',
-        'Clipboard-Benachrichtigung: Hinweis bei jedem Clipboard-Zugriff',
-        'Isolierte Mehrfachprofile mit separater Verschluesselung',
-        'USB-Lockdown: Peripheriegeraete bei gesperrtem Bildschirm blockiert',
-      ],
-      zeroGoogleTitle: 'Zero Google',
-      zeroGoogleDescription:
-        'Keine Google Play Services. Keine Telemetrie. Keine Bloatware. Kompatible Apps koennen ueber eine optionale Sandbox ohne Sonderprivilegien installiert werden, wobei das System vollstaendig vom Google-Oekosystem isoliert bleibt.',
-    },
-
-    connect: {
-      sectionLabel: 'Kommunikation',
-      title: 'Aegida Connect',
-      description:
-        'Reine Peer-to-Peer-Architektur: Jedes Geraet ist ein autonomer Knoten. Nachrichten werden direkt zwischen Absender und Empfaenger ueber mehrere Kanaele \u2014 Tor, lokales Wi-Fi, Bluetooth \u2014 uebertragen, ohne jemals ueber einen zentralen Server zu laufen. Kein Vermittler erfaehrt, wer mit wem kommuniziert.',
-      transportTitle: 'Transportkanaele',
-      transportChannels: [
-        { label: 'Tor / Internet', value: 'Onion Service v3 ED25519 \u2014 anonyme globale Kommunikation' },
-        { label: 'Lokales Wi-Fi', value: 'LAN / Hotspot 802.11 \u2014 keine Internetabhaengigkeit' },
-        { label: 'Bluetooth', value: 'BT Classic / BLE, 10\u2013100 m \u2014 Nahbereich ohne Netzwerk' },
-        { label: 'Physische Datentraeger', value: 'MicroSD / USB \u2014 Delay-tolerant, Air-gapped Transfer' },
-      ],
-      secureRelayTitle: 'Aegida Secure Relay',
-      secureRelayDescription:
-        'Wenn der Empfaenger offline ist, werden Nachrichten voruebergehend auf verteilten Relays gespeichert, Ende-zu-Ende-verschluesselt mit dem oeffentlichen Schluessel des Empfaengers. Das Relay kann weder den Inhalt noch die Metadaten lesen. Sobald der Empfaenger wieder online ist, werden die Nachrichten zugestellt und vom Relay geloescht. Eine Delay-tolerante Architektur, die keine Kompromisse bei der Sicherheit eingeht.',
-      cryptoStackTitle: 'Kryptografischer Stack',
-      cryptoStack: [
-        { name: 'Curva25519', role: 'ECDH Key Exchange' },
-        { name: 'ChaCha20-Poly1305', role: 'AEAD Encryption' },
-        { name: 'BLAKE2', role: 'Hashing' },
-        { name: 'PFS', role: 'Perfect Forward Secrecy' },
-        { name: 'AES-256-GCM', role: 'Symmetric Encryption' },
-        { name: 'Scrypt KDF', role: 'Key Derivation' },
-        { name: 'Onion Service v3', role: 'Anonymous Transport' },
-      ],
-      identityTitle: 'Identitaetsverwaltung',
-      identityDescription:
-        'Keine zentrale PKI, keine Certificate Authority. Jedes Geraet erzeugt ein ED25519-Schluesselpaar direkt im Titan M2. Der Identitaetsaustausch erfolgt ueber QR-Pairing im Nahbereich: Zwei Nutzer scannen gegenseitig den QR-Code, verifizieren den Fingerprint und etablieren einen permanenten verschluesselten Kanal. Einfach, verifizierbar, MITM-resistent.',
-      featuresTitle: 'Funktionen',
-      features: [
-        'Ende-zu-Ende-verschluesselte 1:1-Nachrichten',
-        'Private Gruppen mit geteiltem Schluessel',
-        'Verteilte und moderierbare Foren',
-        'Feeds und Broadcast-Updates',
-        'Aegida Secure Relay fuer Offline-Nutzer',
-        'Sicheres Pairing per QR-Code',
-      ],
-    },
-
-    integration: {
-      sectionLabel: 'Synergie',
-      title: 'Integration der Ebenen',
-      tableHeaders: {
-        from: 'Von',
-        to: 'Nach',
-        synergy: 'Synergie',
-      },
-      rows: [
-        {
-          from: 'Hardware',
-          to: 'OS',
-          synergy:
-            'Verified Boot + Titan M2 stellen sicher, dass nur signiertes Aegida OS starten kann. Kryptografische Schluessel sind hardwaregeschuetzt.',
-        },
-        {
-          from: 'OS',
-          to: 'App',
-          synergy:
-            'Verstaerkte Sandbox, granulare Berechtigungen und hardened_malloc schuetzen Aegida Connect vor System-Level-Exploits.',
-        },
-        {
-          from: 'App',
-          to: 'Hardware',
-          synergy:
-            'Aegida Connect erzeugt und speichert ED25519-Schluessel direkt im Titan M2, ohne sie jemals im RAM offenzulegen.',
-        },
-        {
-          from: 'OS',
-          to: 'Kommunikation',
-          synergy:
-            'Network Permission Toggle und OS-Level-Firewall verhindern Datenlecks ausserhalb der autorisierten verschluesselten Kanaele.',
-        },
-        {
-          from: 'Hardware',
-          to: 'Kommunikation',
-          synergy:
-            'Hardwarebeschleunigte Bluetooth 6 und Wi-Fi 7 bieten P2P-Kanaele mit niedriger Latenz und Transportschicht-Verschluesselung.',
-        },
-      ],
-    },
-
-    download: {
-      sectionLabel: 'Dokumentation',
-      title: 'Download',
-      items: [
-        {
-          title: 'UFED-Test White Paper \u2014 17. April 2026',
-          description:
-            'Forensische Nachweise des Cellebrite Inseyets UFED 10.8.0.322 Tests auf AEGIDA Privacy Phone: Methodik, Screenshots, Schlussfolgerungen und rechtlicher Disclaimer (PDF, 12 Seiten, in Italienisch).',
-        },
-        {
-          title: 'Privacy Phone Broschure',
-          description:
-            'Kommerzielle Uebersicht und Hauptmerkmale des AEGIDA Privacy Phone.',
-        },
-        {
-          title: 'Technisches Dokument',
-          description:
-            'Hardwarespezifikationen, Aegida OS-Funktionen und Aegida Connect-Architektur im Detail.',
-        },
+        { key: 'hardware', title: 'Hardware rafforzato', body: 'Base Pixel 10a. Firmware originale rimosso; sistema operativo indurito da AEGIDA.' },
+        { key: 'connect', title: 'Connect — messaggistica cifrata', body: 'Cifratura post-quantum (ML-KEM FIPS 203). Nessun server centrale.' },
+        { key: 'inspector', title: 'Inspector — attestazione integrità', body: 'Verifica crittografica dell\'integrità hardware.' },
+        { key: 'supporto', title: 'Supporto e formazione', body: '12 mesi di supporto via canale cifrato.' },
       ],
     },
 
     proof: {
-      sectionLabel: 'Forensische Nachweise',
-      title: 'Cellebrite UFED Test \u2014 17. April 2026',
-      intro:
-        'Am 17. April 2026 hat eine unabh\u00e4ngige italienische Firma, spezialisiert auf technische elektronische Gegenma\u00dfnahmen und Counter-Surveillance, AEGIDA Privacy Phone einer forensischen Extraktion mit Cellebrite Inseyets UFED 10.8.0.322 und dem Turbo Link Modul unterzogen \u2014 dem internationalen Referenzwerkzeug der Strafverfolgungsbeh\u00f6rden. Der Test wurde sowohl im Locked-Modus (BFU \u2014 Before First Unlock) als auch im Unlocked-Modus (AFU \u2014 After First Unlock) mit bekanntem und an das Werkzeug \u00fcbergebenem Entsperrcode durchgef\u00fchrt. In keinem Szenario hat UFED Benutzerdaten extrahiert.',
+      sectionLabel: 'Riscontri forensi',
+      title: 'Test Cellebrite UFED — 17 aprile 2026',
+      intro: 'Il 17 aprile 2026 una società italiana indipendente ha sottoposto AEGIDA Privacy Phone a estrazione forense con Cellebrite Inseyets UFED 10.8.0.322 e modulo Turbo Link.',
       testCard: {
-        operator: 'Drittanbieter-Operator',
-        operatorValue: 'Unabh\u00e4ngige italienische Firma zertifiziert in technischen elektronischen Gegenma\u00dfnahmen und Counter-Surveillance',
+        operator: 'Operatore terzo',
+        operatorValue: 'Società italiana indipendente certificata',
         software: 'Software',
-        softwareValue: 'Cellebrite Inseyets UFED 10.8.0.322 + Turbo Link Modul',
-        date: 'Datum',
-        dateValue: '17. April 2026',
-        duration: 'Getestete Modi',
-        durationValue: 'BFU (Locked) und AFU (Unlocked) mit \u00fcbergebenem Code \u2014 14 Minuten gesamt',
-        device: 'Ger\u00e4t',
-        deviceValue: 'AEGIDA Privacy Phone auf Pixel 10a, Aegida OS basierend auf GrapheneOS, Android 16, FBE-Verschl\u00fcsselung',
+        softwareValue: 'Cellebrite Inseyets UFED 10.8.0.322 + modulo Turbo Link',
+        date: 'Data',
+        dateValue: '17 aprile 2026',
+        duration: 'Modalità',
+        durationValue: 'BFU (Locked) e AFU (Unlocked) con codice fornito',
+        device: 'Dispositivo',
+        deviceValue: 'AEGIDA Privacy Phone su base Pixel 10a, Aegida OS, Android 16',
       },
       timeline: [
-        {
-          time: '16:00 \u2014 Locked-Modus (BFU)',
-          caption:
-            'UFED ersch\u00f6pft die f\u00fcr Pixel 10a verf\u00fcgbaren BFU-Methoden und gibt zur\u00fcck: "Access attempt failed \u2014 No suitable method found". Der einzige verbleibende Pfad ist die Recovery-Prozedur, die jedoch den AFU-Status des Ger\u00e4ts verlieren w\u00fcrde.',
-          image: '/proof/ufed-test/01-locked-no-method-found.jpg',
-          alt: 'UFED-Bildschirm zeigt Access attempt failed und No suitable method found im Locked-Modus',
-        },
-        {
-          time: '16:04 \u2014 Unlocked (AFU) mit \u00fcbergebenem Code',
-          caption:
-            'Der Operator f\u00fchrt den Flow im Unlocked-Modus erneut aus und liefert den Entsperrcode. UFED liest Ger\u00e4te-Identifikatoren (Vendor, Modell, Chipset, OS, Kernel, Patch Level, Verschl\u00fcsselungstyp, Batterie) \u2014 Felder, die \u00fcber ADB und fastboot zug\u00e4nglich sind, kein Benutzerinhalt.',
-          image: '/proof/ufed-test/02-metadata-only.jpg',
-          alt: 'UFED Quick view zeigt nur Ger\u00e4te-Identifikatoren des Pixel 10a',
-        },
-        {
-          time: '16:07 \u2014 Benutzerdatenextraktion',
-          caption:
-            'Nach drei Minuten mehrfacher Versuche ("Method failed, starting next attempt..."), kommt UFED zu dem Schluss: "Access attempt failed for Google Pixel 10a \u2014 No suitable method found". Keine Nachrichten, keine Fotos, keine Kontakte, keine Benutzerdateien wurden extrahiert.',
-          image: '/proof/ufed-test/03-unlocked-passcode-failed.jpg',
-          alt: 'UFED-Bildschirm zeigt Access attempt failed for Google Pixel 10a im Unlocked-Modus mit Code',
-        },
-        {
-          time: 'Test-Arbeitsplatz',
-          caption:
-            'Laptop mit Cellebrite Inseyets UFED, Cellebrite Turbo Link Hardware via propriet\u00e4rem Kabel verbunden, AEGIDA Privacy Phone mit Aegida Connect und AEGIDA Inspector im Home-Bildschirm sichtbar. Die International Master Counter Surveillance Technical Zertifizierung des Operators ist am Arbeitsplatz sichtbar.',
-          image: '/proof/ufed-test/04-setup-fisico.jpg',
-          alt: 'Foto des Test-Arbeitsplatzes: Laptop mit UFED, Cellebrite Turbo Link Hardware, AEGIDA Privacy Phone',
-        },
+        { time: '16:00 — Locked (BFU)', caption: 'Access attempt failed — No suitable method found.', image: '/proof/ufed-test/01-locked-no-method-found.jpg', alt: 'UFED Locked mode failure' },
+        { time: '16:04 — Unlocked (AFU)', caption: 'UFED legge solo identificatori di dispositivo.', image: '/proof/ufed-test/02-metadata-only.jpg', alt: 'UFED metadata only' },
+        { time: '16:07 — Estrazione dati', caption: 'Access attempt failed — No suitable method found.', image: '/proof/ufed-test/03-unlocked-passcode-failed.jpg', alt: 'UFED extraction failure' },
+        { time: 'Postazione', caption: 'Laptop con Cellebrite Inseyets UFED e AEGIDA Privacy Phone.', image: '/proof/ufed-test/04-setup-fisico.jpg', alt: 'Test workstation' },
       ],
-      conclusionLabel: 'Fazit',
-      conclusionText:
-        'Im Test vom 17. April 2026 hat Cellebrite Inseyets UFED 10.8.0.322 mit Turbo Link keine Benutzerdaten aus AEGIDA Privacy Phone extrahiert, weder im BFU- (Locked) noch im AFU-Modus (Unlocked) mit dem an das Werkzeug \u00fcbergebenen Entsperrcode. Es wurden ausschlie\u00dflich Ger\u00e4te-Identifikatoren gelesen, die \u00fcber ADB und fastboot zug\u00e4nglich sind. Die Ergebnisse beziehen sich auf die angegebene Version und Konfiguration, am Datum des Tests.',
-      disclaimer:
-        'Test durchgef\u00fchrt von einer unabh\u00e4ngigen, zertifizierten italienischen Firma. Cellebrite, Inseyets, UFED und Turbo Link sind eingetragene Marken von Cellebrite DI Ltd. AEGIDA ist nicht mit Cellebrite DI Ltd. verbunden, gesponsert oder verkn\u00fcpft; die Bez\u00fcge dienen der technischen vergleichenden Dokumentation gem\u00e4\u00df italienischem D.Lgs. 145/2007. Die wiedergegebenen Screenshots stellen ein Zitat gem\u00e4\u00df Art. 70 des italienischen Gesetzes 633/1941 zu Zwecken der Kritik und wissenschaftlichen Diskussion dar. Die Ergebnisse beziehen sich auf die angegebene Software/Firmware-Version und Hardware-Konfiguration, am Datum des Tests; AEGIDA garantiert nicht, dass zuk\u00fcnftige Releases der genannten forensischen Werkzeuge die gleichen Ergebnisse erzeugen, und verpflichtet sich, periodische Re-Tests zu ver\u00f6ffentlichen. Der Test misst die Interoperabilit\u00e4t mit einer spezifischen AEGIDA Privacy Phone Konfiguration und \u00e4u\u00dfert kein Gesamturteil \u00fcber Cellebrite-Produkte. Antwortrecht: legal@aegida-systems.com.',
+      conclusionLabel: 'Conclusione',
+      conclusionText: 'Cellebrite UFED 10.8.0.322 non ha estratto alcun dato utente da AEGIDA Privacy Phone.',
+      disclaimer: 'Cellebrite, Inseyets, UFED e Turbo Link sono marchi registrati di Cellebrite DI Ltd. Diritto di replica: legal@aegida-systems.com.',
     },
-
     pricing: {
-      sectionLabel: 'Preisliste',
-      title: 'Preis und Paket',
-      subtitle:
-        'Ein einheitlicher Preis, der Ger\u00e4t, Dienste und Support f\u00fcr das erste Jahr umfasst.',
-      bundle: {
-        label: 'Paket f\u00fcr das erste Jahr',
-        price: '3.900 \u20ac',
-        period: 'im Preis enthalten',
-        items: [
-          'Hardware-Ger\u00e4t (Google Pixel 10a)',
-          'Aegida Connect mit Post-Quantum-Kryptografie konfiguriert',
-          'AEGIDA Inspector f\u00fcr Hardware-Integrit\u00e4tsattestierung',
-          '12 Monate Unterst\u00fctzung \u00fcber verschl\u00fcsselten Kanal',
-          'Nutzerschulung (remote; vor Ort f\u00fcr Mehrger\u00e4te-Bestellungen)',
-        ],
+      label: 'Prezzi',
+      title: 'Pacchetto primo anno e rinnovi',
+      packages: [
+        { name: 'Pacchetto primo anno', price: '3.900 €', description: 'Hardware + AEGIDA Connect + Inspector + 12 mesi supporto + formazione', highlighted: true },
+        { name: 'Rinnovo annuale', price: '690 € / anno', description: 'Aggiornamenti sicurezza, supporto cifrato, re-hardening annuale', highlighted: false },
+      ],
+      business: {
+        title: 'Ordini multi-dispositivo',
+        body: 'Per 5 o più dispositivi sono disponibili condizioni dedicate.',
+        cta: 'Richiedi preventivo',
       },
-      renewal: {
-        label: 'J\u00e4hrliche Verl\u00e4ngerung',
-        price: '690 \u20ac',
-        period: 'ab dem zweiten Jahr',
-        items: [
-          'Sicherheitsupdates f\u00fcr den gesamten Ger\u00e4te-Lebenszyklus',
-          'Fortgesetzte technische Unterst\u00fctzung \u00fcber verschl\u00fcsselten Kanal',
-          'J\u00e4hrliche Konfigurations\u00fcberpr\u00fcfung',
-          'Incident Response Basis (innerhalb von 4 Stunden)',
-        ],
-      },
-      note: 'Preise f\u00fcr Privatkunden inkl. MwSt., f\u00fcr Unternehmen zzgl. MwSt. F\u00fcr Bestellungen von 5+ Ger\u00e4ten (Anwaltskanzleien, Redaktionen, NGOs, interne Sicherheitsteams) ist ein dediziertes Paket verf\u00fcgbar: Kontakt f\u00fcr ein Angebot.',
-      cta: 'Verf\u00fcgbarkeit pr\u00fcfen',
     },
-
-    cta: {
-      title: 'AEGIDA Privacy Phone kaufen',
-      description:
-        '3.900 \u20ac Paket f\u00fcr das erste Jahr. Enth\u00e4lt Ger\u00e4t, Aegida Connect mit Post-Quantum-Kryptografie, AEGIDA Inspector, 12 Monate verschl\u00fcsselten Support und Schulung. Kontaktieren Sie uns f\u00fcr Verf\u00fcgbarkeit und Versand.',
-      button: 'Verf\u00fcgbarkeit pr\u00fcfen',
+    metodologia: {
+      label: 'Metodologia',
+      title: 'Come testiamo ciò che dichiariamo',
+      body: 'Il test del 17 aprile 2026 è stato condotto da una società italiana di analisi forense certificata.',
+    },
+    disclaimer: {
+      text: 'Cellebrite, Inseyets, UFED e Turbo Link sono marchi registrati di Cellebrite DI Ltd. Diritto di replica: legal@aegida-systems.com.',
+    },
+    ctaFinale: {
+      title: 'Richiedi un colloquio',
+      body: 'Per scegliere un AEGIDA Privacy Phone serve un colloquio.',
+      cta: 'Richiedi un colloquio',
     },
   },
 

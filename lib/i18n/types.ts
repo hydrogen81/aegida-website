@@ -112,90 +112,23 @@ export interface Translations {
     hero: {
       title: string
       tagline: string
-      description: string
-      ctaDownload: string
-      ctaContact: string
+      claim: string
+      ctaPrimary: string
+      ctaSecondary: string
     }
 
-    pillars: {
-      sectionLabel: string
+    cosaE: {
+      label: string
+      body: string
+    }
+
+    cosaInclude: {
+      label: string
       title: string
       items: {
-        num: string
+        key: string
         title: string
-        subtitle: string
-        desc: string
-      }[]
-    }
-
-    hardware: {
-      sectionLabel: string
-      title: string
-      specs: {
-        label: string
-        value: string
-      }[]
-      whyTitle: string
-      whyPoints: string[]
-    }
-
-    os: {
-      sectionLabel: string
-      title: string
-      description: string
-      features: {
-        title: string
-        description: string
-      }[]
-      privacyByDesignTitle: string
-      privacyByDesignItems: string[]
-      zeroGoogleTitle: string
-      zeroGoogleDescription: string
-    }
-
-    connect: {
-      sectionLabel: string
-      title: string
-      description: string
-      transportTitle: string
-      transportChannels: {
-        label: string
-        value: string
-      }[]
-      secureRelayTitle: string
-      secureRelayDescription: string
-      cryptoStackTitle: string
-      cryptoStack: {
-        name: string
-        role: string
-      }[]
-      identityTitle: string
-      identityDescription: string
-      featuresTitle: string
-      features: string[]
-    }
-
-    integration: {
-      sectionLabel: string
-      title: string
-      tableHeaders: {
-        from: string
-        to: string
-        synergy: string
-      }
-      rows: {
-        from: string
-        to: string
-        synergy: string
-      }[]
-    }
-
-    download: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
+        body: string
       }[]
     }
 
@@ -227,29 +160,36 @@ export interface Translations {
     }
 
     pricing: {
-      sectionLabel: string
+      label: string
       title: string
-      subtitle: string
-      bundle: {
-        label: string
+      packages: {
+        name: string
         price: string
-        period: string
-        items: string[]
+        description: string
+        highlighted: boolean
+      }[]
+      business: {
+        title: string
+        body: string
+        cta: string
       }
-      renewal: {
-        label: string
-        price: string
-        period: string
-        items: string[]
-      }
-      note: string
-      cta: string
     }
 
-    cta: {
+    metodologia: {
+      label: string
       title: string
-      description: string
-      button: string
+      body: string
+    }
+
+    disclaimer: {
+      // preserved from original — flexible shape
+      [key: string]: string
+    }
+
+    ctaFinale: {
+      title: string
+      body: string
+      cta: string
     }
   }
 
