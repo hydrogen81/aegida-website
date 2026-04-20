@@ -238,7 +238,7 @@ const it: Translations = {
         {
           name: 'Rinnovo annuale',
           price: '690 € / anno',
-          description: 'Aggiornamenti sicurezza, supporto cifrato continuato, re-hardening annuale, incident response entry-level',
+          description: 'Supporto cifrato continuato, re-hardening annuale, incident response entry-level',
           highlighted: false,
         },
       ],

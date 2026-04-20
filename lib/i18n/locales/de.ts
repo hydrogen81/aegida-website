@@ -186,7 +186,7 @@ const de: Translations = {
       title: 'Pacchetto primo anno e rinnovi',
       packages: [
         { name: 'Pacchetto primo anno', price: '3.900 €', description: 'Hardware + AEGIDA Connect + Inspector + 12 mesi supporto + formazione', highlighted: true },
-        { name: 'Rinnovo annuale', price: '690 € / anno', description: 'Aggiornamenti sicurezza, supporto cifrato, re-hardening annuale', highlighted: false },
+        { name: 'Rinnovo annuale', price: '690 € / anno', description: 'Supporto cifrato continuato, re-hardening annuale', highlighted: false },
       ],
       business: {
         title: 'Ordini multi-dispositivo',

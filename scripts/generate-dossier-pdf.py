@@ -398,7 +398,6 @@ SPECS_SW_ROWS = [
     ["Messaggistica", "ML-KEM FIPS 203 + ChaCha20"],
     ["Attestazione", "Hardware-backed Inspector"],
     ["Lock states", "BFU + AFU protetti"],
-    ["Security patch", "Mensili, validate AEGIDA"],
     ["Store app", "Non fornito (no Play Store)"],
     ["Account Google", "Non richiesto n\u00e9 configurato"],
     ["Telemetria", "Disabilitata"],
@@ -463,12 +462,12 @@ INVEST_INTRO = (
 )
 
 INVEST_P2 = (
-    "La struttura \u00e8 pensata per ridurre l'attrito iniziale: il primo anno "
-    "copre l'intero ciclo (hardware + setup + 12 mesi di operativit\u00e0). "
-    "Il rinnovo annuale mantiene il dispositivo aggiornato con le patch di "
-    "sicurezza validate, il re-hardening del sistema e la continuit\u00e0 del "
-    "supporto. Non rinnovare significa congelare il dispositivo all'ultimo "
-    "stato di configurazione, senza aggiornamenti."
+    "La struttura è pensata per ridurre l'attrito iniziale: il primo anno "
+    "copre l'intero ciclo (hardware + setup + 12 mesi di operatività). "
+    "Il rinnovo annuale garantisce la continuità del supporto cifrato, il "
+    "re-hardening del sistema e l'incident response di primo livello. Le "
+    "nuove generazioni del dispositivo sono proposte in sostituzione quando "
+    "rilasciate."
 )
 
 INVEST_MULTI = (

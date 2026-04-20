@@ -120,7 +120,7 @@ PRICING = [
      "3.900 €",
      "IVA inclusa"],
     ["Rinnovo annuale",
-     "Aggiornamenti sicurezza, supporto cifrato continuato, re-hardening annuale",
+     "Supporto cifrato continuato, re-hardening annuale, incident response",
      "690 € / anno",
      "IVA inclusa"],
     ["Ordini multi-dispositivo (5+)",
