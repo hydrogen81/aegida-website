@@ -39,7 +39,7 @@ export default function GatedDownload({
   const buttonClasses = {
     primary: 'bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-100 hover:bg-ink-200 transition-colors',
     secondary: 'text-ink-100 text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-400 hover:border-ink-200 transition-colors',
-    link: 'text-[14px] text-ink-100 border-b border-current pb-0.5',
+    link: 'text-[14px] underline-offset-4 hover:underline',
   }[variant]
 
   async function handleSubmit(e: FormEvent) {

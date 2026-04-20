@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useTranslations } from '@/lib/i18n/context'
+import GatedDownload from '@/components/GatedDownload'
 
 /* ------------------------------------------------------------------ */
 /*  COMPONENT                                                          */
@@ -39,12 +40,19 @@ export default function PrivacyPhoneContent() {
             >
               {t.privacyPhone.hero.ctaPrimary}
             </a>
-            <a
-              href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf"
-              className="text-ink-100 text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-400 hover:border-ink-200 transition-colors"
-            >
-              {t.privacyPhone.hero.ctaSecondary}
-            </a>
+            <GatedDownload
+              documentSlug="white-paper-ufed"
+              label="Scarica il white paper UFED"
+              variant="secondary"
+            />
+          </div>
+          <div className="mt-4">
+            <GatedDownload
+              documentSlug="privacy-phone-brochure"
+              label="Oppure scarica la brochure sintetica (3 pagine)"
+              variant="link"
+              className="text-[13px] text-ink-300 hover:text-ink-100"
+            />
           </div>
         </div>
       </section>
@@ -231,12 +239,12 @@ export default function PrivacyPhoneContent() {
           ) : null}
           <div className="mt-10 pt-10 border-t border-navy-line">
             <p className="text-sm text-ink-300 mb-3">Vuoi valutare il Privacy Phone offline?</p>
-            <a
-              href="/downloads/aegida-privacy-phone-dossier.pdf"
-              className="text-[14px] text-ink-100 border-b border-current pb-0.5"
-            >
-              Scarica il dossier completo (PDF, 9 pagine)
-            </a>
+            <GatedDownload
+              documentSlug="privacy-phone-dossier"
+              label="Scarica il dossier completo (PDF, 9 pagine)"
+              variant="link"
+              className="text-[14px] text-ink-100"
+            />
           </div>
         </div>
       </section>

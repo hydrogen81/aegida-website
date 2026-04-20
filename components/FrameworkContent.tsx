@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useTranslations } from '@/lib/i18n/context'
+import GatedDownload from '@/components/GatedDownload'
 
 export default function FrameworkContent() {
   const { locale } = useParams() as { locale: string }
@@ -35,6 +36,17 @@ export default function FrameworkContent() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* BROCHURE DOWNLOAD */}
+      <section className="px-6 md:px-10 pb-16">
+        <div className="max-w-[720px] mx-auto mt-8 pt-8 border-t border-navy-line">
+          <GatedDownload
+            documentSlug="framework-brochure"
+            label="Scarica la brochure Framework (PDF, 7 pagine)"
+            variant="secondary"
+          />
         </div>
       </section>
 

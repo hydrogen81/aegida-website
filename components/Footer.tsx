@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useTranslations } from '@/lib/i18n/context'
+import GatedDownload from '@/components/GatedDownload'
 
 export default function Footer() {
   const { locale } = useParams() as { locale: string }
@@ -32,8 +33,38 @@ export default function Footer() {
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] text-ink-400 mb-3">MATERIALI</div>
             <ul className="space-y-2.5">
-              <li><a href="/downloads/aegida-privacy-phone-dossier.pdf" className="text-[13px] text-ink-200 hover:text-ink-100">Dossier Privacy Phone</a></li>
-              <li><a href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf" className="text-[13px] text-ink-200 hover:text-ink-100">White paper UFED</a></li>
+              <li>
+                <GatedDownload
+                  documentSlug="privacy-phone-brochure"
+                  label="Brochure Privacy Phone"
+                  variant="link"
+                  className="text-[13px] text-ink-200 hover:text-ink-100"
+                />
+              </li>
+              <li>
+                <GatedDownload
+                  documentSlug="privacy-phone-dossier"
+                  label="Dossier tecnico Privacy Phone"
+                  variant="link"
+                  className="text-[13px] text-ink-200 hover:text-ink-100"
+                />
+              </li>
+              <li>
+                <GatedDownload
+                  documentSlug="framework-brochure"
+                  label="Brochure Framework"
+                  variant="link"
+                  className="text-[13px] text-ink-200 hover:text-ink-100"
+                />
+              </li>
+              <li>
+                <GatedDownload
+                  documentSlug="white-paper-ufed"
+                  label="White paper UFED"
+                  variant="link"
+                  className="text-[13px] text-ink-200 hover:text-ink-100"
+                />
+              </li>
             </ul>
           </div>
           <div>

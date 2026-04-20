@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useTranslations } from '@/lib/i18n/context'
 import BlogStrip from '@/components/BlogStrip'
+import GatedDownload from '@/components/GatedDownload'
 
 export default function HomeContent() {
   const { locale } = useParams() as { locale: string }
@@ -31,12 +32,11 @@ export default function HomeContent() {
             >
               {home.hero.ctaPrimary}
             </Link>
-            <a
-              href="/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf"
-              className="text-ink-100 text-sm font-medium px-[22px] py-[13px] rounded-sm border border-ink-400 hover:border-ink-200 transition-colors"
-            >
-              {home.hero.ctaSecondary}
-            </a>
+            <GatedDownload
+              documentSlug="white-paper-ufed"
+              label="Scarica il white paper UFED"
+              variant="secondary"
+            />
           </div>
         </div>
       </section>
