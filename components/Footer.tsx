@@ -1,133 +1,48 @@
 'use client'
-
 import Link from 'next/link'
-import { useTranslations, useLocale } from '@/lib/i18n/context'
-import ShieldSVG from './ShieldSVG'
+import { useParams } from 'next/navigation'
+import { useTranslations } from '@/lib/i18n/context'
 
 export default function Footer() {
+  const { locale } = useParams() as { locale: string }
   const t = useTranslations()
-  const { locale } = useLocale()
+  const f = t.footer
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-navy-900">
-      <div
-        className="h-px w-full"
-        style={{
-          background:
-            'linear-gradient(to right, transparent, #243055, transparent)',
-        }}
-      />
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        {/* Top row: logo + istituzionale */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <ShieldSVG size={40} />
-              <span className="font-display text-2xl font-bold uppercase tracking-wide-display text-white">
-                AEGIDA
-              </span>
-            </div>
-            <p className="text-sm text-gray-400 font-body max-w-xs">
-              {t.footer.istituzionale}
+    <footer className="bg-navy-deep border-t border-navy-line px-6 md:px-10 pt-12 pb-8">
+      <div className="max-w-[1100px] mx-auto">
+        <div className="grid md:grid-cols-3 gap-10 pb-8 border-b border-navy-line">
+          <div>
+            <div className="font-mono font-semibold tracking-[0.15em] text-[16px] text-ink-100 mb-3">AEGIDA</div>
+            <p className="text-[13px] text-ink-300 leading-[1.55] max-w-[420px]">
+              {f.istituzionale}
             </p>
           </div>
-
-          {/* Nav + Legale columns */}
-          <div className="flex gap-12">
-            {/* Nav column */}
-            <div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href={`/${locale}/privacy-phone/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.nav.privacyPhone}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/framework/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.nav.framework}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/chi-siamo/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.nav.chiSiamo}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/blog/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.nav.blog}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/contatti/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.nav.contatti}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legale column */}
-            <div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href={`/${locale}/privacy-policy/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.legale.privacyPolicy}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/cookie-policy/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.legale.cookiePolicy}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`/${locale}/conformita/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
-                  >
-                    {t.footer.legale.conformita}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <div className="font-mono text-[11px] tracking-[0.18em] text-ink-400 mb-3">PRODOTTI</div>
+            <ul className="space-y-2.5">
+              <li><Link href={`/${locale}/privacy-phone/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.nav.privacyPhone}</Link></li>
+              <li><Link href={`/${locale}/framework/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.nav.framework}</Link></li>
+              <li><Link href={`/${locale}/chi-siamo/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.nav.chiSiamo}</Link></li>
+              <li><Link href={`/${locale}/blog/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.nav.blog}</Link></li>
+              <li><Link href={`/${locale}/contatti/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.nav.contatti}</Link></li>
+            </ul>
+          </div>
+          <div>
+            <div className="font-mono text-[11px] tracking-[0.18em] text-ink-400 mb-3">LEGALE</div>
+            <ul className="space-y-2.5">
+              <li><Link href={`/${locale}/privacy-policy/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.legale.privacyPolicy}</Link></li>
+              <li><Link href={`/${locale}/cookie-policy/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.legale.cookiePolicy}</Link></li>
+              <li><Link href={`/${locale}/conformita/`} className="text-[13px] text-ink-200 hover:text-ink-100">{f.legale.conformita}</Link></li>
+            </ul>
           </div>
         </div>
-
-        {/* Payoff */}
-        <div className="border-t border-navy-800 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <p className="font-mono text-sm tracking-widest-mono text-gold-500 uppercase">
-            {t.footer.payoff}
-          </p>
-          <p className="text-xs text-gray-500 font-body">
-            {t.footer.copyright.replace('{year}', String(year))}
-          </p>
+        <div className="pt-5 flex flex-wrap justify-between gap-3 font-mono text-[11px] tracking-[0.12em] text-ink-400">
+          <span>{f.copyright.replace('{year}', year.toString())}</span>
+          <span>{f.payoff}</span>
         </div>
       </div>
-
-      <div
-        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
-      />
     </footer>
   )
 }
