@@ -39,7 +39,7 @@ TITLE = "AEGIDA Privacy Phone"
 SUBTITLE = "Smartphone rafforzato per chi lavora con informazioni sensibili. Documento informativo."
 KICKER = "DOSSIER · 2026"
 DATE = "aprile 2026"
-VERSION = "v1.0"
+VERSION = "v1.1"
 LOCALE = "IT"
 
 MANIFESTO_BODY = [
@@ -57,7 +57,8 @@ MANIFESTO_BODY = [
 
 CLAIM_UFED_PULL = (
     "&laquo;Cellebrite UFED 10.8, 17 aprile 2026: 0 dati utente estratti. "
-    "Metodologia e risultati nel white paper forense.&raquo;"
+    "Nessun contenuto applicativo (messaggi, foto, contatti, file) estratto; "
+    "solo metadati di sistema accessibili. Metodologia completa nel white paper.&raquo;"
 )
 
 COSA_RISOLVE_TITLE = "Cosa risolve AEGIDA Privacy Phone"
@@ -69,7 +70,12 @@ COSA_RISOLVE_BODY = [
 ]
 COSA_RISOLVE_LIST = [
     "<b>Estrazione forense:</b> il dispositivo resiste a Cellebrite UFED 10.8, "
-    "confermato da test documentato del 17 aprile 2026.",
+    "confermato da verifica forense indipendente (metodologia e risultati nel white paper).",
+    "<b>Emissioni compromettenti:</b> dispositivo testato secondo metodologia "
+    "TEMPEST per la resistenza a intercettazione di emissioni elettromagnetiche, "
+    "acustiche e ottiche non intenzionali. Test condotti da società italiana "
+    "indipendente secondo protocolli documentati (non costituiscono certificazione "
+    "SDIP-27 né accreditamento da ente terzo).",
     "<b>Compromissione OS:</b> sistema operativo derivato e indurito, "
     "verified boot con chiavi proprietarie AEGIDA, attestazione hardware "
     "verificabile.",
@@ -87,10 +93,11 @@ COSA_INCLUDE_ITEMS = [
      "AEGIDA, con verified boot attivo e chiavi proprietarie. Il dispositivo "
      "arriva al cliente già configurato e sigillato."),
     ("02", "AEGIDA Connect — messaggistica cifrata",
-     "Comunicazione diretta tra dispositivi AEGIDA con cifratura post-quantum "
-     "(ML-KEM FIPS 203). Nessun server centrale di instradamento: i messaggi "
-     "transitano solo tra i dispositivi coinvolti. Niente account, niente "
-     "metadati custoditi presso terzi."),
+     "Comunicazione diretta tra dispositivi AEGIDA con scambio di chiavi "
+     "post-quantum (ML-KEM FIPS 203) e cifratura dati ChaCha20-Poly1305. "
+     "Nessun server centrale di instradamento: i messaggi transitano solo tra "
+     "i dispositivi coinvolti. Niente account, niente metadati custoditi "
+     "presso terzi."),
     ("03", "AEGIDA Inspector — attestazione integrità",
      "App di verifica dell'integrità hardware, basata su fork di GrapheneOS "
      "Auditor (licenza GPLv3). Permette di confermare crittograficamente, "
@@ -129,6 +136,7 @@ SPECS_SOFTWARE_TABLE = [
     ["App preinstallate", "Connect, Inspector, browser hardened"],
     ["Root access", "Non disponibile al cliente"],
     ["Telemetria", "Disabilitata"],
+    ["TEMPEST", "Test secondo metodologia (non certificazione)"],
 ]
 
 PRICING_TITLE = "Pricing"
@@ -200,7 +208,7 @@ CONTATTI_BODY = (
 DISCLAIMER_BODY = (
     "Questo documento è redatto ai sensi del D.Lgs. 145/2007 in materia di "
     "pubblicità ingannevole e comparativa, e ai sensi dell'art. 70 della "
-    "Legge 633/1941. I marchi Google, Pixel, Tensor, Cellebrite, UFED, "
+    "Legge 633/1941. I marchi Google, Pixel, Tensor, Cellebrite, UFED, Turbo Link, "
     "GrapheneOS appartengono ai rispettivi proprietari e sono citati a "
     "scopo identificativo. AEGIDA non ha alcun rapporto commerciale con "
     "Google, Cellebrite o con la Fondazione GrapheneOS. La menzione di "
