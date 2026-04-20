@@ -24,3 +24,8 @@ define('TELEGRAM_WEBHOOK_SECRET', 'REPLACE-WITH-RANDOM-64-HEX-CHARS');
 // GitHub Personal Access Token (Settings → Developer → Tokens)
 define('GITHUB_TOKEN', 'github_pat_REPLACE');
 define('GITHUB_REPO', 'hydrogen81/aegida-website');
+
+// ID lista Brevo per lead magnet (download gate).
+// Crea una lista dedicata su Brevo → Marketing → Lists → Create list
+// e inserisci qui il suo ID numerico.
+define('BREVO_LEAD_LIST_ID', 0); // sostituire con ID reale
