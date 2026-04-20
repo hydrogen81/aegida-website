@@ -43,7 +43,7 @@ TITLE = "Cellebrite UFED 10.8 vs AEGIDA Privacy Phone"
 SUBTITLE = "17 aprile 2026. Metodologia e risultati."
 KICKER = "WHITE PAPER · UFED"
 DATE = "17 aprile 2026"
-VERSION = "v1.0"
+VERSION = "v1.1"
 LOCALE = "IT"
 
 EXECUTIVE_SUMMARY = [
@@ -142,12 +142,12 @@ BFU_BODY = [
     "rilevato il dispositivo come generica Google Pixel 10a e ha tentato "
     "l'identificazione del bootloader.",
 
-    "Il software ha esplorato le procedure <i>checkm8</i>, <i>EDL</i> e "
-    "<i>brute-force passcode</i>. Nessuna procedura disponibile nella versione "
-    "10.8.0.322 ha prodotto accesso ai dati utente. Il tentativo di "
-    "identificazione del bootloader ha restituito &laquo;no method found&raquo;, "
-    "indicando che la coppia verified boot + chiavi proprietarie non è "
-    "compatibile con i fingerprint noti a UFED.",
+    "Il software ha tentato le procedure UFED 10.8 disponibili per Google "
+    "Tensor: identificazione del bootloader, ingresso in modalità Recovery, "
+    "estrazione logica via protocolli standard. Tutte le procedure hanno "
+    "restituito &laquo;no method found&raquo;, indicando che la coppia verified boot + "
+    "chiavi proprietarie AEGIDA non è compatibile con i fingerprint noti a "
+    "questa versione di UFED.",
 
     "L'unica estrazione riuscita è stata la lettura di metadati di sistema "
     "(versione Android modificata, build ID AEGIDA, stato verified boot). "
@@ -163,10 +163,11 @@ AFU_BODY = [
     "estrazione logica e fisica.",
 
     "UFED ha identificato il dispositivo sbloccato ma ha restituito "
-    "&laquo;passcode failed&raquo; sulle procedure di bypass della protezione "
-    "ADB/fastboot. L'accesso via protocolli standard è bloccato dalla "
-    "configurazione AEGIDA: ADB è disabilitato, fastboot è bloccato da "
-    "verified boot, le chiavi USB debugging sono state rigettate.",
+    "&laquo;passcode failed&raquo; sulle procedure di bypass. Il motivo tecnico: la "
+    "configurazione AEGIDA disabilita ADB di default, fastboot è inibito da "
+    "verified boot con chiavi proprietarie, e le richieste di USB debugging "
+    "sono rigettate a livello di sistema operativo. Nessuno dei vettori di "
+    "ingresso standard disponibili a UFED 10.8 è applicabile.",
 
     "Anche in modalità AFU con codice corretto, UFED non ha estratto dati "
     "applicativi. Il test è stato chiuso dall'operatore dopo aver esaurito le "
@@ -184,9 +185,13 @@ RISULTATI_TABLE = [
     ["AFU (Unlocked)", "Estrazione fisica", "bloccata"],
 ]
 RISULTATI_NOTE = (
-    "In entrambe le modalità, <b>0 dati utente sono stati estratti</b>. "
-    "Nessun messaggio, contatto, foto, documento applicativo ha lasciato "
-    "il dispositivo durante l'intera sessione di test."
+    "In entrambe le modalità, <b>0 dati utente estratti</b>: nessun "
+    "messaggio, contatto, foto, documento applicativo ha lasciato il "
+    "dispositivo durante l'intera sessione di test. I metadati di "
+    "sistema (build ID, versione OS, stato verified boot) sono risultati "
+    "accessibili come accade per qualsiasi dispositivo Android; non "
+    "contengono informazioni dell'utente e non costituiscono dati "
+    "applicativi in senso forense."
 )
 
 IMPLICAZIONI_TITLE = "Implicazioni per il modello di minaccia"
@@ -217,12 +222,16 @@ LIMITAZIONI_BODY = [
     "disponibili in 10.8. Ripeteremo il test con cadenza periodica e "
     "pubblicheremo le nuove versioni di questo documento.",
 
-    "Il test non coinvolge strumentazione di laboratorio statale avanzata "
-    "(TEMPEST, glitching, chip-off, ISP, cold boot). Un attaccante "
-    "statale con risorse ingenti e accesso fisico prolungato al dispositivo "
-    "può impiegare tecniche diverse da quelle incluse in UFED commerciale. Il "
-    "Privacy Phone resiste a UFED, non a un intero laboratorio forense "
-    "avversario in modalità white-glove.",
+    "Il test impiega solo UFED commerciale 10.8.0.322. Non sono state tentate "
+    "tecniche di laboratorio statale quali: analisi di emissioni "
+    "elettromagnetiche e acustiche compromettenti (metodologia TEMPEST / "
+    "SDIP-27), glitching hardware (voltage, electromagnetic, laser fault "
+    "injection), cold boot, chip-off, ISP, o exploit 0-day non pubblici. Un "
+    "attaccante con accesso fisico prolungato e risorse di laboratorio "
+    "avanzate potrebbe applicare metodi diversi da quelli inclusi in UFED. "
+    "Nota: AEGIDA ha eseguito separatamente test TEMPEST sul dispositivo "
+    "(descritti in documentazione separata); non sono oggetto di questo "
+    "white paper.",
 
     "Il test non è stato condotto sotto supervisione di un ente "
     "terzo certificatore (es. ACN, ENISA). Una certificazione formale è un "
@@ -253,7 +262,7 @@ DISCLAIMER_BODY = (
     "pubblicità ingannevole e comparativa, e ai sensi dell'art. 70 della "
     "Legge 633/1941 sul diritto d'autore in relazione al diritto di "
     "citazione. I marchi Cellebrite, UFED, Inseyets, Turbo Link, iPhone, "
-    "iOS, Samsung, Galaxy, Pixel, Android, GrapheneOS appartengono ai "
+    "iOS, Samsung, Galaxy, Pixel, Tensor, Android, GrapheneOS appartengono ai "
     "rispettivi proprietari e sono citati a solo scopo identificativo. "
     "AEGIDA non ha alcun rapporto commerciale con Cellebrite, Apple, "
     "Samsung o Google. La menzione di tali marchi non implica sponsorship, "
