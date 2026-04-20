@@ -20,18 +20,12 @@ export default function ArticleContent({ slug }: { slug: string }) {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative pt-28 pb-12 md:pt-36 md:pb-16"
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 60% at 50% 20%, rgba(26,37,64,0.7) 0%, transparent 60%), #0a0e1a',
-        }}
-      >
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 pb-12 md:pt-36 md:pb-16">
+        <div className="mx-auto max-w-[720px] px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <Link
               href={`/${locale}/blog/`}
-              className="font-mono text-xs text-slate-500 hover:text-gold-400 transition-colors duration-200 uppercase tracking-wider-mono"
+              className="font-mono text-[11px] text-ink-400 hover:text-ink-100 transition-colors duration-200 uppercase tracking-[0.15em]"
             >
               &larr; {BLOG_UI.backToBlog[locale]}
             </Link>
@@ -39,21 +33,21 @@ export default function ArticleContent({ slug }: { slug: string }) {
 
           <div className="flex items-center gap-3 mb-4">
             <CategoryBadge category={article.category} locale={locale} />
-            <span className="font-mono text-[10px] text-slate-500">
+            <span className="font-mono text-[10px] text-ink-400">
               {readTime} {BLOG_UI.minRead[locale]}
             </span>
           </div>
 
-          <h1 className="font-display text-2xl md:text-4xl font-bold text-slate-100 tracking-wide-display leading-tight">
+          <h1 className="text-[36px] md:text-[48px] font-display font-medium leading-[1.1] tracking-[-0.015em] text-ink-100">
             {data.title}
           </h1>
 
           <div className="mt-4 flex items-center gap-4">
-            <span className="font-mono text-xs text-slate-500">
+            <span className="font-mono text-[11px] text-ink-400">
               {formatDate(article.date, locale)}
             </span>
-            <span className="text-navy-600">|</span>
-            <span className="font-mono text-xs text-slate-500">
+            <span className="text-navy-line">|</span>
+            <span className="font-mono text-[11px] text-ink-400">
               {article.author}
             </span>
           </div>
@@ -62,27 +56,29 @@ export default function ArticleContent({ slug }: { slug: string }) {
 
       {/* Article body */}
       <section className="py-12 md:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <ContentRenderer blocks={data.body} />
+        <div className="mx-auto max-w-[720px] px-4 sm:px-6 lg:px-8">
+          <div className="text-ink-200 leading-[1.65]">
+            <ContentRenderer blocks={data.body} />
+          </div>
 
           {/* Share + Back */}
-          <div className="mt-16 pt-8 border-t border-navy-700 flex items-center justify-between">
+          <div className="mt-16 pt-8 border-t border-navy-line flex items-center justify-between">
             <Link
               href={`/${locale}/blog/`}
-              className="font-display text-sm uppercase tracking-wide-display text-gold-400 hover:text-gold-300 transition-colors duration-200"
+              className="font-mono text-[11px] uppercase tracking-[0.15em] text-ink-300 hover:text-ink-100 transition-colors duration-200"
             >
               &larr; {BLOG_UI.backToBlog[locale]}
             </Link>
 
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs text-slate-500 uppercase tracking-wider-mono">
+              <span className="font-mono text-[11px] text-ink-400 uppercase tracking-[0.15em]">
                 {BLOG_UI.shareTitle[locale]}
               </span>
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.aegida-systems.com/${locale}/blog/${article.slug}/`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-gold-400 transition-colors duration-200"
+                className="text-ink-400 hover:text-ink-100 transition-colors duration-200"
                 aria-label="Share on LinkedIn"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -93,7 +89,7 @@ export default function ArticleContent({ slug }: { slug: string }) {
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.aegida-systems.com/${locale}/blog/${article.slug}/`)}&text=${encodeURIComponent(data.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-gold-400 transition-colors duration-200"
+                className="text-ink-400 hover:text-ink-100 transition-colors duration-200"
                 aria-label="Share on X"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

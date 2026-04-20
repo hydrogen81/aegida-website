@@ -4,7 +4,7 @@ import type { ContentBlock } from '@/lib/blog/types'
 
 function CheckIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold-400 shrink-0 mt-1">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-ink-300 shrink-0 mt-1">
       <polyline points="20 6 9 17 4 12" />
     </svg>
   )
@@ -17,27 +17,27 @@ export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) 
         switch (block.type) {
           case 'paragraph':
             return (
-              <p key={i} className="font-body text-slate-300 leading-relaxed">
+              <p key={i} className="text-ink-200 leading-[1.65]">
                 {block.text}
               </p>
             )
           case 'heading':
             if (block.level === 2) {
               return (
-                <h2 key={i} className="font-display text-xl md:text-2xl font-bold uppercase text-slate-100 tracking-wide-display mt-10 mb-3">
+                <h2 key={i} className="text-xl md:text-2xl font-display font-medium text-ink-100 mt-10 mb-3">
                   {block.text}
                 </h2>
               )
             }
             if (block.level === 3) {
               return (
-                <h3 key={i} className="font-display text-lg font-bold uppercase text-slate-100 tracking-wide-display mt-8 mb-2">
+                <h3 key={i} className="text-lg font-display font-medium text-ink-100 mt-8 mb-2">
                   {block.text}
                 </h3>
               )
             }
             return (
-              <h4 key={i} className="font-display text-base font-bold text-slate-200 mt-6 mb-2">
+              <h4 key={i} className="text-base font-medium text-ink-100 mt-6 mb-2">
                 {block.text}
               </h4>
             )
@@ -46,8 +46,8 @@ export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) 
               return (
                 <ol key={i} className="space-y-2 pl-1">
                   {block.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3 font-body text-sm text-slate-300 leading-relaxed">
-                      <span className="font-mono text-xs text-gold-400 mt-0.5 shrink-0">{j + 1}.</span>
+                    <li key={j} className="flex items-start gap-3 text-sm text-ink-200 leading-[1.65]">
+                      <span className="font-mono text-xs text-ink-400 mt-0.5 shrink-0">{j + 1}.</span>
                       {item}
                     </li>
                   ))}
@@ -57,7 +57,7 @@ export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) 
             return (
               <ul key={i} className="space-y-2 pl-1">
                 {block.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-3 font-body text-sm text-slate-300 leading-relaxed">
+                  <li key={j} className="flex items-start gap-3 text-sm text-ink-200 leading-[1.65]">
                     <CheckIcon />
                     {item}
                   </li>
@@ -66,22 +66,22 @@ export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) 
             )
           case 'quote':
             return (
-              <blockquote key={i} className="border-l-3 border-gold-500 pl-5 py-2 my-6">
-                <p className="font-body text-slate-300 italic leading-relaxed">{block.text}</p>
+              <blockquote key={i} className="border-l-2 border-steel pl-5 py-2 my-6">
+                <p className="text-ink-200 italic leading-[1.65]">{block.text}</p>
                 {block.author && (
-                  <p className="mt-2 font-mono text-xs text-slate-500">— {block.author}</p>
+                  <p className="mt-2 font-mono text-xs text-ink-400">— {block.author}</p>
                 )}
               </blockquote>
             )
           case 'callout': {
             const colors = {
-              info: 'border-accent-blue bg-accent-blue/5',
-              warning: 'border-danger-red bg-danger-red/5',
-              tip: 'border-success-green bg-success-green/5',
+              info: 'border-ink-300 bg-navy-card',
+              warning: 'border-ink-300 bg-navy-card',
+              tip: 'border-steel bg-navy-card',
             }
             return (
-              <div key={i} className={`border-l-4 ${colors[block.variant]} rounded-r-lg px-5 py-4 my-6`}>
-                <p className="font-body text-sm text-slate-300 leading-relaxed">{block.text}</p>
+              <div key={i} className={`border-l-2 ${colors[block.variant]} rounded-r px-5 py-4 my-6`}>
+                <p className="text-sm text-ink-200 leading-[1.65]">{block.text}</p>
               </div>
             )
           }
