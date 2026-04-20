@@ -475,37 +475,25 @@ INVEST_MULTI = (
 # ---- 9. PROCESSO -------------------------------------------------------------
 
 PROCESSO_INTRO = (
-    "L'acquisto \u00e8 un percorso breve: quattro step, dal primo contatto alla "
-    "consegna. Non \u00e8 prevista nessuna registrazione, nessun account e nessun "
-    "impegno economico prima dell'emissione del preventivo definitivo."
+    "Tre passaggi, dal primo contatto alla consegna. Nessuna registrazione, "
+    "nessun account, nessun impegno economico prima del preventivo."
 )
 
 PROCESSO_STEPS = [
-    ("01", "Colloquio preliminare",
-     "Scrivere via modulo sul sito o direttamente a info@aegida-systems.com. "
-     "Si fissa una videoconferenza di 30-45 minuti per capire il caso d'uso, "
-     "il modello di minaccia e le eventuali esigenze di formazione. "
-     "Nessun impegno, nessun pagamento in questa fase."),
+    ("01", "Colloquio",
+     "Una videoconferenza di 30-45 minuti per capire il caso d'uso, concordare "
+     "la configurazione ed emettere il preventivo. Si scrive a "
+     "info@aegida-systems.com o dal modulo del sito."),
 
-    ("02", "Configurazione concordata",
-     "Se il prodotto \u00e8 adatto, si definisce insieme la configurazione: "
-     "impostazioni specifiche, eventuale MDM, livello di formazione, SLA di "
-     "supporto. Il preventivo definitivo viene emesso al termine di questo "
-     "step."),
+    ("02", "Consegna",
+     "Dispositivo configurato e sigillato a Roma. Spedizione con corriere "
+     "tracciato e assicurato previo bonifico, oppure ritiro in sede con firma "
+     "di presa in carico."),
 
-    ("03", "Consegna",
-     "Il dispositivo viene configurato e sigillato presso AEGIDA a Roma. "
-     "La spedizione avviene tramite corriere tracciato e assicurato, previo "
-     "bonifico anticipato. In alternativa \u00e8 possibile il ritiro diretto "
-     "presso la sede AEGIDA a Roma: il cliente firma la presa in carico al "
-     "momento del ritiro. In entrambi i casi il dispositivo arriva in "
-     "packaging sigillato con verifica d'integrit\u00e0."),
-
-    ("04", "Formazione utente",
-     "Sessione di 1-2 ore in remoto (o in sede per ordini multi-dispositivo). "
-     "Argomenti: uso operativo di Connect e Inspector, gestione sicura dei "
-     "codici di sblocco, procedure in caso di perdita o sequestro del "
-     "dispositivo."),
+    ("03", "Formazione",
+     "Sessione di 1-2 ore in remoto (in sede per ordini multi-dispositivo): "
+     "uso di Connect e Inspector, gestione dei codici, procedure in caso di "
+     "perdita o sequestro."),
 ]
 
 # ---- 10. CHI SIAMO + CONTATTI + DISCLAIMER -----------------------------------
