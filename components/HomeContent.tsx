@@ -44,7 +44,7 @@ export default function HomeContent() {
       {/* PROOF STRIP */}
       <section className="border-y border-navy-line">
         <div className="max-w-[1100px] mx-auto px-6 md:px-10 py-5 flex flex-wrap gap-x-12 gap-y-2 font-mono text-[11px] md:text-[12px] tracking-wide text-ink-300">
-          <span><b className="text-ink-100 font-medium">Strumento</b> · Cellebrite UFED 10.8.0.322 + Turbo Link</span>
+          <span><b className="text-ink-100 font-medium">Metodologia</b> · UFED 10.8.0.322 + TEMPEST (emissioni)</span>
           <span><b className="text-ink-100 font-medium">Modalità</b> · BFU + AFU</span>
           <span><b className="text-ink-100 font-medium">Esito</b> · 0 dati utente estratti</span>
           <span><b className="text-ink-100 font-medium">Operatore</b> · IMCST certificato · società terza</span>
@@ -147,7 +147,7 @@ export default function HomeContent() {
             {home.ctaFinale.subtitle}
           </p>
           <Link
-            href={`/${locale}/contatti/`}
+            href={`/${locale}/privacy-phone/`}
             className="inline-block bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm hover:bg-ink-200 transition-colors"
           >
             {home.ctaFinale.cta}
