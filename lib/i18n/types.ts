@@ -276,6 +276,7 @@ export interface Translations {
     team: {
       title: string
       body: string
+      members: Array<{ name: string; role: string }>
     }
     ctaFinale: {
       title: string

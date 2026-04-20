@@ -59,10 +59,18 @@ export default function AboutContent() {
 
       {/* TEAM */}
       <section className="px-6 md:px-10 py-16 border-t border-navy-line">
-        <div className="max-w-[720px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">IL TEAM</div>
           <h2 className="text-[22px] font-display font-medium text-ink-100 mb-3 tracking-[-0.01em]">{a.team.title}</h2>
-          <p className="text-[16px] text-ink-200 leading-[1.65]">{a.team.body}</p>
+          <p className="text-[16px] text-ink-200 leading-[1.65] mb-8 max-w-[720px]">{a.team.body}</p>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {a.team.members.map((m) => (
+              <div key={m.name} className="bg-navy-card border border-navy-line rounded p-6">
+                <div className="font-mono text-[11px] tracking-[0.15em] text-steel-hi mb-2">{m.role}</div>
+                <h3 className="text-[18px] font-display font-medium text-ink-100 tracking-[-0.01em]">{m.name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

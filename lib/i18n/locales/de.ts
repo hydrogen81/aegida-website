@@ -246,7 +246,12 @@ const de: Translations = {
     },
     team: {
       title: 'Il team',
-      body: '[DA CONFERMARE: nomi e ruoli del team H4R/AEGIDA. Mantenere registro sobrio: niente claim motivazionali, solo nome, ruolo e, se utile, una riga di background professionale rilevante.]',
+      body: 'Il team operativo di H4R.',
+      members: [
+        { name: 'Giuseppe Savio', role: 'CEO' },
+        { name: 'Daniele Fabro', role: 'CTO' },
+        { name: 'Fabrizio Mariani', role: 'COO' },
+      ],
     },
     ctaFinale: {
       title: 'Parliamone',
