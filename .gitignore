@@ -21,3 +21,4 @@ scripts/*.log
 
 .superpowers/
 .redesign-mockups/
+__pycache__/
