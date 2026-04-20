@@ -189,248 +189,38 @@ const de: Translations = {
   /* ================================================================ */
   /*  Framework page                                                   */
   /* ================================================================ */
-  framework: {
+    framework: {
     hero: {
-      sectionLabel: 'FRAMEWORK',
       title: 'AEGIDA Framework',
-      tagline: 'Post-Quantum-Sicherheit fuer Kritische Infrastrukturen',
-      description:
-        'AEGIDA Framework schuetzt die WAN-Kommunikation Kritischer Infrastrukturen mit Post-Quantum-Kryptografie (ML-KEM, NIST FIPS 203), einer Stealth-Schicht, die den Datenverkehr von normalen HTTPS-Sitzungen ununterscheidbar macht, und Zero-Trust-Zugangskontrolle fuer OEM-Lieferanten. Entwickelt fuer Energie, Gesundheitswesen, Verkehr und oeffentliche Verwaltung.',
-      ctaDownload: 'Technisches Dokument herunterladen',
-      ctaContact: 'PoC anfragen',
+      tagline: 'Piattaforma di sicurezza per le reti di comunicazione di infrastrutture critiche.',
     },
 
-    problem: {
-      sectionLabel: 'DAS PROBLEM',
-      title: 'Kommunikationsnetzwerke sind die Angriffsflaeche',
-      description:
-        'Kritische Infrastrukturen sind auf WAN-Netzwerke fuer Fernsteuerung, Telemetrie und Wartung angewiesen. Diese Verbindungen laufen ueber das oeffentliche Internet und sind Abhoerung, Targeting und Stoerungen ausgesetzt. Traditionelle Loesungen (VPN IPSec, WireGuard) bieten keinen Post-Quantum-Schutz, verschleiern den Datenverkehr nicht und verwalten keine Lieferantenzugaenge.',
-      threats: [
-        {
-          type: 'Abhoeren',
-          detail:
-            'Store-now-decrypt-later: Heute verschluesselte Daten, morgen mit Quantencomputern entschluesselbar.',
-        },
-        {
-          type: 'Lieferanten-Kompromittierung',
-          detail:
-            'Ukraine 2015, Colonial Pipeline 2021, Synnovis UK 2024, SolarWinds 2020.',
-        },
-        {
-          type: 'Identifizierung / Targeting',
-          detail:
-            'Erkennbare VPN-Muster: IKEv2 Port 500/4500, WireGuard festes UDP, TLS-Fingerprint.',
-        },
-        {
-          type: 'Gezielte Stoerung',
-          detail:
-            'NATO/ENISA/CISA-Szenarien: koordinierte Angriffe auf Energie, Wasser, Verkehr.',
-        },
-      ],
-      tableHeaders: {
-        threat: 'Bedrohung',
-        detail: 'Detail',
-      },
+    cosaE: {
+      title: "Cos'è",
+      body: "AEGIDA Framework è una piattaforma pensata per le reti di comunicazione di infrastrutture critiche. Combina crittografia post-quantum (ML-KEM, NIST FIPS 203), offuscamento del traffico e controllo accessi zero-trust per fornitori OEM. Progettato per energia, sanità, trasporti e pubblica amministrazione.",
     },
 
-    layers: {
-      sectionLabel: 'ARCHITEKTUR',
-      title: 'Drei Schutzschichten',
-      layerA: {
-        label: 'Layer A',
-        name: 'ML-KEM (FIPS 203)',
-        subtitle: 'Post-Quantum Key Exchange',
-        details: [
-          'Standard NIST FIPS 203 (August 2024)',
-          'ML-KEM (ehem. Kyber-768)',
-          'Klassische Sicherheit aequivalent zu AES-192',
-          'Resistent gegen Shors Algorithmus',
-        ],
-      },
-      layerB: {
-        label: 'Layer B',
-        name: 'AES-256-GCM',
-        subtitle: 'Symmetric Authenticated Encryption',
-        details: [
-          'Authentifiziertes AES-256-GCM',
-          'Durchsatz: 350 Mbps',
-          'Schluesselableitung aus Layer A',
-          'Automatische Rotation, Forward Secrecy',
-        ],
-      },
-      layerC: {
-        label: 'Layer C',
-        name: 'Stealth HTTPS Obfuscation',
-        subtitle: 'Anti-DPI Traffic Camouflage',
-        details: [
-          'Port 443/TCP, identisch mit HTTPS',
-          'Umgeht Deep Packet Inspection',
-          'Keine Verkehrsanalyse moeglich',
-          'Unsichtbar fuer Firewalls und IDS',
-        ],
-      },
+    perChi: {
+      title: 'A chi serve',
+      body: 'Agli operatori di servizi essenziali che devono rispondere a NIS2, DORA e ai requisiti ACN, e che non possono permettersi superfici di attacco sulle reti WAN di controllo e telemetria.',
     },
 
-    stats: {
-      items: [
-        { value: '350', unit: 'Mbps', label: 'Verschluesselter Durchsatz' },
-        { value: '24/7', unit: '', label: 'Luefterlos, wartungsfrei' },
-        { value: '0%', unit: '', label: 'DPI-Erkennungsrate' },
-        { value: '<5', unit: 'ms', label: 'Overhead auf Glasfaser' },
-      ],
-    },
-
-    comparison: {
-      sectionLabel: 'VERGLEICH',
-      title: 'AEGIDA vs. bestehende Loesungen',
-      headers: ['', 'IPSec/IKEv2', 'WireGuard', 'ZTNA', 'SD-WAN', 'AEGIDA'],
-      rows: [
-        { label: 'Symmetrische Verschluesselung' },
-        { label: 'PQC Key Exchange' },
-        { label: 'Traffic Obfuscation / DPI Resistance' },
-        { label: 'Zero-Trust Access OEM' },
-        { label: 'Kein Fingerprint' },
-        { label: 'Forward Secrecy mit PQC' },
-      ],
-      note: 'AEGIDA ersetzt nicht, sondern ergaenzt. Es arbeitet auf WAN-Transportebene ohne Aenderungen am internen Netzwerk.',
-    },
-
-    threats: {
-      sectionLabel: 'THREAT LANDSCAPE',
-      title: 'Dokumentierte Angriffe auf Kritische Infrastrukturen',
-      cards: [
-        {
-          year: '2016',
-          name: 'INDUSTROYER / CRASHOVERRIDE',
-          location: 'Ukraine',
-          description:
-            'Erste Malware, die speziell fuer Angriffe auf Stromnetze entwickelt wurde. Stromausfall in Kiew durch manipulierte ICS-Protokolle.',
-        },
-        {
-          year: '2017',
-          name: 'TRITON / TRISIS',
-          location: 'Petrochemie',
-          description:
-            'Angriff auf Triconex-SIS-Sicherheitssysteme. Ziel: Deaktivierung physischer Schutzvorrichtungen in einer petrochemischen Anlage.',
-        },
-        {
-          year: '2022',
-          name: 'PIPEDREAM / INCONTROLLER',
-          location: 'Sandworm / GRU',
-          description:
-            'Modulares Toolkit fuer Angriffe auf Schneider-PLC, OMRON und OPC-UA-Server. Faehigkeit zur gross angelegten Stoerung.',
-        },
-        {
-          year: 'Ongoing',
-          name: 'Store-Now-Decrypt-Later',
-          location: 'NSA, NCSC UK, BSI',
-          description:
-            'Massenhafte Abhoerung verschluesselten Datenverkehrs zur kuenftigen Entschluesselung mit Quantencomputern. Von Behoerden bestaetigte Bedrohung.',
-        },
-      ],
-    },
-
-    nis2: {
-      sectionLabel: 'NIS2',
-      title: 'NIS2-Konformitaet',
-      badgeTitle: 'NIS2-Richtlinie \u2014 NIS2UmsuCG',
-      badgeSubtitle:
-        'Sanktionen bis zu 2 % des weltweiten Jahresumsatzes bei Nichtkonformitaet.',
-      tableHeaders: {
-        requirement: 'NIS2-Anforderung',
-        coverage: 'AEGIDA-Abdeckung',
-      },
-      rows: [
-        {
-          article: 'Art. 21 Kryptografie',
-          mapping:
-            'ML-KEM (FIPS 203) + AES-256-GCM mit Forward Secrecy und automatischer Schluesselrotation.',
-        },
-        {
-          article: 'Art. 21 Risikomanagement',
-          mapping:
-            'Redundantes Mesh, automatisches Failover, kein Single Point of Failure.',
-        },
-        {
-          article: 'Art. 21 Lieferkette',
-          mapping:
-            'Zero-Trust-OEM-Zugaenge: Authentifizierung, Autorisierung und Protokollierung pro Sitzung.',
-        },
-        {
-          article: 'Artt. 20\u201323 Governance',
-          mapping:
-            'Strukturiertes Logging, vollstaendiger Audit Trail, automatisierte Berichterstellung.',
-        },
-      ],
+    stato: {
+      title: 'Stato 2026',
+      body: "Il Framework è in fase di qualificazione presso l'Agenzia per la Cybersicurezza Nazionale. Sono in corso test con un numero limitato di organizzazioni selezionate. Non è ancora disponibile per l'acquisto diretto.",
     },
 
     roadmap: {
-      sectionLabel: 'ZERTIFIZIERUNGEN',
-      title: 'Zertifizierungs-Roadmap',
-      items: [
-        { label: 'NIST FIPS 203', status: 'Implementiert' },
-        { label: 'FIPS 140-3', status: 'In Bearbeitung' },
-        { label: 'Common Criteria EAL4+', status: 'In Bearbeitung' },
-        { label: 'BSI-Qualifizierung', status: 'In Bearbeitung' },
-      ],
-      statusImplemented: 'Implementiert',
-      statusInProgress: 'In Bearbeitung',
+      title: 'Roadmap 2027-2028',
+      body: 'Il lancio commerciale è previsto nel biennio 2027-2028, a seguito del completamento del percorso di qualificazione e delle certificazioni FIPS 140-3 e Common Criteria EAL4+.',
     },
 
-    poc: {
-      sectionLabel: 'PROOF OF CONCEPT',
-      title: 'Proof of Concept',
-      description:
-        'Der PoC-Prozess gliedert sich in drei Phasen zur Validierung der Leistung und Integration von AEGIDA in Ihre Infrastruktur.',
-      phases: [
-        {
-          phase: '1',
-          title: 'Setup',
-          description:
-            'Anforderungsanalyse, Appliance-Konfiguration und Baseline-Definition.',
-        },
-        {
-          phase: '2',
-          title: 'Deployment',
-          description:
-            'Installation in der Produktionsumgebung und Integration in die bestehende Infrastruktur.',
-        },
-        {
-          phase: '3',
-          title: 'Analyse',
-          description:
-            'Metriken-Erfassung, vollstaendiger technischer Bericht und Empfehlungen fuer den Roll-out.',
-        },
-      ],
-    },
-
-    download: {
-      sectionLabel: 'DOKUMENTATION',
-      title: 'Dokumentation herunterladen',
-      items: [
-        {
-          title: 'Framework Broschure',
-          description: 'Kommerzielle Uebersicht und Vorteile des AEGIDA Framework.',
-        },
-        {
-          title: 'Allgemeines Briefing',
-          description: 'Fuer den Sicherheitsverantwortlichen.',
-        },
-        {
-          title: 'Technisches Dokument',
-          description: 'Detaillierte Architektur und Proof of Concept.',
-        },
-      ],
-    },
-
-    cta: {
-      title: 'Bereit fuer eine technische Bewertung?',
-      description:
-        'Kontaktieren Sie unser Team fuer eine kostenlose technische Bewertung Ihrer Infrastruktur und erfahren Sie, wie AEGIDA Framework Ihre kritische Kommunikation schuetzen kann.',
-      button: 'Technische Bewertung anfragen',
+    ctaFinale: {
+      title: 'Interessato a un pilot?',
+      body: "Se la tua organizzazione rientra fra gli operatori di servizi essenziali e vuole valutare AEGIDA Framework in anticipo rispetto al lancio, contattaci per discutere le condizioni di un programma pilot riservato.",
+      cta: 'Richiedi contatto per un pilot',
     },
   },
-
   /* ================================================================ */
   /*  AegidaConnect page                                               */
   /* ================================================================ */

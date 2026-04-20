@@ -198,130 +198,34 @@ export interface Translations {
   /* ================================================================ */
   framework: {
     hero: {
-      sectionLabel: string
       title: string
       tagline: string
-      description: string
-      ctaDownload: string
-      ctaContact: string
     }
 
-    problem: {
-      sectionLabel: string
+    cosaE: {
       title: string
-      description: string
-      threats: {
-        type: string
-        detail: string
-      }[]
-      tableHeaders: {
-        threat: string
-        detail: string
-      }
+      body: string
     }
 
-    layers: {
-      sectionLabel: string
+    perChi: {
       title: string
-      layerA: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
-      layerB: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
-      layerC: {
-        label: string
-        name: string
-        subtitle: string
-        details: string[]
-      }
+      body: string
     }
 
-    stats: {
-      items: {
-        value: string
-        unit: string
-        label: string
-      }[]
-    }
-
-    comparison: {
-      sectionLabel: string
+    stato: {
       title: string
-      headers: string[]
-      rows: {
-        label: string
-      }[]
-      note: string
-    }
-
-    threats: {
-      sectionLabel: string
-      title: string
-      cards: {
-        year: string
-        name: string
-        location: string
-        description: string
-      }[]
-    }
-
-    nis2: {
-      sectionLabel: string
-      title: string
-      badgeTitle: string
-      badgeSubtitle: string
-      tableHeaders: {
-        requirement: string
-        coverage: string
-      }
-      rows: {
-        article: string
-        mapping: string
-      }[]
+      body: string
     }
 
     roadmap: {
-      sectionLabel: string
       title: string
-      items: {
-        label: string
-        status: string
-      }[]
-      statusImplemented: string
-      statusInProgress: string
+      body: string
     }
 
-    poc: {
-      sectionLabel: string
+    ctaFinale: {
       title: string
-      description: string
-      phases: {
-        phase: string
-        title: string
-        description: string
-      }[]
-    }
-
-    download: {
-      sectionLabel: string
-      title: string
-      items: {
-        title: string
-        description: string
-      }[]
-    }
-
-    cta: {
-      title: string
-      description: string
-      button: string
+      body: string
+      cta: string
     }
   }
 
