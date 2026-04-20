@@ -5,15 +5,17 @@ const en: Translations = {
   /*  Navigation                                                       */
   /* ================================================================ */
   nav: {
-    prodotti: 'Products',
     privacyPhone: 'Privacy Phone',
     framework: 'Framework',
-    aegidaConnect: 'Connect',
+    blog: 'Blog',
+    chiSiamo: 'About us',
+    contatti: 'Contact',
+    richiedi: 'Request a meeting',
+    // deprecated keys kept for transitional compatibility
+    prodotti: 'Products',
     settori: 'Sectors',
     conformita: 'Compliance',
-    blog: 'Blog',
-    contatti: 'Contact',
-    richiedi: 'Request Briefing',
+    aegidaConnect: 'Connect',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },

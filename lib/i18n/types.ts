@@ -7,15 +7,17 @@ export interface Translations {
   /*  Navigation                                                       */
   /* ================================================================ */
   nav: {
-    prodotti: string
     privacyPhone: string
     framework: string
-    aegidaConnect: string
-    settori: string
-    conformita: string
     blog: string
+    chiSiamo: string
     contatti: string
     richiedi: string
+    // deprecated keys kept for transitional compatibility
+    prodotti: string
+    settori: string
+    conformita: string
+    aegidaConnect: string
     openMenu: string
     closeMenu: string
   }

@@ -5,15 +5,17 @@ const it: Translations = {
   /*  Navigation                                                       */
   /* ================================================================ */
   nav: {
-    prodotti: 'Prodotti',
     privacyPhone: 'Privacy Phone',
     framework: 'Framework',
-    aegidaConnect: 'Connect',
-    settori: 'Settori',
-    conformita: 'Conformita',
     blog: 'Blog',
+    chiSiamo: 'Chi siamo',
     contatti: 'Contatti',
-    richiedi: 'Richiedi Briefing',
+    richiedi: 'Richiedi un colloquio',
+    // Voci deprecate (tenute per compatibilità transitoria, rimuovibili dopo Task 16):
+    prodotti: 'Prodotti',
+    settori: 'Settori',
+    conformita: 'Conformità',
+    aegidaConnect: 'Connect',
     openMenu: 'Apri menu',
     closeMenu: 'Chiudi menu',
   },
