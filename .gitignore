@@ -22,3 +22,5 @@ scripts/*.log
 .superpowers/
 .redesign-mockups/
 __pycache__/
+.redesign-mockups/
+# Materiali offline (non pubblicati sul sito, ma committati)
