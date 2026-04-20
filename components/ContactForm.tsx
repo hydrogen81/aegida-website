@@ -30,6 +30,7 @@ export default function ContactForm({
     settore: 'Altro',
     // 'messaggio' is what PHP reads; visible as 'motivo' to the user
     messaggio: '',
+    tipoRichiesta: '',
     // consenso is UI-only, not sent to backend
   })
   const [consenso, setConsenso] = useState(false)
@@ -38,7 +39,7 @@ export default function ContactForm({
   const [error, setError] = useState('')
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -49,10 +50,13 @@ export default function ContactForm({
     setError('')
 
     try {
+      const combinedMessage = formData.tipoRichiesta
+        ? `[${formData.tipoRichiesta}]\n\n${formData.messaggio || ''}`
+        : formData.messaggio
       const res = await fetch('/api/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, messaggio: combinedMessage }),
       })
 
       if (!res.ok) {
@@ -143,6 +147,24 @@ export default function ContactForm({
                 className={inputClasses}
                 placeholder={form.placeholders.ruolo}
               />
+            </div>
+
+            <div>
+              <label htmlFor="cf-tipo-richiesta" className={labelClasses}>
+                {form.labels.tipoRichiesta}
+              </label>
+              <select
+                id="cf-tipo-richiesta"
+                name="tipoRichiesta"
+                className={inputClasses}
+                value={formData.tipoRichiesta}
+                onChange={handleChange}
+              >
+                <option value="">— Seleziona —</option>
+                {form.motivoOptions.map((opt: string) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
             </div>
 
             <div>
