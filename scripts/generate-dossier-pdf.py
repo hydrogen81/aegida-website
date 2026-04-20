@@ -313,8 +313,9 @@ RISPOSTA_PULL = (
     "&laquo;Test forense indipendente, 17 aprile 2026 — Cellebrite UFED 10.8.0.322 "
     "in modalità BFU e AFU: zero dati utente estratti. Nessun contenuto "
     "applicativo recuperato (messaggi, foto, contatti, file). Solo metadati "
-    "di sistema accessibili. Operatore IMCST certificato, società terza "
-    "italiana. Metodologia completa nel white paper correlato.&raquo;"
+    "di sistema accessibili. Test condotto da laboratorio italiano di digital "
+    "forensics certificato, operatore ASIS IMCST. Metodologia completa nel "
+    "white paper correlato.&raquo;"
 )
 
 # ---- 5. COSA INCLUDE ---------------------------------------------------------
@@ -328,7 +329,7 @@ INCLUDE_INTRO = (
 )
 
 INCLUDE_ITEMS = [
-    ("01", "Hardware rafforzato — base Pixel 10a",
+    ("01", "Hardware con hardening AEGIDA — base Pixel 10a",
      "Il dispositivo fisico è un Google Pixel 10a (processore Tensor G4, "
      "8 GB RAM, 128 GB di storage) con firmware originale rimosso. "
      "Viene installato un sistema operativo derivato da GrapheneOS, indurito "

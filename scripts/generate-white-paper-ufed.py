@@ -47,8 +47,8 @@ VERSION = "v1.1"
 LOCALE = "IT"
 
 EXECUTIVE_SUMMARY = [
-    "Il 17 aprile 2026 una società italiana di analisi forense ha tentato "
-    "l'estrazione di dati utente da un AEGIDA Privacy Phone utilizzando "
+    "Il 17 aprile 2026 un laboratorio italiano di digital forensics certificato "
+    "ha tentato l'estrazione di dati utente da un AEGIDA Privacy Phone utilizzando "
     "Cellebrite Inseyets UFED 10.8.0.322 con modulo Turbo Link. Il test è "
     "stato condotto sia in modalità <b>Locked (BFU — Before First Unlock)</b> "
     "sia in modalità <b>Unlocked (AFU — After First Unlock)</b> con codice di "
@@ -82,10 +82,11 @@ CONTESTO_BODY = [
     "sottoporre AEGIDA Privacy Phone a un test documentato per rispondere a "
     "questa domanda con dati pubblicabili.",
 
-    "Il test è stato commissionato da AEGIDA e condotto da una società "
-    "italiana terza specializzata in analisi forense. L'operatore ha una "
-    "certificazione <i>International Master Counter Surveillance Technical</i>. "
-    "Non esiste conflitto di interessi commerciale tra le due parti.",
+    "Il test è stato commissionato da AEGIDA e condotto da un laboratorio "
+    "italiano di digital forensics certificato, specializzato in mobile "
+    "forensic acquisition. L'operatore tecnico è certificato ASIS IMCST "
+    "(<i>International Master Counter Surveillance Technical</i>). Non esiste "
+    "conflitto di interessi commerciale tra le due parti.",
 ]
 
 SCOPE_TITLE = "Scope del test"
