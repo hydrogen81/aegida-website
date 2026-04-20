@@ -64,6 +64,14 @@ EXECUTIVE_SUMMARY = [
     "del test. È accompagnato da quattro screenshot del software UFED al "
     "termine di ciascuna fase. Il contenuto è destinato a giornalisti, "
     "ricercatori, clienti prospect e all'esercizio del diritto di replica.",
+
+    "<b>Primato tecnico verificabile.</b> AEGIDA Privacy Phone è a oggi l'unico "
+    "smartphone commerciale a integrare ML-KEM (NIST FIPS 203, ratificato "
+    "nell'agosto 2024) nel sistema di messaggistica sicura. Signal e Apple "
+    "iMessage (PQ3) offrono cifratura post-quantum a livello applicativo, ma "
+    "non su un sistema operativo indurito e hardware resistente all'estrazione "
+    "forense. Il primato riguarda l'integrazione: hardware sigillato + OS "
+    "derivato + post-quantum in un'unica architettura di prodotto.",
 ]
 
 CONTESTO_TITLE = "Perché questo test"
@@ -120,15 +128,15 @@ METODOLOGIA_BODY = [
     "standard documentate da Cellebrite per l'analisi di dispositivi Android.",
 
     "Il dispositivo target è un AEGIDA Privacy Phone base Pixel 10a con "
-    "sistema operativo derivato da GrapheneOS e indurito da AEGIDA, "
+    "sistema operativo derivato da GrapheneOS con hardening AEGIDA, "
     "verified boot attivo, chiavi di boot proprietarie AEGIDA. Il dispositivo "
     "è stato consegnato all'operatore con la sola condizione di restituirlo "
     "integro e riportare l'esito con screenshot del software UFED.",
 ]
 
 METODOLOGIA_SETUP_BOX = [
-    "OPERATORE · Società italiana di analisi forense (nominativo oscurato)",
-    "CERTIFICAZIONE · International Master Counter Surveillance Technical",
+    "OPERATORE · Laboratorio italiano di digital forensics certificato (nominativo oscurato)",
+    "CERTIFICAZIONE · ASIS IMCST (International Master Counter Surveillance Technical)",
     "STRUMENTO · Cellebrite Inseyets UFED 10.8.0.322",
     "MODULO · Turbo Link",
     "DISPOSITIVO · AEGIDA Privacy Phone (Pixel 10a · AEGIDA OS)",

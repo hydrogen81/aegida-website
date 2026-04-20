@@ -25,7 +25,7 @@ const de: Translations = {
   /*  Footer                                                           */
   /* ================================================================ */
   footer: {
-    istituzionale: 'AEGIDA è il brand di sicurezza di H4R (Human for Research Srl). Roma, Italia.',
+    istituzionale: 'AEGIDA è il brand di sicurezza di H4R Srl - Human for Research. Roma, Italia.',
     payoff: 'PROGETTATO IN ITALIA.',
     nav: {
       privacyPhone: 'Privacy Phone',
@@ -39,7 +39,7 @@ const de: Translations = {
       cookiePolicy: 'Cookie Policy',
       conformita: 'Conformità normativa',
     },
-    copyright: '© {year} H4R — Human for Research Srl. Tutti i diritti riservati.',
+    copyright: '© {year} H4R Srl - Human for Research. Tutti i diritti riservati.',
   },
 
   /* ================================================================ */
@@ -47,19 +47,19 @@ const de: Translations = {
   /* ================================================================ */
   home: {
     hero: {
-      title: 'Smartphone indurito. Zero dati estratti in test forense.',
-      subtitle: 'Il 17 aprile 2026 un laboratorio italiano di digital forensics ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED. I dettagli del test sono in questa pagina. La metodologia completa è nel white paper.',
+      title: 'Smartphone sigillato. Zero dati estratti in test forense.',
+      subtitle: 'Il 17 aprile 2026 un laboratorio italiano di digital forensics ha tentato l\'estrazione dati da un AEGIDA Privacy Phone con Cellebrite UFED. I dettagli sono in questa pagina. È anche l\'unico smartphone commerciale al mondo con cifratura post-quantum (ML-KEM FIPS 203) integrata nel sistema di comunicazione.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
     },
     istituzionale: {
-      body: 'AEGIDA nasce dentro H4R (Human for Research Srl), laboratorio italiano attivo dal 2018 nella ricerca applicata alla sicurezza. Abbiamo costruito questo brand perché il mercato offriva due alternative insufficienti: soluzioni militari inaccessibili a un professionista, oppure app «privacy» di consumo che crollano al primo test serio. AEGIDA colma quel vuoto con strumenti progettati, assemblati e verificati in Italia, pensati per chi — giornalisti, avvocati, dirigenti — lavora con informazioni la cui compromissione ha un costo reale.',
+      body: 'AEGIDA nasce dentro H4R Srl - Human for Research, laboratorio italiano attivo dal 2018 nella ricerca applicata alla sicurezza. Abbiamo costruito questo brand perché il mercato offriva due alternative insufficienti: soluzioni militari inaccessibili a un professionista, oppure app «privacy» di consumo che crollano al primo test serio. AEGIDA colma quel vuoto con strumenti progettati, assemblati e verificati in Italia, pensati per chi — giornalisti, avvocati, dirigenti — lavora con informazioni la cui compromissione ha un costo reale.',
     },
     prodotti: {
       label: 'Cosa produciamo',
       privacyPhone: {
         name: 'AEGIDA Privacy Phone',
-        claim: 'Hardware Pixel 10a con sistema AEGIDA indurito. Include Connect (messaggistica cifrata), Inspector (attestazione integrità), 12 mesi di supporto. Per giornalisti, avvocati, dirigenti.',
+        claim: 'Hardware Pixel 10a con sistema AEGIDA sigillato. Unico smartphone commerciale con cifratura post-quantum integrata. Include Connect (messaggistica cifrata), Inspector (attestazione integrità), 12 mesi di supporto.',
         cta: 'Scopri Privacy Phone',
       },
       framework: {
@@ -135,7 +135,7 @@ const de: Translations = {
   privacyPhone: {
     hero: {
       title: 'AEGIDA Privacy Phone',
-      tagline: 'Smartphone ad alta sicurezza su base Pixel 10a, con sistema operativo derivato e indurito da AEGIDA.',
+      tagline: 'Smartphone sigillato su base Pixel 10a, con sistema operativo derivato da GrapheneOS e hardening AEGIDA su verified boot a chiavi proprietarie.',
       claim: 'Cellebrite UFED 10.8.0.322 — verifica documentata: 0 dati utente estratti.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
@@ -149,7 +149,7 @@ const de: Translations = {
       title: 'Il pacchetto AEGIDA Privacy Phone',
       items: [
         { key: 'hardware', title: 'Hardware con hardening AEGIDA', body: 'Base Pixel 10a. Firmware originale rimosso; sistema operativo indurito da AEGIDA.' },
-        { key: 'connect', title: 'Connect — messaggistica cifrata', body: 'Cifratura post-quantum (ML-KEM FIPS 203). Nessun server centrale.' },
+        { key: 'connect', title: 'Connect — messaggistica post-quantum (primato tecnico)', body: 'Unico smartphone commerciale con ML-KEM FIPS 203 integrato. Nessun server centrale.' },
         { key: 'inspector', title: 'Inspector — attestazione integrità', body: 'Verifica crittografica dell\'integrità hardware.' },
         { key: 'supporto', title: 'Supporto e formazione', body: '12 mesi di supporto via canale cifrato.' },
       ],
@@ -223,7 +223,7 @@ const de: Translations = {
     },
     societa: {
       title: 'La società',
-      body: 'H4R (Human for Research Srl) è una società italiana con sede a Roma, fondata nel 2018. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
+      body: 'H4R Srl - Human for Research è una società italiana con sede a Roma, fondata nel 2018. Opera nei settori della sicurezza informatica e della ricerca applicata. AEGIDA è il brand con cui H4R sviluppa e commercializza strumenti dedicati alla protezione delle comunicazioni.',
     },
     missione: {
       title: 'La missione',
@@ -235,7 +235,7 @@ const de: Translations = {
         {
           name: 'AEGIDA Privacy Phone',
           status: 'Prodotto commerciale 2026',
-          body: 'Hardware Pixel 10a con sistema AEGIDA indurito. Testato in verifica forense indipendente: 0 dati utente estratti.',
+          body: 'Hardware Pixel 10a con sistema AEGIDA sigillato. Unico smartphone commerciale con cifratura post-quantum integrata. Testato in verifica forense indipendente: 0 dati utente estratti.',
         },
         {
           name: 'AEGIDA Framework',

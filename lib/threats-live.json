@@ -1,5 +1,69 @@
 [
   {
+    "date": "2026-04-20",
+    "cve": "CVE-2026-20122",
+    "vendor": "Cisco",
+    "product": "Catalyst SD-WAN Manger",
+    "name": "Cisco Catalyst SD-WAN Manager Incorrect Use of Privileged APIs Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2026-20133",
+    "vendor": "Cisco",
+    "product": "Catalyst SD-WAN Manager",
+    "name": "Cisco Catalyst SD-WAN Manager Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2025-2749",
+    "vendor": "Kentico",
+    "product": "Kentico Xperience",
+    "name": "Kentico Xperience Path Traversal Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2023-27351",
+    "vendor": "PaperCut",
+    "product": "NG/MF",
+    "name": "PaperCut NG/MF Improper Authentication Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2025-48700",
+    "vendor": "Synacor",
+    "product": "Zimbra Collaboration Suite (ZCS)",
+    "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-site Scripting Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2026-20128",
+    "vendor": "Cisco",
+    "product": "Catalyst SD-WAN Manager",
+    "name": "Cisco Catalyst SD-WAN Manager Storing Passwords in a Recoverable Format Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2025-32975",
+    "vendor": "Quest",
+    "product": "KACE Systems Management Appliance (SMA)",
+    "name": "Quest KACE Systems Management Appliance (SMA) Improper Authentication Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-20",
+    "cve": "CVE-2024-27199",
+    "vendor": "JetBrains",
+    "product": "TeamCity",
+    "name": "JetBrains TeamCity Relative Path Traversal Vulnerability",
+    "ransomware": false
+  },
+  {
     "date": "2026-04-16",
     "cve": "CVE-2026-34197",
     "vendor": "Apache",
@@ -133,70 +197,6 @@
     "vendor": "Aquasecurity",
     "product": "Trivy",
     "name": "Aquasecurity Trivy Embedded Malicious Code Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-25",
-    "cve": "CVE-2026-33017",
-    "vendor": "Langflow",
-    "product": "Langflow",
-    "name": "Langflow Code Injection Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-20",
-    "cve": "CVE-2025-32432",
-    "vendor": "Craft CMS",
-    "product": "Craft CMS",
-    "name": "Craft CMS Code Injection Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-20",
-    "cve": "CVE-2025-54068",
-    "vendor": "Laravel",
-    "product": "Livewire",
-    "name": "Laravel Livewire Code Injection Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-20",
-    "cve": "CVE-2025-43510",
-    "vendor": "Apple",
-    "product": "Multiple Products",
-    "name": "Apple Multiple Products Improper Locking Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-20",
-    "cve": "CVE-2025-43520",
-    "vendor": "Apple",
-    "product": "Multiple Products",
-    "name": "Apple Multiple Products Classic Buffer Overflow Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-20",
-    "cve": "CVE-2025-31277",
-    "vendor": "Apple",
-    "product": "Multiple Products",
-    "name": "Apple Multiple Products Buffer Overflow Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-19",
-    "cve": "CVE-2026-20131",
-    "vendor": "Cisco",
-    "product": "Secure Firewall Management Center (FMC)",
-    "name": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
-    "ransomware": true
-  },
-  {
-    "date": "2026-03-18",
-    "cve": "CVE-2025-66376",
-    "vendor": "Synacor",
-    "product": "Zimbra Collaboration Suite (ZCS)",
-    "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-Site Scripting Vulnerability",
     "ransomware": false
   }
 ]

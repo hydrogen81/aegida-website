@@ -387,11 +387,11 @@ CONTATTI_BLOCKS = [
     (
         "PEC",
         "h4-researchsrl@legalmail.it",
-        "Posta elettronica certificata di H4R \u2014 Human for Research Srl.",
+        "Posta elettronica certificata di H4R Srl - Human for Research.",
     ),
     (
         "Sede legale",
-        "H4R \u2014 Human for Research Srl",
+        "H4R Srl - Human for Research",
         "Costituita a Roma nel 2018. Partita IVA e ragione sociale nelle comunicazioni ufficiali.",
     ),
 ]
@@ -409,7 +409,7 @@ DISCLAIMER_FULL = (
     "descrittivo e informativo; appartengono ai rispettivi titolari. "
     "AEGIDA e H4R non vantano affiliazioni ufficiali con le organizzazioni "
     "citate. Qualsiasi richiesta di rettifica o replica pu\u00f2 essere inviata a "
-    "legal@aegida-systems.com. \u00a9 2026 H4R \u2014 Human for Research Srl. "
+    "legal@aegida-systems.com. \u00a9 2026 H4R Srl - Human for Research. "
     "Tutti i diritti riservati."
 )
 

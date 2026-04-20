@@ -247,13 +247,13 @@ TOC_ITEMS = [
     ("05", "Evidenze", "Test UFED e metodologia TEMPEST"),
     ("06", "Investimento", "Pricing e logica di acquisto"),
     ("07", "Processo", "Dall'interesse alla consegna in quattro step"),
-    ("08", "Chi siamo", "H4R — Human for Research Srl e il team"),
+    ("08", "Chi siamo", "H4R Srl - Human for Research e il team"),
 ]
 
 SOMMARIO_NOTE = (
     "Questo documento è destinato a uso riservato. Contiene informazioni "
     "commerciali e tecniche su AEGIDA Privacy Phone, prodotto di punta di "
-    "H4R — Human for Research Srl (Roma, Italia). Non è un contratto né "
+    "H4R Srl - Human for Research (Roma, Italia). Non è un contratto né "
     "un'offerta vincolante. Il white paper tecnico correlato è disponibile "
     "su richiesta a info@aegida-systems.com."
 )
@@ -291,12 +291,15 @@ PROBLEMA_P3 = (
 # ---- 4. LA RISPOSTA ----------------------------------------------------------
 
 RISPOSTA_INTRO = (
-    "AEGIDA Privacy Phone è uno smartphone costruito in Italia a partire da "
-    "hardware di fascia alta (Google Pixel 10a, processore Tensor G4), con il "
-    "firmware originale completamente rimosso e sostituito da un sistema "
-    "operativo indurito da AEGIDA. Il dispositivo arriva al cliente già "
-    "configurato, sigillato e verificato: nessun account Google, nessun "
-    "servizio cloud consumer, nessuna telemetria attiva."
+    "AEGIDA Privacy Phone è uno smartphone sigillato costruito in Italia a "
+    "partire da hardware di fascia alta (Google Pixel 10a, processore "
+    "Tensor G4), con il firmware originale completamente rimosso e "
+    "sostituito da un sistema operativo con hardening AEGIDA, verified boot "
+    "a chiavi proprietarie. Il dispositivo arriva al cliente già "
+    "configurato e sigillato: nessun account Google, nessun servizio cloud "
+    "consumer, nessuna telemetria attiva. È oggi l'unico smartphone "
+    "commerciale al mondo a integrare cifratura post-quantum (ML-KEM "
+    "FIPS 203) nel sistema di messaggistica sicura."
 )
 
 RISPOSTA_P2 = (
@@ -329,20 +332,23 @@ INCLUDE_INTRO = (
 )
 
 INCLUDE_ITEMS = [
-    ("01", "Hardware con hardening AEGIDA — base Pixel 10a",
+    ("01", "Hardware sigillato — base Pixel 10a con hardening AEGIDA",
      "Il dispositivo fisico è un Google Pixel 10a (processore Tensor G4, "
      "8 GB RAM, 128 GB di storage) con firmware originale rimosso. "
-     "Viene installato un sistema operativo derivato da GrapheneOS, indurito "
-     "da AEGIDA con verified boot attivo e chiavi crittografiche proprietarie. "
-     "ADB disabilitato, fastboot bloccato, accesso root non disponibile. "
-     "Il dispositivo arriva sigillato."),
+     "Viene installato un sistema operativo derivato da GrapheneOS, con "
+     "hardening AEGIDA, verified boot attivo e chiavi crittografiche "
+     "proprietarie. ADB disabilitato, fastboot bloccato, accesso root non "
+     "disponibile. Il dispositivo arriva sigillato."),
 
-    ("02", "AEGIDA Connect — comunicazione cifrata punto-a-punto",
-     "Messaggistica diretta tra dispositivi AEGIDA con scambio di chiavi "
-     "post-quantum ML-KEM (FIPS 203) e cifratura simmetrica ChaCha20-Poly1305. "
-     "L'architettura non prevede server centrale di instradamento: i messaggi "
-     "transitano soltanto tra i dispositivi coinvolti nella sessione. Nessun "
-     "account richiesto, nessun metadato custodito presso terzi."),
+    ("02", "AEGIDA Connect — messaggistica post-quantum (primato tecnico)",
+     "AEGIDA Privacy Phone è oggi l'unico smartphone commerciale al mondo a "
+     "integrare ML-KEM FIPS 203 — lo standard NIST per la cifratura post-quantum "
+     "ratificato nell'agosto 2024 — nel proprio sistema di messaggistica. "
+     "Scambio di chiavi post-quantum (ML-KEM) e cifratura simmetrica "
+     "ChaCha20-Poly1305. Nessun server centrale di instradamento: i messaggi "
+     "transitano solo tra i dispositivi coinvolti. Resistente anche ad attacchi "
+     "«harvest-now-decrypt-later», in cui un avversario archivia oggi traffico "
+     "cifrato per decifrarlo con futuri computer quantistici."),
 
     ("03", "AEGIDA Inspector — attestazione dell'integrit\u00e0",
      "Applicazione di verifica crittografica dell'integrit\u00e0 del dispositivo, "
@@ -500,7 +506,7 @@ PROCESSO_STEPS = [
 # ---- 10. CHI SIAMO + CONTATTI + DISCLAIMER -----------------------------------
 
 CHISIAMO_INTRO = (
-    "H4R — Human for Research Srl \u00e8 una societ\u00e0 italiana con sede a Roma, "
+    "H4R Srl - Human for Research \u00e8 una societ\u00e0 italiana con sede a Roma, "
     "fondata nel 2018. Si occupa di sicurezza delle informazioni per "
     "organizzazioni e professionisti che operano in contesti ad alta "
     "esposizione. AEGIDA \u00e8 il brand di prodotto di H4R, dedicato agli "
@@ -517,7 +523,7 @@ CONTATTI_ROWS = [
     ["Commerciale e colloqui", "info@aegida-systems.com"],
     ["Legale e diritto di replica", "legal@aegida-systems.com"],
     ["Sito web", "aegida-systems.com"],
-    ["Sede legale", "H4R — Human for Research Srl, Roma, Italia"],
+    ["Sede legale", "H4R Srl - Human for Research, Roma, Italia"],
     ["PEC", "h4r@pec.it"],
 ]
 
@@ -679,7 +685,7 @@ def build_story():
         "3.900 \u20ac",
         "Hardware Pixel 10a configurato + AEGIDA Connect + AEGIDA Inspector "
         "+ 12 mesi supporto cifrato + formazione utente.",
-        "IVA esclusa",
+        "IVA inclusa",
         highlight=True,
     ))
     story.append(Spacer(1, 10))
@@ -688,7 +694,7 @@ def build_story():
         "690 \u20ac / anno",
         "Aggiornamenti di sicurezza validati, supporto cifrato continuato, "
         "re-hardening annuale del sistema operativo, incident response entry-level.",
-        "IVA esclusa",
+        "IVA inclusa",
         highlight=False,
     ))
     story.append(Spacer(1, 16))
@@ -709,7 +715,7 @@ def build_story():
     # -------------------------------------------------------------------------
     # 10. CHI SIAMO + CONTATTI + DISCLAIMER
     # -------------------------------------------------------------------------
-    story.extend(section_header("08 — CHI SIAMO", "H4R — Human for Research Srl"))
+    story.extend(section_header("08 — CHI SIAMO", "H4R Srl - Human for Research"))
     story.append(Spacer(1, 6))
     story.append(Paragraph(CHISIAMO_INTRO, _section_intro))
     story.append(Spacer(1, 10))

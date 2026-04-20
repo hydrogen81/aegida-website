@@ -48,6 +48,7 @@ export default function HomeContent() {
           <span><b className="text-ink-100 font-medium">Modalità</b> · BFU + AFU</span>
           <span><b className="text-ink-100 font-medium">Esito</b> · 0 dati utente estratti</span>
           <span><b className="text-ink-100 font-medium">Operatore</b> · Laboratorio forense italiano · IMCST certificato</span>
+          <span><b className="text-ink-100 font-medium">Primato</b> · Unico smartphone commerciale con post-quantum (ML-KEM FIPS 203)</span>
         </div>
       </section>
 
