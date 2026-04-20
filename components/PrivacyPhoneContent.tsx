@@ -26,8 +26,11 @@ export default function PrivacyPhoneContent() {
           <p className="text-[17px] md:text-[19px] text-ink-200 leading-relaxed max-w-[720px] mb-4">
             {t.privacyPhone.hero.tagline}
           </p>
-          <p className="font-mono text-[13px] text-steel-hi tracking-wide mb-8">
+          <p className="font-mono text-[13px] text-steel-hi tracking-wide mb-4">
             {t.privacyPhone.hero.claim}
+          </p>
+          <p className="font-mono text-[11px] tracking-[0.18em] text-steel-hi mt-3 mb-8">
+            PROGETTATO E COSTRUITO IN ITALIA
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -93,7 +96,20 @@ export default function PrivacyPhoneContent() {
         </div>
       </section>
 
-      <div className="border-t border-navy-line" />
+      {/* ============================================================ */}
+      {/*  TEMPEST                                                     */}
+      {/* ============================================================ */}
+      <section className="px-6 md:px-10 py-20 bg-navy-deep border-t border-navy-line">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">METODOLOGIA COMPLEMENTARE</div>
+          <h2 className="text-[24px] md:text-[28px] font-display font-medium text-ink-100 mb-5 tracking-[-0.01em]">
+            {t.privacyPhone.tempest.title}
+          </h2>
+          <p className="text-[16px] text-ink-200 leading-[1.65] max-w-[720px]">
+            {t.privacyPhone.tempest.body}
+          </p>
+        </div>
+      </section>
 
       {/* ============================================================ */}
       {/*  PROOF — UFED FORENSIC TEST                                  */}
@@ -213,6 +229,15 @@ export default function PrivacyPhoneContent() {
               </Link>
             </div>
           ) : null}
+          <div className="mt-10 pt-10 border-t border-navy-line">
+            <p className="text-sm text-ink-300 mb-3">Vuoi valutare il Privacy Phone offline?</p>
+            <a
+              href="/downloads/aegida-privacy-phone-dossier.pdf"
+              className="text-[14px] text-ink-100 border-b border-current pb-0.5"
+            >
+              Scarica il dossier completo (PDF, 9 pagine)
+            </a>
+          </div>
         </div>
       </section>
 
