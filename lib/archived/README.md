@@ -28,3 +28,12 @@ Rimosso il 2026-04-20. Motivo: cascade fade-in su scroll (Framer Motion
 con 126 utilizzi) incompatibile con la nuova direzione "animazioni-zero
 al primo paint". Tutti gli utilizzi sono stati sostituiti con <div> o
 rimossi come wrapper superflui.
+
+## ShieldSVG.tsx, LayerDiagram.tsx, PacketInspector.tsx
+
+Archiviati il 2026-04-20 durante Task 18 del Progetto 2 (Redesign visivo).
+Motivo: nessun utilizzo attivo dopo il Framework reduction (Progetto 1)
+e il redesign home/blog (Progetto 2). Questi componenti rappresentavano
+la visualizzazione tecnica della "architettura a strati" e della "security
+inspection" nella vecchia estetica gold-accented. Sostituiti da componenti
+minimalisti istituzionali.
