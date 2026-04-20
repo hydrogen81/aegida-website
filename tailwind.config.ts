@@ -10,32 +10,35 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          950: '#0a0e1a',
-          900: '#0d1321',
-          800: '#131b2e',
-          700: '#1a2540',
-          600: '#243055',
+          ink: '#0B1220',
+          card: '#16202F',
+          line: '#1F2C3F',
+          deep: '#07101C',
         },
-        gold: {
-          500: '#b8960c',
-          400: '#d4ad0e',
-          300: '#e8c840',
+        ink: {
+          100: '#E8ECF2',
+          200: '#C7D0DE',
+          300: '#8C9AB3',
+          400: '#5E6B82',
         },
-        accent: {
-          blue: '#3b82f6',
-          cyan: '#22d3ee',
+        steel: {
+          DEFAULT: '#4A6583',
+          hi: '#6B84A0',
         },
-        danger: {
-          red: '#dc2626',
-        },
-        success: {
-          green: '#22c55e',
+        semantic: {
+          error: '#B8574F',
         },
       },
       fontFamily: {
-        display: ['var(--font-barlow)', 'sans-serif'],
-        body: ['var(--font-source-sans)', 'sans-serif'],
-        mono: ['var(--font-jetbrains)', 'monospace'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
+      },
+      borderRadius: {
+        sm: '2px',
+        DEFAULT: '4px',
+        md: '4px',
+        lg: '6px',
       },
       letterSpacing: {
         'wide-display': '0.05em',
