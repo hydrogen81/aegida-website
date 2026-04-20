@@ -15,27 +15,30 @@ const inputClasses =
 const labelClasses = 'block text-sm font-body text-slate-300 mb-1.5'
 
 export default function ContactForm({
-  defaultProduct = '',
+  defaultProduct = 'Privacy Phone',
   className = '',
 }: ContactFormProps) {
   const t = useTranslations()
-  const form = t.contactForm
+  const form = t.contact.form
 
   const [formData, setFormData] = useState({
     nome: '',
-    organizzazione: '',
     email: '',
     ruolo: '',
-    prodotto: defaultProduct,
-    settore: '',
+    // PHP-required fields — sent as hidden defaults
+    prodotto: defaultProduct || 'Privacy Phone',
+    settore: 'Altro',
+    // 'messaggio' is what PHP reads; visible as 'motivo' to the user
     messaggio: '',
+    // consenso is UI-only, not sent to backend
   })
+  const [consenso, setConsenso] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -54,12 +57,12 @@ export default function ContactForm({
 
       if (!res.ok) {
         const data = await res.json()
-        throw new Error(data.error || form.errorDefault)
+        throw new Error(data.error || form.error.generic)
       }
 
       setSubmitted(true)
     } catch (err) {
-      setError(err instanceof Error ? err.message : form.errorDefault)
+      setError(err instanceof Error ? err.message : form.error.generic)
     } finally {
       setSending(false)
     }
@@ -77,10 +80,10 @@ export default function ContactForm({
             className="rounded border border-success-green/30 bg-success-green/10 px-6 py-8 text-center"
           >
             <p className="text-success-green font-display text-xl uppercase tracking-wide mb-2">
-              {form.successTitle}
+              {form.success.title}
             </p>
             <p className="text-slate-400 font-body text-sm">
-              {form.successMessage}
+              {form.success.body}
             </p>
           </motion.div>
         ) : (
@@ -94,128 +97,82 @@ export default function ContactForm({
           >
             <div>
               <label htmlFor="cf-nome" className={labelClasses}>
-                {form.nameLabel}
+                {form.labels.nome}
               </label>
               <input
                 id="cf-nome"
                 name="nome"
                 type="text"
                 required
-                aria-label={form.nameLabel}
+                aria-label={form.labels.nome}
                 value={formData.nome}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.namePlaceholder}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="cf-org" className={labelClasses}>
-                {form.organizationLabel}
-              </label>
-              <input
-                id="cf-org"
-                name="organizzazione"
-                type="text"
-                aria-label={form.organizationLabel}
-                value={formData.organizzazione}
-                onChange={handleChange}
-                className={inputClasses}
-                placeholder={form.organizationPlaceholder}
+                placeholder={form.placeholders.nome}
               />
             </div>
 
             <div>
               <label htmlFor="cf-email" className={labelClasses}>
-                {form.emailLabel}
+                {form.labels.email}
               </label>
               <input
                 id="cf-email"
                 name="email"
                 type="email"
                 required
-                aria-label={form.emailLabel}
+                aria-label={form.labels.email}
                 value={formData.email}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.emailPlaceholder}
+                placeholder={form.placeholders.email}
               />
             </div>
 
             <div>
               <label htmlFor="cf-ruolo" className={labelClasses}>
-                {form.roleLabel}
+                {form.labels.ruolo}
               </label>
               <input
                 id="cf-ruolo"
                 name="ruolo"
                 type="text"
-                aria-label={form.roleLabel}
+                aria-label={form.labels.ruolo}
                 value={formData.ruolo}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder={form.rolePlaceholder}
+                placeholder={form.placeholders.ruolo}
               />
             </div>
 
             <div>
-              <label htmlFor="cf-prodotto" className={labelClasses}>
-                {form.productLabel}
-              </label>
-              <select
-                id="cf-prodotto"
-                name="prodotto"
-                required
-                aria-label={form.productLabel}
-                value={formData.prodotto}
-                onChange={handleChange}
-                className={inputClasses}
-              >
-                <option value="">{form.productPlaceholder}</option>
-                {form.productOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="cf-settore" className={labelClasses}>
-                {form.sectorLabel}
-              </label>
-              <select
-                id="cf-settore"
-                name="settore"
-                required
-                aria-label={form.sectorLabel}
-                value={formData.settore}
-                onChange={handleChange}
-                className={inputClasses}
-              >
-                <option value="">{form.sectorPlaceholder}</option>
-                {form.sectorOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
               <label htmlFor="cf-messaggio" className={labelClasses}>
-                {form.messageLabel}
+                {form.labels.motivo}
               </label>
               <textarea
                 id="cf-messaggio"
                 name="messaggio"
                 rows={5}
-                aria-label={form.messageLabel}
+                aria-label={form.labels.motivo}
                 value={formData.messaggio}
                 onChange={handleChange}
                 className={`${inputClasses} resize-y`}
-                placeholder={form.messagePlaceholder}
+                placeholder={form.placeholders.motivo}
               />
+            </div>
+
+            <div className="flex items-start gap-3">
+              <input
+                id="cf-consenso"
+                type="checkbox"
+                required
+                checked={consenso}
+                onChange={(e) => setConsenso(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-navy-600 bg-navy-900 text-gold-500 focus:ring-gold-500"
+              />
+              <label htmlFor="cf-consenso" className="text-xs text-slate-400 font-body">
+                {form.consenso}
+              </label>
             </div>
 
             {error && (
@@ -226,10 +183,10 @@ export default function ContactForm({
 
             <button
               type="submit"
-              disabled={sending}
+              disabled={sending || !consenso}
               className="w-full font-display uppercase tracking-wide text-sm font-semibold rounded px-6 py-3.5 bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-900 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {sending ? form.sending : form.submitButton}
+              {sending ? '...' : form.submit}
             </button>
           </motion.form>
         )}
