@@ -35,14 +35,6 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <GatedDownload
-                  documentSlug="privacy-phone-brochure"
-                  label="Brochure Privacy Phone"
-                  variant="link"
-                  className="text-[13px] text-ink-200 hover:text-ink-100"
-                />
-              </li>
-              <li>
-                <GatedDownload
                   documentSlug="privacy-phone-dossier"
                   label="Dossier tecnico Privacy Phone"
                   variant="link"

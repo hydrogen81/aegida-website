@@ -110,10 +110,9 @@ if (!in_array($role, $allowedRoles, true)) {
 }
 
 $documents = [
-    'privacy-phone-brochure' => '/downloads/aegida-privacy-phone-brochure.pdf',
-    'privacy-phone-dossier'  => '/downloads/aegida-privacy-phone-dossier.pdf',
-    'framework-brochure'     => '/downloads/aegida-framework-brochure.pdf',
-    'white-paper-ufed'       => '/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf',
+    'privacy-phone-dossier' => '/downloads/aegida-privacy-phone-dossier.pdf',
+    'framework-brochure'    => '/downloads/aegida-framework-brochure.pdf',
+    'white-paper-ufed'      => '/downloads/aegida-privacy-phone-test-ufed-2026-04-17.pdf',
 ];
 if (!isset($documents[$documentSlug])) {
     http_response_code(400);

@@ -5,13 +5,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from '@/lib/i18n/context'
 
 interface GatedDownloadProps {
-  documentSlug: 'privacy-phone-brochure' | 'privacy-phone-dossier' | 'framework-brochure' | 'white-paper-ufed'
+  documentSlug: 'privacy-phone-dossier' | 'framework-brochure' | 'white-paper-ufed'
   label: string
   variant?: 'primary' | 'secondary' | 'link'
   className?: string
 }
 
-const API_ENDPOINT = 'https://aegida-systems.com/api/download-gate.php'
+// URL relativa: stesso origine del sito (evita CORS quando il sito
+// è servito da www.aegida-systems.com e il fetch colpisce
+// aegida-systems.com senza www → cross-origin e blocco sul preflight).
+const API_ENDPOINT = '/api/download-gate.php'
 
 const inputClasses =
   'w-full bg-navy-card border border-navy-line rounded px-4 py-3 text-ink-100 font-sans text-sm placeholder:text-ink-400 outline-none transition-colors duration-200 focus:border-ink-200 focus:ring-1 focus:ring-ink-200'

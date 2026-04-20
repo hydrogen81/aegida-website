@@ -48,8 +48,8 @@ export default function PrivacyPhoneContent() {
           </div>
           <div className="mt-4">
             <GatedDownload
-              documentSlug="privacy-phone-brochure"
-              label="Oppure scarica la brochure sintetica (3 pagine)"
+              documentSlug="privacy-phone-dossier"
+              label="Oppure scarica il dossier commerciale"
               variant="link"
               className="text-[13px] text-ink-300 hover:text-ink-100"
             />
