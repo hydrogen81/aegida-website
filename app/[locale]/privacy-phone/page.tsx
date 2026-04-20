@@ -22,15 +22,39 @@ export async function generateMetadata({
     de: 'Privacy-First-Smartphone basierend auf Google Pixel 10a mit Aegida OS (GrapheneOS), Titan M2, und Aegida Connect für verschlüsselte Peer-to-Peer-Kommunikation über Tor, WLAN und Bluetooth. Keine Server, keine Vermittler.',
   }
 
+  const title = titles[locale] || titles.it
+  const description = descriptions[locale] || descriptions.it
+  const url = `https://www.aegida-systems.com/${locale}/privacy-phone/`
+
   return {
-    title: titles[locale] || titles.it,
-    description: descriptions[locale] || descriptions.it,
+    title,
+    description,
     alternates: {
+      canonical: url,
       languages: {
         'it': '/it/privacy-phone/',
         'en': '/en/privacy-phone/',
         'de': '/de/privacy-phone/',
       },
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url,
+      siteName: 'AEGIDA',
+      images: [{
+        url: 'https://www.aegida-systems.com/logo-aegida.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AEGIDA Privacy Phone',
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.aegida-systems.com/logo-aegida.jpg'],
     },
   }
 }
@@ -40,7 +64,7 @@ const jsonLd = {
   '@type': 'Product',
   name: 'AEGIDA Privacy Phone',
   brand: { '@type': 'Brand', name: 'AEGIDA' },
-  manufacturer: { '@type': 'Organization', name: 'H4R Human for Research Srl' },
+  manufacturer: { '@type': 'Organization', name: 'H4RESEARCH SRL' },
   category: 'Smartphone',
   offers: {
     '@type': 'Offer',

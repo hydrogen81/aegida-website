@@ -3,6 +3,19 @@ node_modules/
 out/
 .vercel
 *.tsbuildinfo
-public/api/contact.php
-public/api/telegram-bot.php
+public/api/config.local.php
 key.telegram.txt
+.ftp-credentials
+security-reports/
+
+# Env files with secrets / analytics IDs
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Backup and staged artefacts
+*.backup-*
+*.staged.deployed
+scripts/*.log
+

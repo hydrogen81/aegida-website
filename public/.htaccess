@@ -39,14 +39,52 @@ RewriteRule ^(.+?)/?$ /$1/index.html [L]
   ExpiresByType application/json "access plus 1 day"
 </IfModule>
 
-# Security headers
+# ─── Security Headers ─────────────────────────────────────
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set X-XSS-Protection "1; mode=block"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # HSTS — forza HTTPS per 2 anni, include sottodomini, preload eligibile
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Previene MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Protezione clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Rimuove X-XSS-Protection (deprecato, può introdurre vulnerabilità in browser vecchi)
+  Header always unset X-XSS-Protection
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions-Policy — disabilita feature browser non utilizzate
+  Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
+
+  # Cross-Origin-Opener-Policy — isolamento browsing context
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Cross-Origin-Resource-Policy — protegge le risorse dal caricamento cross-origin
+  Header always set Cross-Origin-Resource-Policy "same-site"
+
+  # Content-Security-Policy — previene XSS, data exfiltration, iniezioni
+  # Nota: Next.js richiede 'unsafe-inline' per style e 'unsafe-eval' per script in dev;
+  # in static export possiamo essere più restrittivi, ma alcuni script Next.js richiedono 'unsafe-inline'
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://api.brevo.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+  # Rimuove header che espongono info server
+  Header always unset X-Powered-By
+  Header always unset Server
 </IfModule>
 
+# ─── Blocco file sensibili ────────────────────────────────
+# Blocca accesso a file di configurazione, backup, versioning
+<FilesMatch "^(\.env|\.env\..*|\.ftp-credentials|\.git|\.gitignore|\.htaccess|\.htpasswd|composer\.json|composer\.lock|package\.json|package-lock\.json|yarn\.lock|tsconfig\.json|next\.config\..*|tailwind\.config\..*|postcss\.config\..*|deploy\.sh|ftp-upload\.sh|.*\.bak|.*\.backup|.*\.sql|.*\.log|config\.local\.php)$">
+  Require all denied
+</FilesMatch>
+
+# Blocca accesso a directory interne di build/sviluppo
+RewriteRule ^(\.git|\.next|node_modules|lib|scripts|drafts)(/.*)?$ - [F,L]
+
+# ─── PHP endpoints ────────────────────────────────────────
 # Esegui PHP nella cartella api
 <FilesMatch "\.php$">
   SetHandler application/x-httpd-php
@@ -56,4 +94,10 @@ RewriteRule ^(.+?)/?$ /$1/index.html [L]
 ErrorDocument 404 /404.html
 
 # Impedisci listing directory
-Options -Indexes
+Options -Indexes -MultiViews
+
+# Disabilita trace e track HTTP methods (XST)
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+  RewriteRule .* - [F]
+</IfModule>

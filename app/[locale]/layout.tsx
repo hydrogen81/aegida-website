@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     template: '%s | AEGIDA',
     default: 'AEGIDA',
   },
+  verification: {
+    google: 'PpW_au1Ag54vVDSPk7tkUgxEkSOgpU-AGa7sQmj5QxE',
+  },
 }
 
 export function generateStaticParams() {

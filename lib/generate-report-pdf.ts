@@ -374,7 +374,7 @@ export function generateReportPdf(
     doc.setFontSize(7)
     setColor(doc, SLATE_400)
     doc.text(t.quiz.results.pdfGenerated, marginL, pageH - 22)
-    doc.text('H4R Human for Research Srl', marginL, pageH - 17)
+    doc.text('H4RESEARCH SRL', marginL, pageH - 17)
 
     // Disclaimer
     doc.setFontSize(6.5)

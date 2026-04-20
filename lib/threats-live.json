@@ -1,5 +1,101 @@
 [
   {
+    "date": "2026-04-16",
+    "cve": "CVE-2026-34197",
+    "vendor": "Apache",
+    "product": "ActiveMQ",
+    "name": "Apache ActiveMQ Improper Input Validation Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-14",
+    "cve": "CVE-2009-0238",
+    "vendor": "Microsoft",
+    "product": "Office",
+    "name": "Microsoft Office Remote Code Execution",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-14",
+    "cve": "CVE-2026-32201",
+    "vendor": "Microsoft",
+    "product": "SharePoint Server",
+    "name": "Microsoft SharePoint Server Improper Input Validation Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2012-1854",
+    "vendor": "Microsoft",
+    "product": "Visual Basic for Applications (VBA)",
+    "name": "Microsoft Visual Basic for Applications Insecure Library Loading Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2025-60710",
+    "vendor": "Microsoft",
+    "product": "Windows",
+    "name": "Microsoft Windows Link Following Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2023-21529",
+    "vendor": "Microsoft",
+    "product": "Exchange Server",
+    "name": "Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2023-36424",
+    "vendor": "Microsoft",
+    "product": "Windows",
+    "name": "Microsoft Windows Out-of-Bounds Read Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2020-9715",
+    "vendor": "Adobe",
+    "product": "Acrobat",
+    "name": "Adobe Acrobat Use-After-Free Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2026-21643",
+    "vendor": "Fortinet",
+    "product": "FortiClient EMS",
+    "name": "Fortinet FortiClient EMS SQL Injection Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-13",
+    "cve": "CVE-2026-34621",
+    "vendor": "Adobe",
+    "product": "Acrobat and Reader",
+    "name": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-08",
+    "cve": "CVE-2026-1340",
+    "vendor": "Ivanti",
+    "product": "Endpoint Manager Mobile (EPMM)",
+    "name": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability",
+    "ransomware": false
+  },
+  {
+    "date": "2026-04-06",
+    "cve": "CVE-2026-35616",
+    "vendor": "Fortinet",
+    "product": "FortiClient EMS",
+    "name": "Fortinet FortiClient EMS Improper Access Control Vulnerability",
+    "ransomware": false
+  },
+  {
     "date": "2026-04-02",
     "cve": "CVE-2026-3502",
     "vendor": "TrueConf",
@@ -101,102 +197,6 @@
     "vendor": "Synacor",
     "product": "Zimbra Collaboration Suite (ZCS)",
     "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-Site Scripting Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-18",
-    "cve": "CVE-2026-20963",
-    "vendor": "Microsoft",
-    "product": "SharePoint",
-    "name": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-16",
-    "cve": "CVE-2025-47813",
-    "vendor": "Wing FTP Server",
-    "product": "Wing FTP Server",
-    "name": "Wing FTP Server Information Disclosure Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-13",
-    "cve": "CVE-2026-3910",
-    "vendor": "Google",
-    "product": "Chromium V8",
-    "name": "Google Chromium V8 Improper Restriction of Operations Within the Bounds of a Memory Buffer Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-13",
-    "cve": "CVE-2026-3909",
-    "vendor": "Google",
-    "product": "Skia",
-    "name": "Google Skia Out-of-Bounds Write Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-11",
-    "cve": "CVE-2025-68613",
-    "vendor": "n8n",
-    "product": "n8n",
-    "name": "n8n Improper Control of Dynamically-Managed Code Resources Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-09",
-    "cve": "CVE-2021-22054",
-    "vendor": "Omnissa",
-    "product": "Workspace One UEM",
-    "name": "Omnissa Workspace ONE Server-Side Request Forgery",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-09",
-    "cve": "CVE-2025-26399",
-    "vendor": "SolarWinds",
-    "product": "Web Help Desk",
-    "name": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-09",
-    "cve": "CVE-2026-1603",
-    "vendor": "Ivanti",
-    "product": " Endpoint Manager (EPM)",
-    "name": "Ivanti Endpoint Manager (EPM) Authentication Bypass Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-05",
-    "cve": "CVE-2017-7921",
-    "vendor": "Hikvision",
-    "product": "Multiple Products",
-    "name": "Hikvision Multiple Products Improper Authentication Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-05",
-    "cve": "CVE-2021-22681",
-    "vendor": "Rockwell",
-    "product": "Multiple Products",
-    "name": "Rockwell Multiple Products Insufficient Protected Credentials Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-05",
-    "cve": "CVE-2023-43000",
-    "vendor": "Apple",
-    "product": "Multiple Products",
-    "name": "Apple Multiple products Use-After-Free Vulnerability",
-    "ransomware": false
-  },
-  {
-    "date": "2026-03-05",
-    "cve": "CVE-2021-30952",
-    "vendor": "Apple",
-    "product": "Multiple Products",
-    "name": "Apple Multiple Products Integer Overflow or Wraparound Vulnerability",
     "ransomware": false
   }
 ]

@@ -22,7 +22,7 @@ export default function ConformitaContent() {
     },
     creator: {
       '@type': 'Organization',
-      name: 'H4R Human for Research Srl',
+      name: 'H4RESEARCH SRL',
     },
   }
 

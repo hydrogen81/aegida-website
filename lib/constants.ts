@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: 'AEGIDA',
-  company: 'H4R Human for Research Srl',
+  company: 'H4RESEARCH SRL',
   url: 'https://www.aegida-systems.com',
   contactEndpoint: '/api/contact', // configurabile per integrazione futura
 }

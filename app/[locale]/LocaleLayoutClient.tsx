@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
 import BackToTop from '@/components/BackToTop'
+import Analytics from '@/components/Analytics'
 
 export default function LocaleLayoutClient({
   locale,
@@ -31,6 +32,7 @@ export default function LocaleLayoutClient({
       <Footer />
       <CookieBanner />
       <BackToTop />
+      <Analytics />
     </LocaleProvider>
   )
 }

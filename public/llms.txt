@@ -1,7 +1,7 @@
-# AEGIDA by H4R Human for Research
+# AEGIDA by H4RESEARCH SRL
 
 ## Cosa è AEGIDA
-AEGIDA è una piattaforma di sicurezza sviluppata da H4R Human for Research Srl (Italia) che comprende due prodotti:
+AEGIDA è una piattaforma di sicurezza sviluppata da H4RESEARCH SRL Srl (Italia) che comprende due prodotti:
 
 ### AEGIDA Privacy Phone
 Smartphone privacy-first basato su Google Pixel 10a con:
@@ -9,6 +9,7 @@ Smartphone privacy-first basato su Google Pixel 10a con:
 - Aegida Connect: comunicazioni peer-to-peer cifrate (E2E) via Tor, Wi-Fi locale, Bluetooth e supporti fisici. Nessun server intermedio. Basato su Briar Project (GPLv3).
 - Hardware: Titan M2 Security Chip per chiavi crittografiche. 7 anni aggiornamenti.
 - Stack crittografico: Curva25519, ChaCha20-Poly1305, BLAKE2, AES-256-GCM, ED25519, PFS.
+- URL: https://www.aegida-systems.com/it/privacy-phone/
 
 ### AEGIDA Framework
 Piattaforma post-quantum per la protezione delle comunicazioni su infrastrutture critiche distribuite:
@@ -18,10 +19,222 @@ Piattaforma post-quantum per la protezione delle comunicazioni su infrastrutture
 - Zero-trust access control per fornitori e manutentori OEM
 - Hardware industriale fanless 24/7
 - Conforme NIS2 (D.Lgs. 138/2024), Art. 21
+- URL: https://www.aegida-systems.com/it/framework/
 
 ## Settori target
 Energia, sanità, trasporti, acqua/utilities, finanza, telecomunicazioni, PA, difesa, legal, giornalismo, ONG.
 
+## Blog — Threat Intelligence & Analisi
+Il blog AEGIDA pubblica analisi approfondite su minacce cyber, geopolitica della sicurezza informatica, conformità normativa e tecnologie di protezione. Disponibile in italiano, inglese e tedesco.
+
+- [2026-04-17] FrostArmada: la Campagna APT28 di DNS Hijacking su Router che ha Colpito 18.000 Dispositivi in 120 Paesi
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-17-threat-apt28-frostarmada-dns-hijacking-router/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-17-threat-apt28-frostarmada-dns-hijacking-router/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-17-threat-apt28-frostarmada-dns-hijacking-router/
+
+- [2026-04-17] 36 Pacchetti npm Malevoli Travestiti da Plugin Strapi: Ricostruzione Red Team dell\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-17-deep-strapi-npm-supply-chain-red-team/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-17-deep-strapi-npm-supply-chain-red-team/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-17-deep-strapi-npm-supply-chain-red-team/
+
+- [2026-04-17] Bitcoin Depot, il Furto da 3,665 Milioni: Come un Solo Set di Credenziali Ha Svuotato i Settlement Account del Più Grande ATM Bitcoin USA
+  Categoria: case-studies
+  URL: https://www.aegida-systems.com/it/blog/2026-04-17-case-bitcoin-depot-hot-wallet-settlement/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-17-case-bitcoin-depot-hot-wallet-settlement/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-17-case-bitcoin-depot-hot-wallet-settlement/
+
+- [2026-04-16] La Conferenza, il Token Fantasma, la Firma Cieca: Ricostruzione Forense del Furto da 285 Milioni a Drift Protocol
+  Categoria: case-studies
+  URL: https://www.aegida-systems.com/it/blog/2026-04-16-case-drift-protocol-dprk-durable-nonces/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-16-case-drift-protocol-dprk-durable-nonces/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-16-case-drift-protocol-dprk-durable-nonces/
+
+- [2026-04-15] Rockstar, GTA e 78,6 Milioni di Record: Quando 
+  Categoria: case-studies
+  URL: https://www.aegida-systems.com/it/blog/2026-04-15-case-rockstar-shinyhunters-snowflake-anodot/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-15-case-rockstar-shinyhunters-snowflake-anodot/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-15-case-rockstar-shinyhunters-snowflake-anodot/
+
+- [2026-04-14] Stretto di Hormuz, Aprile 2026: 1.100 Navi nella Nebbia Elettronica — Quando il Blocco Cinetico Incontra la Guerra al PNT
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-14-geo-hormuz-gps-spoofing-ais-jamming/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-14-geo-hormuz-gps-spoofing-ais-jamming/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-14-geo-hormuz-gps-spoofing-ais-jamming/
+
+- [2026-04-14] Adobe, 13 Milioni di Ticket Esfiltrati: Il Breach di 
+  Categoria: case-studies
+  URL: https://www.aegida-systems.com/it/blog/2026-04-14-case-adobe-breach-mr-raccoon-bpo/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-14-case-adobe-breach-mr-raccoon-bpo/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-14-case-adobe-breach-mr-raccoon-bpo/
+
+- [2026-04-13] CVE-2026-35616: FortiClient EMS Sotto Sfruttamento Attivo — Il Bypass Pre-Auth che Trasforma la Gestione Endpoint in un Vettore di Intrusione
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-13-threat-forticlient-ems-cve-35616/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-13-threat-forticlient-ems-cve-35616/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-13-threat-forticlient-ems-cve-35616/
+
+- [2026-04-13] Dopo Khamenei: L\
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-13-geo-iran-golfo-escalation-post-khamenei/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-13-geo-iran-golfo-escalation-post-khamenei/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-13-geo-iran-golfo-escalation-post-khamenei/
+
+- [2026-04-11] Smart Slider 3 Pro Compromesso: Sei Ore di Aggiornamento Maligno Che Hanno Trasformato Migliaia di Siti WordPress in Backdoor Persistenti
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-11-threat-smart-slider-wordpress-supply-chain/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-11-threat-smart-slider-wordpress-supply-chain/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-11-threat-smart-slider-wordpress-supply-chain/
+
+- [2026-04-11] CVE-2026-39987: Marimo Sfruttato in 9 Ore e 41 Minuti — Quando la Disclosure Pubblica Diventa lo Starter di una Corsa Globale all\
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-11-threat-marimo-rce-exploit-9-ore/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-11-threat-marimo-rce-exploit-9-ore/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-11-threat-marimo-rce-exploit-9-ore/
+
+- [2026-04-10] Operation PRISMEX: APT28 Colpisce Ucraina e Alleati NATO con Steganografia, Zero-Day e Sabotaggi Logistici
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-10-geo-apt28-prismex-nato-ucraina/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-10-geo-apt28-prismex-nato-ucraina/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-10-geo-apt28-prismex-nato-ucraina/
+
+- [2026-04-10] Caso Equalize: Anatomia del più Grande Furto di Banche Dati nella Storia d\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-10-deep-equalize-italia-banche-dati/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-10-deep-equalize-italia-banche-dati/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-10-deep-equalize-italia-banche-dati/
+
+- [2026-04-09] Iran Dentro i PLC Americani: L\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-09-geo-iran-plc-infrastrutture-critiche-usa/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-09-geo-iran-plc-infrastrutture-critiche-usa/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-09-geo-iran-plc-infrastrutture-critiche-usa/
+
+- [2026-04-09] Report GTIG 2026: 90 Zero-Day Sfruttati nel 2025 — L\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-09-deep-gtig-zero-day-enterprise-campo-battaglia/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-09-deep-gtig-zero-day-enterprise-campo-battaglia/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-09-deep-gtig-zero-day-enterprise-campo-battaglia/
+
+- [2026-04-09] Caso Stryker: Come l\
+  Categoria: case-studies
+  URL: https://www.aegida-systems.com/it/blog/2026-04-09-case-stryker-handala-intune-arma/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-09-case-stryker-handala-intune-arma/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-09-case-stryker-handala-intune-arma/
+
+- [2026-04-08] Storm-1175: Il Gruppo Cinese Che Distribuisce Medusa Ransomware Sfruttando Zero-Day in Meno di 24 Ore
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-08-threat-storm1175-medusa-ransomware-zero-day/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-08-threat-storm1175-medusa-ransomware-zero-day/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-08-threat-storm1175-medusa-ransomware-zero-day/
+
+- [2026-04-08] Salt Typhoon in Europa: La Cina È Già Dentro le Reti Telecom del Continente
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-08-geo-salt-typhoon-europa-telecom/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-08-geo-salt-typhoon-europa-telecom/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-08-geo-salt-typhoon-europa-telecom/
+
+- [2026-04-07] Medusa: Il Ransomware che Sfrutta Zero-Day e Colpisce in 24 Ore — Dall\
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-07-threat-medusa-ransomware-zero-day/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-07-threat-medusa-ransomware-zero-day/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-07-threat-medusa-ransomware-zero-day/
+
+- [2026-04-07] Due Zero-Day in Una Settimana: BlueHammer Espone Ogni PC Windows, Fortinet CVE-2026-35616 Colpisce i Governi
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-07-threat-bluehammer-fortinet-zero-day/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-07-threat-bluehammer-fortinet-zero-day/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-07-threat-bluehammer-fortinet-zero-day/
+
+- [2026-04-07] Iran: Missili sulle Citt\u00e0, Password Spraying sui Municipi — Come Teheran Sincronizza Guerra Cinetica e Cyber
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-07-geo-iran-password-spraying-missili/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-07-geo-iran-password-spraying-missili/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-07-geo-iran-password-spraying-missili/
+
+- [2026-04-04] BrowserGate: LinkedIn Scansiona di Nascosto 6.236 Estensioni del Tuo Browser e Mappa la Tua Azienda
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-04-threat-linkedin-browsergate-sorveglianza/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-04-threat-linkedin-browsergate-sorveglianza/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-04-threat-linkedin-browsergate-sorveglianza/
+
+- [2026-04-04] Operation TrueChaos: Come la Cina Ha Trasformato un Software di Videoconferenza in un\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-04-geo-operation-truechaos-cina/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-04-geo-operation-truechaos-cina/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-04-geo-operation-truechaos-cina/
+
+- [2026-04-03] Attacco ransomware alle Gallerie degli Uffizi: il patrimonio culturale italiano nel mirino del cybercrime
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-03-threat-attacco-uffizi/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-03-threat-attacco-uffizi/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-03-threat-attacco-uffizi/
+
+- [2026-04-03] Settimana Nera: Commissione UE Hackerata, Romania Sotto Assedio, gli Hacker Russi Tornano sui Vecchi Bersagli
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-03-geo-europa-sotto-assedio-cyber/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-03-geo-europa-sotto-assedio-cyber/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-03-geo-europa-sotto-assedio-cyber/
+
+- [2026-04-02] Sandworm e la Rete Elettrica Europea: Anatomia di una Campagna Ibrida che l\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-02-geo-sandworm-europa-grid/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-02-geo-sandworm-europa-grid/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-02-geo-sandworm-europa-grid/
+
+- [2026-04-01] Tempesta perfetta: zero-day e supply chain sotto attacco — Threat Report Aprile 2026
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-04-01-threat-tempesta-zero-day-supply-chain/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-01-threat-tempesta-zero-day-supply-chain/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-01-threat-tempesta-zero-day-supply-chain/
+
+- [2026-04-01] Operation Epic Fury: la Guerra Cyber per Procura dell\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-04-01-geo-operation-epic-fury/
+  EN: https://www.aegida-systems.com/en/blog/2026-04-01-geo-operation-epic-fury/
+  DE: https://www.aegida-systems.com/de/blog/2026-04-01-geo-operation-epic-fury/
+
+- [2026-03-10] Attacchi alla supply chain: il vettore preferito dai gruppi APT nel 2025-2026
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-03-supply-chain-attacks/
+  EN: https://www.aegida-systems.com/en/blog/2026-03-supply-chain-attacks/
+  DE: https://www.aegida-systems.com/de/blog/2026-03-supply-chain-attacks/
+
+- [2026-03-20] Store-Now-Decrypt-Later: perché le tue comunicazioni di oggi sono già a rischio
+  Categoria: threat-intelligence
+  URL: https://www.aegida-systems.com/it/blog/2026-03-post-quantum-minacce/
+  EN: https://www.aegida-systems.com/en/blog/2026-03-post-quantum-minacce/
+  DE: https://www.aegida-systems.com/de/blog/2026-03-post-quantum-minacce/
+
+- [2026-03-28] NIS2: scadenze, obblighi e sanzioni per le aziende italiane
+  Categoria: compliance
+  URL: https://www.aegida-systems.com/it/blog/2026-03-nis2-scadenze/
+  EN: https://www.aegida-systems.com/en/blog/2026-03-nis2-scadenze/
+  DE: https://www.aegida-systems.com/de/blog/2026-03-nis2-scadenze/
+
+- [2026-03-05] Anatomia dell\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-03-analisi-solarwinds/
+  EN: https://www.aegida-systems.com/en/blog/2026-03-analisi-solarwinds/
+  DE: https://www.aegida-systems.com/de/blog/2026-03-analisi-solarwinds/
+
+- [2026-03-01] Colonial Pipeline: anatomia del più grande attacco ransomware a un\
+  Categoria: deep-analysis
+  URL: https://www.aegida-systems.com/it/blog/2026-03-analisi-colonial-pipeline/
+  EN: https://www.aegida-systems.com/en/blog/2026-03-analisi-colonial-pipeline/
+  DE: https://www.aegida-systems.com/de/blog/2026-03-analisi-colonial-pipeline/
+
+## Self-Assessment Conformità
+Strumento gratuito per valutare la conformità NIS2/GDPR/NIST della propria organizzazione.
+URL: https://www.aegida-systems.com/it/conformita/
+
+## Lingue disponibili
+- Italiano: https://www.aegida-systems.com/it/
+- English: https://www.aegida-systems.com/en/
+- Deutsch: https://www.aegida-systems.com/de/
+
 ## Contatti
 Sito: www.aegida-systems.com
-Società: H4R Human for Research Srl, Italia
+Società: H4RESEARCH SRL Srl, Roma, Italia
+P.IVA: IT14765811006

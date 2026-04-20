@@ -22,15 +22,39 @@ export async function generateMetadata({
     de: 'Kommunikationsschutzplattform mit Post-Quantum-Kryptographie ML-KEM (FIPS 203), Anti-DPI Stealth Layer und Zero-Trust Access Control. 350 Mbps, NIS2-konform. Für Energie, Gesundheit, Verkehr, öffentliche Verwaltung.',
   }
 
+  const title = titles[locale] || titles.it
+  const description = descriptions[locale] || descriptions.it
+  const url = `https://www.aegida-systems.com/${locale}/framework/`
+
   return {
-    title: titles[locale] || titles.it,
-    description: descriptions[locale] || descriptions.it,
+    title,
+    description,
     alternates: {
+      canonical: url,
       languages: {
         'it': '/it/framework/',
         'en': '/en/framework/',
         'de': '/de/framework/',
       },
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url,
+      siteName: 'AEGIDA',
+      images: [{
+        url: 'https://www.aegida-systems.com/logo-aegida.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AEGIDA Framework — Post-Quantum Security',
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.aegida-systems.com/logo-aegida.jpg'],
     },
   }
 }
@@ -40,7 +64,7 @@ const jsonLd = {
   '@type': 'Product',
   name: 'AEGIDA Framework',
   brand: { '@type': 'Brand', name: 'AEGIDA' },
-  manufacturer: { '@type': 'Organization', name: 'H4R Human for Research Srl' },
+  manufacturer: { '@type': 'Organization', name: 'H4RESEARCH SRL' },
   category: 'Cybersecurity Software',
   offers: {
     '@type': 'Offer',

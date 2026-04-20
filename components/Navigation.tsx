@@ -21,6 +21,7 @@ export default function Navigation() {
     { label: t.nav.prodotti, href: `/${locale}/#prodotti` },
     { label: t.nav.privacyPhone, href: `/${locale}/privacy-phone/` },
     { label: t.nav.framework, href: `/${locale}/framework/` },
+    // { label: t.nav.aegidaConnect, href: `/${locale}/aegida-connect/`, free: true },
     { label: t.nav.settori, href: `/${locale}/#settori` },
     { label: t.nav.conformita, href: `/${locale}/conformita/` },
     { label: t.nav.blog, href: `/${locale}/blog/`, highlight: true },
@@ -125,9 +126,11 @@ export default function Navigation() {
                   className={`px-3 py-2 text-sm font-display uppercase tracking-wide-display transition-colors duration-200 ${
                     'highlight' in link && link.highlight
                       ? 'border border-danger-red/60 rounded text-danger-red hover:bg-danger-red hover:text-white'
-                      : isActive(link.href)
-                        ? 'text-gold-400'
-                        : 'text-gray-300 hover:text-white'
+                      : 'free' in link && link.free
+                        ? 'border border-success-green/60 rounded text-success-green hover:bg-success-green hover:text-white'
+                        : isActive(link.href)
+                          ? 'text-gold-400'
+                          : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -249,9 +252,11 @@ export default function Navigation() {
                       className={`flex items-center px-4 py-3 text-lg font-display uppercase tracking-wide-display rounded transition-colors duration-200 ${
                         'highlight' in link && link.highlight
                           ? 'border border-danger-red/60 text-danger-red hover:bg-danger-red hover:text-white'
-                          : isActive(link.href)
-                            ? 'text-gold-400 bg-navy-800'
-                            : 'text-gray-300 hover:text-white hover:bg-navy-800'
+                          : 'free' in link && link.free
+                            ? 'border border-success-green/60 text-success-green hover:bg-success-green hover:text-white'
+                            : isActive(link.href)
+                              ? 'text-gold-400 bg-navy-800'
+                              : 'text-gray-300 hover:text-white hover:bg-navy-800'
                       }`}
                     >
                       {link.label}

@@ -7,6 +7,7 @@ import ComparisonTable from '@/components/ComparisonTable'
 import DownloadSection from '@/components/DownloadSection'
 import FeatureGrid from '@/components/FeatureGrid'
 import LayerDiagram from '@/components/LayerDiagram'
+import PacketInspector from '@/components/PacketInspector'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
 
 /* ------------------------------------------------------------------ */
@@ -233,6 +234,37 @@ export default function FrameworkContent() {
               </div>
             ))}
           </div>
+        </ScrollReveal>
+      </section>
+
+      <Divider />
+
+      {/* ============================================================ */}
+      {/* 3.4b PACKET INSPECTOR — Live Stealth Demo                    */}
+      {/* ============================================================ */}
+      <section className="mx-auto max-w-6xl px-6">
+        <ScrollReveal>
+          <SectionLabel className="mb-6">LAYER C — LIVE DEMO</SectionLabel>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-wide text-white mb-6">
+            Deep Packet Inspection: Before &amp; After
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <p className="font-body text-base leading-relaxed text-slate-400 max-w-3xl mb-10">
+            {locale === 'de'
+              ? 'Klicken Sie auf den Toggle, um den Unterschied zu sehen. Mit AEGIDA OFF ist der Datenverkehr identifizierbar. Mit AEGIDA ON wird alles zu Standard-HTTPS auf Port 443 — unsichtbar fuer Deep Packet Inspection.'
+              : locale === 'en'
+                ? 'Click the toggle to see the difference. With AEGIDA OFF, traffic protocols are fully identifiable. With AEGIDA ON, everything becomes standard HTTPS on port 443 — invisible to Deep Packet Inspection.'
+                : 'Clicca il toggle per vedere la differenza. Con AEGIDA OFF, i protocolli di traffico sono completamente identificabili. Con AEGIDA ON, tutto diventa HTTPS standard su porta 443 — invisibile al Deep Packet Inspection.'}
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <PacketInspector />
         </ScrollReveal>
       </section>
 

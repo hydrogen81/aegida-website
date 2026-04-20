@@ -10,6 +10,7 @@ export interface Translations {
     prodotti: string
     privacyPhone: string
     framework: string
+    aegidaConnect: string
     settori: string
     conformita: string
     blog: string
@@ -65,6 +66,15 @@ export interface Translations {
 
       card2: {
         title: string
+        specs: string
+        description: string
+        features: string[]
+        cta: string
+      }
+
+      card3: {
+        title: string
+        badge: string
         specs: string
         description: string
         features: string[]
@@ -215,6 +225,53 @@ export interface Translations {
       }[]
     }
 
+    proof: {
+      sectionLabel: string
+      title: string
+      intro: string
+      testCard: {
+        operator: string
+        operatorValue: string
+        software: string
+        softwareValue: string
+        date: string
+        dateValue: string
+        duration: string
+        durationValue: string
+        device: string
+        deviceValue: string
+      }
+      timeline: {
+        time: string
+        caption: string
+        image: string
+        alt: string
+      }[]
+      conclusionLabel: string
+      conclusionText: string
+      disclaimer: string
+    }
+
+    pricing: {
+      sectionLabel: string
+      title: string
+      subtitle: string
+      bundle: {
+        label: string
+        price: string
+        period: string
+        items: string[]
+      }
+      renewal: {
+        label: string
+        price: string
+        period: string
+        items: string[]
+      }
+      note: string
+      cta: string
+    }
+
     cta: {
       title: string
       description: string
@@ -345,6 +402,67 @@ export interface Translations {
         title: string
         description: string
       }[]
+    }
+
+    cta: {
+      title: string
+      description: string
+      button: string
+    }
+  }
+
+  /* ================================================================ */
+  /*  AegidaConnect page                                               */
+  /* ================================================================ */
+  aegidaConnect: {
+    hero: {
+      badge: string
+      title: string
+      tagline: string
+      description: string
+      ctaDownload: string
+      ctaLearnMore: string
+    }
+
+    features: {
+      sectionLabel: string
+      title: string
+      items: {
+        title: string
+        description: string
+      }[]
+    }
+
+    security: {
+      sectionLabel: string
+      title: string
+      description: string
+      items: {
+        label: string
+        value: string
+      }[]
+    }
+
+    comparison: {
+      sectionLabel: string
+      title: string
+      description: string
+      headers: string[]
+      rows: {
+        feature: string
+        connect: string
+        privacyPhone: string
+      }[]
+      note: string
+    }
+
+    download: {
+      sectionLabel: string
+      title: string
+      description: string
+      linuxLabel: string
+      linuxDescription: string
+      comingSoon: string
     }
 
     cta: {

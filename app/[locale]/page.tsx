@@ -23,15 +23,40 @@ export async function generateMetadata({
     de: 'AEGIDA ist die Post-Quantum-Sicherheitsplattform von H4R: Zero-Trust Privacy-Smartphone und Kommunikationsschutz für kritische Infrastrukturen. NIST FIPS 203 Kryptographie, Peer-to-Peer-Architektur, NIS2-Konformität.',
   }
 
+  const title = titles[locale] || titles.it
+  const description = descriptions[locale] || descriptions.it
+  const url = `https://www.aegida-systems.com/${locale}/`
+
   return {
-    title: titles[locale] || titles.it,
-    description: descriptions[locale] || descriptions.it,
+    title,
+    description,
     alternates: {
+      canonical: url,
       languages: {
         'it': '/it/',
         'en': '/en/',
         'de': '/de/',
       },
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url,
+      siteName: 'AEGIDA',
+      locale: locale === 'it' ? 'it_IT' : locale === 'de' ? 'de_DE' : 'en_US',
+      images: [{
+        url: 'https://www.aegida-systems.com/logo-aegida.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AEGIDA — Post-Quantum Security Platform',
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.aegida-systems.com/logo-aegida.jpg'],
     },
   }
 }
@@ -39,9 +64,9 @@ export async function generateMetadata({
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'H4R Human for Research Srl',
+  name: 'H4RESEARCH SRL',
   url: 'https://www.aegida-systems.com',
-  logo: 'https://www.aegida-systems.com/logo.png',
+  logo: 'https://www.aegida-systems.com/logo-aegida.jpg',
   description:
     'AEGIDA è la piattaforma di sicurezza post-quantum di H4R per comunicazioni e infrastrutture critiche.',
   brand: {

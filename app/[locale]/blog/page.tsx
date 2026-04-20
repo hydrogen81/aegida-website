@@ -21,15 +21,39 @@ export async function generateMetadata({
     de: 'Artikel, Analysen und Einblicke zur Post-Quantum-Sicherheit, NIS2-Compliance, Threat Intelligence und Schutz kritischer Infrastrukturen.',
   }
 
+  const title = titles[locale] || titles.it
+  const description = descriptions[locale] || descriptions.it
+  const url = `https://www.aegida-systems.com/${locale}/blog/`
+
   return {
-    title: titles[locale] || titles.it,
-    description: descriptions[locale] || descriptions.it,
+    title,
+    description,
     alternates: {
+      canonical: url,
       languages: {
         it: '/it/blog/',
         en: '/en/blog/',
         de: '/de/blog/',
       },
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url,
+      siteName: 'AEGIDA',
+      images: [{
+        url: 'https://www.aegida-systems.com/logo-aegida.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AEGIDA Blog — Threat Intelligence & Research',
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.aegida-systems.com/logo-aegida.jpg'],
     },
   }
 }
