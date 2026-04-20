@@ -18,6 +18,7 @@ const de: Translations = {
     aegidaConnect: 'Connect',
     openMenu: 'Menu oeffnen',
     closeMenu: 'Menu schliessen',
+    langWarning: '',
   },
 
   /* ================================================================ */
@@ -78,42 +79,6 @@ const de: Translations = {
       subtitle: 'Le decisioni importanti sulla sicurezza del tuo lavoro non si prendono tramite un modulo di contatto generico. Richiedi un colloquio.',
       cta: 'Richiedi un colloquio',
     },
-  },
-
-  /* ================================================================ */
-  /*  Contact Form (shared)                                            */
-  /* ================================================================ */
-  contactForm: {
-    nameLabel: 'Name',
-    namePlaceholder: 'Ihr vollstaendiger Name',
-    organizationLabel: 'Organisation',
-    organizationPlaceholder: 'Name der Organisation',
-    emailLabel: 'E-Mail',
-    emailPlaceholder: 'email@organisation.de',
-    roleLabel: 'Position',
-    rolePlaceholder: 'Ihre Position',
-    productLabel: 'Interessiertes Produkt',
-    productPlaceholder: 'Produkt auswaehlen',
-    productOptions: ['Privacy Phone', 'Framework', 'Beide'],
-    sectorLabel: 'Branche',
-    sectorPlaceholder: 'Branche auswaehlen',
-    sectorOptions: [
-      'Energie',
-      'Gesundheitswesen',
-      'Recht',
-      'Verkehr/Transport',
-      'Journalismus',
-      'Oeffentliche Verwaltung',
-      'Sonstige',
-    ],
-    messageLabel: 'Nachricht',
-    messagePlaceholder: 'Beschreiben Sie Ihre Sicherheitsanforderungen...',
-    submitButton: 'Briefing-Anfrage senden',
-    sending: 'Wird gesendet...',
-    successTitle: 'Anfrage gesendet',
-    successMessage:
-      'Unser Team wird sich innerhalb von 24 Werktags-Stunden bei Ihnen melden.',
-    errorDefault: 'Fehler beim Senden. Bitte versuchen Sie es spaeter erneut.',
   },
 
   /* ================================================================ */

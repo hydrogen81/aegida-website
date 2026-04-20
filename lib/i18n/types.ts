@@ -20,6 +20,7 @@ export interface Translations {
     aegidaConnect: string
     openMenu: string
     closeMenu: string
+    langWarning: string
   }
 
   /* ================================================================ */
@@ -113,11 +114,6 @@ export interface Translations {
       form: ContactFormTranslations
     }
   }
-
-  /* ================================================================ */
-  /*  Contact Form (shared)                                            */
-  /* ================================================================ */
-  contactForm: ContactFormTranslations
 
   /* ================================================================ */
   /*  Contact / Colloquio page                                         */

@@ -18,6 +18,7 @@ const en: Translations = {
     aegidaConnect: 'Connect',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
+    langWarning: '',
   },
 
   /* ================================================================ */
@@ -78,42 +79,6 @@ const en: Translations = {
       subtitle: 'Le decisioni importanti sulla sicurezza del tuo lavoro non si prendono tramite un modulo di contatto generico. Richiedi un colloquio.',
       cta: 'Richiedi un colloquio',
     },
-  },
-
-  /* ================================================================ */
-  /*  Contact Form (shared)                                            */
-  /* ================================================================ */
-  contactForm: {
-    nameLabel: 'Name',
-    namePlaceholder: 'Your full name',
-    organizationLabel: 'Organization',
-    organizationPlaceholder: 'Organization name',
-    emailLabel: 'Email',
-    emailPlaceholder: 'email@organization.com',
-    roleLabel: 'Role',
-    rolePlaceholder: 'Your position',
-    productLabel: 'Product of interest',
-    productPlaceholder: 'Select a product',
-    productOptions: ['Privacy Phone', 'Framework', 'Both'],
-    sectorLabel: 'Sector',
-    sectorPlaceholder: 'Select your sector',
-    sectorOptions: [
-      'Energy',
-      'Healthcare',
-      'Legal',
-      'Transportation',
-      'Journalism',
-      'Government',
-      'Other',
-    ],
-    messageLabel: 'Message',
-    messagePlaceholder: 'Describe your security requirements...',
-    submitButton: 'Submit Briefing Request',
-    sending: 'Sending...',
-    successTitle: 'Request submitted',
-    successMessage:
-      'Our team will contact you within 24 business hours.',
-    errorDefault: 'An error occurred while sending. Please try again later.',
   },
 
   /* ================================================================ */
