@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ShieldSVG from '@/components/ShieldSVG'
 import SectionLabel from '@/components/SectionLabel'
+import BlogStrip from '@/components/BlogStrip'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
 
 /* ================================================================== */
@@ -88,6 +89,8 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      <BlogStrip />
 
       <hr className="divider mx-auto max-w-7xl" />
 
