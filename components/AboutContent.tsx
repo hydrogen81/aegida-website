@@ -1,134 +1,86 @@
 'use client'
-
-import SectionLabel from '@/components/SectionLabel'
-import { useTranslations, useLocale } from '@/lib/i18n/context'
-
-/* ------------------------------------------------------------------ */
-/*  COMPONENT                                                          */
-/* ------------------------------------------------------------------ */
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import { useTranslations } from '@/lib/i18n/context'
 
 export default function AboutContent() {
+  const { locale } = useParams() as { locale: string }
   const t = useTranslations()
-  const { locale } = useLocale()
+  const a = t.about
 
   return (
-    <main className="min-h-screen bg-navy-950 text-slate-200">
-
-      {/* ============================================================ */}
-      {/*  HERO                                                        */}
-      {/* ============================================================ */}
-      <section id="hero" className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse 70% 50% at 50% 20%, rgba(184,150,12,0.07) 0%, transparent 70%)',
-          }}
-          aria-hidden="true"
-        />
-
-        <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white mb-4">
-            {t.about.hero.title}
+    <main>
+      {/* HERO */}
+      <section className="px-6 md:px-10 pt-20 pb-12 md:pt-28">
+        <div className="max-w-[1100px] mx-auto">
+          <h1 className="text-[36px] md:text-[48px] font-display font-medium leading-[1.1] tracking-[-0.015em] text-ink-100 mb-6">
+            {a.hero.title}
           </h1>
-
-          <p className="font-body text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            {t.about.hero.subtitle}
+          <p className="text-[17px] md:text-[19px] text-ink-200 leading-relaxed max-w-[720px]">
+            {a.hero.subtitle}
           </p>
         </div>
       </section>
 
-      <hr className="border-navy-800 mx-6" />
-
-      {/* ============================================================ */}
-      {/*  SOCIETA                                                     */}
-      {/* ============================================================ */}
-      <section id="societa" className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionLabel className="mb-4">{t.about.societa.title}</SectionLabel>
-          <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
-            {t.about.societa.body}
-          </p>
+      {/* SOCIETÀ + MISSIONE */}
+      <section className="px-6 md:px-10 pb-12">
+        <div className="max-w-[720px] mx-auto space-y-12">
+          <div>
+            <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">LA SOCIETÀ</div>
+            <h2 className="text-[22px] font-display font-medium text-ink-100 mb-3 tracking-[-0.01em]">{a.societa.title}</h2>
+            <p className="text-[16px] text-ink-200 leading-[1.65]">{a.societa.body}</p>
+          </div>
+          <div>
+            <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">LA MISSIONE</div>
+            <h2 className="text-[22px] font-display font-medium text-ink-100 mb-3 tracking-[-0.01em]">{a.missione.title}</h2>
+            <p className="text-[16px] text-ink-200 leading-[1.65]">{a.missione.body}</p>
+          </div>
         </div>
       </section>
 
-      <hr className="border-navy-800 mx-6" />
-
-      {/* ============================================================ */}
-      {/*  MISSIONE                                                    */}
-      {/* ============================================================ */}
-      <section id="missione" className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionLabel className="mb-4">{t.about.missione.title}</SectionLabel>
-          <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
-            {t.about.missione.body}
-          </p>
-        </div>
-      </section>
-
-      <hr className="border-navy-800 mx-6" />
-
-      {/* ============================================================ */}
-      {/*  COSA PRODUCIAMO                                             */}
-      {/* ============================================================ */}
-      <section id="cosa-produciamo" className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionLabel className="mb-4">{t.about.cosaProduciamo.title}</SectionLabel>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 mt-8" style={{ gap: '1.5rem' }}>
-            {t.about.cosaProduciamo.items.map((item) => (
-              <div key={item.name} className="rounded border border-navy-700 bg-navy-900 p-6 h-full transition-colors duration-200 hover:border-gold-500/40">
-                <h3 className="font-display text-lg font-bold uppercase tracking-wide text-white mb-2">
-                  {item.name}
-                </h3>
-                <p className="font-mono text-xs uppercase tracking-wider text-gold-400 mb-3">
-                  {item.status}
-                </p>
-                <p className="font-body text-sm leading-relaxed text-slate-400">
-                  {item.body}
-                </p>
+      {/* COSA PRODUCIAMO */}
+      <section className="px-6 md:px-10 py-16 border-t border-navy-line">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">COSA PRODUCIAMO</div>
+          <h2 className="text-[24px] md:text-[28px] font-display font-medium text-ink-100 mb-8 tracking-[-0.01em]">
+            {a.cosaProduciamo.title}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {a.cosaProduciamo.items.map((item) => (
+              <div key={item.name} className="bg-navy-card border border-navy-line rounded p-8">
+                <div className="font-mono text-[11px] tracking-[0.15em] text-steel-hi mb-3">{item.status}</div>
+                <h3 className="text-[20px] font-display font-medium text-ink-100 mb-3 tracking-[-0.01em]">{item.name}</h3>
+                <p className="text-sm text-ink-300 leading-[1.55]">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <hr className="border-navy-800 mx-6" />
-
-      {/* ============================================================ */}
-      {/*  TEAM                                                        */}
-      {/* ============================================================ */}
-      <section id="team" className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionLabel className="mb-4">{t.about.team.title}</SectionLabel>
-          <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
-            {t.about.team.body}
-          </p>
+      {/* TEAM */}
+      <section className="px-6 md:px-10 py-16 border-t border-navy-line">
+        <div className="max-w-[720px] mx-auto">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-steel-hi mb-3">IL TEAM</div>
+          <h2 className="text-[22px] font-display font-medium text-ink-100 mb-3 tracking-[-0.01em]">{a.team.title}</h2>
+          <p className="text-[16px] text-ink-200 leading-[1.65]">{a.team.body}</p>
         </div>
       </section>
 
-      <hr className="border-navy-800 mx-6" />
-
-      {/* ============================================================ */}
-      {/*  CTA FINALE                                                  */}
-      {/* ============================================================ */}
-      <section id="cta-finale" className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-6">
-            {t.about.ctaFinale.title}
+      {/* CTA FINALE */}
+      <section className="px-6 md:px-10 py-16 bg-navy-deep border-t border-navy-line">
+        <div className="max-w-[720px] mx-auto">
+          <h2 className="text-[24px] md:text-[28px] font-display font-medium text-ink-100 mb-4 tracking-[-0.01em]">
+            {a.ctaFinale.title}
           </h2>
-          <p className="font-body text-base text-slate-400 max-w-2xl mx-auto mb-10">
-            {t.about.ctaFinale.body}
-          </p>
-          <a
+          <p className="text-[16px] text-ink-300 leading-relaxed mb-8">{a.ctaFinale.body}</p>
+          <Link
             href={`/${locale}/contatti/`}
-            className="inline-flex items-center justify-center rounded bg-gold-500 px-8 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-navy-950 transition-colors duration-200 hover:bg-gold-400"
+            className="inline-block bg-ink-100 text-navy-ink text-sm font-medium px-[22px] py-[13px] rounded-sm hover:bg-ink-200 transition-colors"
           >
-            {t.about.ctaFinale.cta}
-          </a>
+            {a.ctaFinale.cta}
+          </Link>
         </div>
       </section>
-
     </main>
   )
 }
