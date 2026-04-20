@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import ScrollReveal from '@/components/ScrollReveal'
+import ScrollReveal from '@/lib/archived/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import ShieldSVG from '@/components/ShieldSVG'
 import { useTranslations, useLocale } from '@/lib/i18n/context'

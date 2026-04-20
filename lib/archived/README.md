@@ -21,3 +21,10 @@ incompatibile con la direzione istituzionale-sobria. Sostituito da
 `components/BlogStrip.tsx` che mostra gli ultimi 3 articoli del blog in forma
 statica. Il prebuild `scripts/fetch-threats.js` (popola `lib/threats-live.json`)
 resta funzionante per eventuale riuso futuro.
+
+## ScrollReveal.tsx
+
+Rimosso il 2026-04-20. Motivo: cascade fade-in su scroll (Framer Motion
+con 126 utilizzi) incompatibile con la nuova direzione "animazioni-zero
+al primo paint". Tutti gli utilizzi sono stati sostituiti con <div> o
+rimossi come wrapper superflui.

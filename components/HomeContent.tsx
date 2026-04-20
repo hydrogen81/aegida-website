@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ShieldSVG from '@/components/ShieldSVG'
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
 
@@ -97,11 +96,9 @@ export default function HomeContent() {
       {/* ============================================================ */}
       <section id="istituzionale" className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <p className="font-body text-lg text-slate-400 leading-relaxed max-w-3xl">
-              {t.home.istituzionale.body}
-            </p>
-          </ScrollReveal>
+          <p className="font-body text-lg text-slate-400 leading-relaxed max-w-3xl">
+            {t.home.istituzionale.body}
+          </p>
         </div>
       </section>
 
@@ -112,13 +109,11 @@ export default function HomeContent() {
       {/* ============================================================ */}
       <section id="prodotti" className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel>{t.home.prodotti.label}</SectionLabel>
-          </ScrollReveal>
+          <SectionLabel>{t.home.prodotti.label}</SectionLabel>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Privacy Phone — occupa 2/3 */}
-            <ScrollReveal delay={0.1} className="md:col-span-2">
+            <div className="md:col-span-2">
               <Link
                 href={`/${locale}/privacy-phone/`}
                 className="group relative block rounded-lg border border-navy-700 bg-navy-900 p-8 transition-colors duration-300 hover:border-gold-500 overflow-hidden h-full"
@@ -134,10 +129,10 @@ export default function HomeContent() {
                   {t.home.prodotti.privacyPhone.cta} &rarr;
                 </span>
               </Link>
-            </ScrollReveal>
+            </div>
 
             {/* Framework — occupa 1/3 */}
-            <ScrollReveal delay={0.2}>
+            <div>
               <Link
                 href={`/${locale}/framework/`}
                 className="group relative block rounded-lg border border-navy-700 bg-navy-900 p-8 transition-colors duration-300 hover:border-gold-500 overflow-hidden h-full"
@@ -153,7 +148,7 @@ export default function HomeContent() {
                   {t.home.prodotti.framework.cta} &rarr;
                 </span>
               </Link>
-            </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -165,21 +160,19 @@ export default function HomeContent() {
       {/* ============================================================ */}
       <section id="proof" className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel>{t.home.proofPreview.label}</SectionLabel>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
-              {t.home.proofPreview.title}
-            </h2>
-            <p className="mt-6 font-body text-slate-400 leading-relaxed max-w-3xl">
-              {t.home.proofPreview.body}
-            </p>
-            <Link
-              href={`/${locale}/privacy-phone/#proof`}
-              className="mt-6 inline-flex items-center text-gold-400 font-display text-sm uppercase tracking-wide-display hover:text-gold-300 transition-colors duration-200"
-            >
-              {t.home.proofPreview.cta} &rarr;
-            </Link>
-          </ScrollReveal>
+          <SectionLabel>{t.home.proofPreview.label}</SectionLabel>
+          <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
+            {t.home.proofPreview.title}
+          </h2>
+          <p className="mt-6 font-body text-slate-400 leading-relaxed max-w-3xl">
+            {t.home.proofPreview.body}
+          </p>
+          <Link
+            href={`/${locale}/privacy-phone/#proof`}
+            className="mt-6 inline-flex items-center text-gold-400 font-display text-sm uppercase tracking-wide-display hover:text-gold-300 transition-colors duration-200"
+          >
+            {t.home.proofPreview.cta} &rarr;
+          </Link>
         </div>
       </section>
 
@@ -197,22 +190,20 @@ export default function HomeContent() {
         }}
       >
         <div id="contatti" className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
-              {t.home.ctaFinale.title}
-            </h2>
-            <p className="mt-4 font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              {t.home.ctaFinale.subtitle}
-            </p>
-            <div className="mt-10">
-              <Link
-                href={`/${locale}/#contatti`}
-                className="inline-flex items-center px-8 py-4 bg-gold-500 text-navy-950 font-display font-bold uppercase text-base tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
-              >
-                {t.home.ctaFinale.cta}
-              </Link>
-            </div>
-          </ScrollReveal>
+          <h2 className="font-display text-3xl md:text-4xl font-bold uppercase text-slate-100 tracking-wide-display">
+            {t.home.ctaFinale.title}
+          </h2>
+          <p className="mt-4 font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+            {t.home.ctaFinale.subtitle}
+          </p>
+          <div className="mt-10">
+            <Link
+              href={`/${locale}/#contatti`}
+              className="inline-flex items-center px-8 py-4 bg-gold-500 text-navy-950 font-display font-bold uppercase text-base tracking-wide-display rounded hover:bg-gold-400 transition-colors duration-200"
+            >
+              {t.home.ctaFinale.cta}
+            </Link>
+          </div>
         </div>
       </section>
     </>

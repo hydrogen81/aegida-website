@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useLocale } from '@/lib/i18n/context'
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import BlogCard from '@/components/blog/BlogCard'
 import { getAllArticles } from '@/lib/blog/registry'
@@ -30,15 +29,13 @@ export default function BlogListContent() {
         }}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel className="justify-center">{BLOG_UI.heroLabel[locale]}</SectionLabel>
-            <h1 className="mt-4 text-center font-display text-3xl md:text-5xl font-bold uppercase text-slate-100 tracking-wide-display">
-              {BLOG_UI.heroTitle[locale]}
-            </h1>
-            <p className="mt-4 text-center font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              {BLOG_UI.heroDescription[locale]}
-            </p>
-          </ScrollReveal>
+          <SectionLabel className="justify-center">{BLOG_UI.heroLabel[locale]}</SectionLabel>
+          <h1 className="mt-4 text-center font-display text-3xl md:text-5xl font-bold uppercase text-slate-100 tracking-wide-display">
+            {BLOG_UI.heroTitle[locale]}
+          </h1>
+          <p className="mt-4 text-center font-body text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+            {BLOG_UI.heroDescription[locale]}
+          </p>
         </div>
       </section>
 
@@ -74,10 +71,8 @@ export default function BlogListContent() {
 
           {/* Articles grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((article, i) => (
-              <ScrollReveal key={article.slug} delay={i * 0.08}>
-                <BlogCard article={article} locale={locale} />
-              </ScrollReveal>
+            {filtered.map((article) => (
+              <BlogCard key={article.slug} article={article} locale={locale} />
             ))}
           </div>
         </div>

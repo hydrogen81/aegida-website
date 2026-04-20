@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
 
@@ -59,44 +58,44 @@ export default function FrameworkContent() {
         <div className="mx-auto max-w-5xl px-6 space-y-16">
 
           {/* Cos'è */}
-          <ScrollReveal>
+          <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-4">
               {t.framework.cosaE.title}
             </h2>
             <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
               {t.framework.cosaE.body}
             </p>
-          </ScrollReveal>
+          </div>
 
           {/* Per chi */}
-          <ScrollReveal delay={0.1}>
+          <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-4">
               {t.framework.perChi.title}
             </h2>
             <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
               {t.framework.perChi.body}
             </p>
-          </ScrollReveal>
+          </div>
 
           {/* Stato 2026 */}
-          <ScrollReveal delay={0.15}>
+          <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-4">
               {t.framework.stato.title}
             </h2>
             <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
               {t.framework.stato.body}
             </p>
-          </ScrollReveal>
+          </div>
 
           {/* Roadmap */}
-          <ScrollReveal delay={0.2}>
+          <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-wide text-white mb-4">
               {t.framework.roadmap.title}
             </h2>
             <p className="font-body text-base md:text-lg leading-relaxed text-slate-400 max-w-3xl">
               {t.framework.roadmap.body}
             </p>
-          </ScrollReveal>
+          </div>
 
         </div>
       </section>
@@ -108,20 +107,18 @@ export default function FrameworkContent() {
       {/* ============================================================ */}
       <section id="cta-pilot" className="py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-wide text-white mb-6">
-              {t.framework.ctaFinale.title}
-            </h2>
-            <p className="font-body text-base text-slate-400 max-w-2xl mx-auto mb-10">
-              {t.framework.ctaFinale.body}
-            </p>
-            <a
-              href={`/${locale}/#contatti`}
-              className="inline-flex items-center font-display text-sm font-bold uppercase tracking-wider px-8 py-4 rounded bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400"
-            >
-              {t.framework.ctaFinale.cta}
-            </a>
-          </ScrollReveal>
+          <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-wide text-white mb-6">
+            {t.framework.ctaFinale.title}
+          </h2>
+          <p className="font-body text-base text-slate-400 max-w-2xl mx-auto mb-10">
+            {t.framework.ctaFinale.body}
+          </p>
+          <a
+            href={`/${locale}/#contatti`}
+            className="inline-flex items-center font-display text-sm font-bold uppercase tracking-wider px-8 py-4 rounded bg-gold-500 text-navy-950 transition-colors duration-200 hover:bg-gold-400"
+          >
+            {t.framework.ctaFinale.cta}
+          </a>
         </div>
       </section>
 

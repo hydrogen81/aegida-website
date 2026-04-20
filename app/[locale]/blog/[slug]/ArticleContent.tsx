@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useLocale } from '@/lib/i18n/context'
-import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import CategoryBadge from '@/components/blog/CategoryBadge'
 import ContentRenderer from '@/components/blog/ContentRenderer'
@@ -29,37 +28,35 @@ export default function ArticleContent({ slug }: { slug: string }) {
         }}
       >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="mb-6">
-              <Link
-                href={`/${locale}/blog/`}
-                className="font-mono text-xs text-slate-500 hover:text-gold-400 transition-colors duration-200 uppercase tracking-wider-mono"
-              >
-                &larr; {BLOG_UI.backToBlog[locale]}
-              </Link>
-            </div>
+          <div className="mb-6">
+            <Link
+              href={`/${locale}/blog/`}
+              className="font-mono text-xs text-slate-500 hover:text-gold-400 transition-colors duration-200 uppercase tracking-wider-mono"
+            >
+              &larr; {BLOG_UI.backToBlog[locale]}
+            </Link>
+          </div>
 
-            <div className="flex items-center gap-3 mb-4">
-              <CategoryBadge category={article.category} locale={locale} />
-              <span className="font-mono text-[10px] text-slate-500">
-                {readTime} {BLOG_UI.minRead[locale]}
-              </span>
-            </div>
+          <div className="flex items-center gap-3 mb-4">
+            <CategoryBadge category={article.category} locale={locale} />
+            <span className="font-mono text-[10px] text-slate-500">
+              {readTime} {BLOG_UI.minRead[locale]}
+            </span>
+          </div>
 
-            <h1 className="font-display text-2xl md:text-4xl font-bold text-slate-100 tracking-wide-display leading-tight">
-              {data.title}
-            </h1>
+          <h1 className="font-display text-2xl md:text-4xl font-bold text-slate-100 tracking-wide-display leading-tight">
+            {data.title}
+          </h1>
 
-            <div className="mt-4 flex items-center gap-4">
-              <span className="font-mono text-xs text-slate-500">
-                {formatDate(article.date, locale)}
-              </span>
-              <span className="text-navy-600">|</span>
-              <span className="font-mono text-xs text-slate-500">
-                {article.author}
-              </span>
-            </div>
-          </ScrollReveal>
+          <div className="mt-4 flex items-center gap-4">
+            <span className="font-mono text-xs text-slate-500">
+              {formatDate(article.date, locale)}
+            </span>
+            <span className="text-navy-600">|</span>
+            <span className="font-mono text-xs text-slate-500">
+              {article.author}
+            </span>
+          </div>
         </div>
       </section>
 
