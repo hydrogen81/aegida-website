@@ -47,8 +47,8 @@ const de: Translations = {
   /* ================================================================ */
   home: {
     hero: {
-      title: 'Cellebrite UFED, 17 aprile 2026: nessun dato utente estratto.',
-      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce strumenti per chi opera con informazioni sensibili.',
+      title: 'Smartphone rafforzato. Zero dati estratti in test forense.',
+      subtitle: 'AEGIDA è il brand di sicurezza di H4R. Progetta e produce smartphone e piattaforme per chi lavora con informazioni sensibili — giornalisti investigativi, avvocati, dirigenti esposti. Ogni strumento è testato in laboratorio forense indipendente e costruito in Italia.',
       ctaPrimary: 'Richiedi un colloquio',
       ctaSecondary: 'Scarica il white paper UFED',
     },
