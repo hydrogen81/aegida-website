@@ -12,3 +12,12 @@ Riutilizzare solo se/quando Connect diventerà un prodotto venduto a sé,
 e in ogni caso dopo aggiornamento del copy alle convenzioni editoriali 2026.
 
 Vedi: docs/superpowers/specs/2026-04-20-bonifica-comunicazione-design.md
+
+## ThreatTicker.tsx
+
+Rimosso il 2026-04-20 durante il redesign visivo (Progetto 2).
+Motivo: estetica matrix-cyberpunk (pulsing dot verde, scroll infinito, badge LIVE)
+incompatibile con la direzione istituzionale-sobria. Sostituito da
+`components/BlogStrip.tsx` che mostra gli ultimi 3 articoli del blog in forma
+statica. Il prebuild `scripts/fetch-threats.js` (popola `lib/threats-live.json`)
+resta funzionante per eventuale riuso futuro.

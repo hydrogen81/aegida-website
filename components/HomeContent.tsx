@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import ShieldSVG from '@/components/ShieldSVG'
-import ThreatTicker from '@/components/ThreatTicker'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionLabel from '@/components/SectionLabel'
 import { useTranslations, useLocale } from '@/lib/i18n/context'
@@ -90,11 +89,6 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
-
-      {/* ============================================================ */}
-      {/*  THREAT TICKER                                               */}
-      {/* ============================================================ */}
-      <ThreatTicker />
 
       <hr className="divider mx-auto max-w-7xl" />
 
