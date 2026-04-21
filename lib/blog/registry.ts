@@ -34,7 +34,11 @@ import threatApt28FrostarmadaDns from './articles/2026-04-17-threat-apt28-frosta
 import deepStrapiNpmSupplyChainRedTeam from './articles/2026-04-17-deep-strapi-npm-supply-chain-red-team'
 import caseBitcoinDepotHotWallet from './articles/2026-04-17-case-bitcoin-depot-hot-wallet-settlement'
 import geoIranCeasefire22Aprile from './articles/2026-04-21-geo-iran-ceasefire-22-aprile-cyber-escalation'
-import deepUfedPrivacyPhoneOperatori from './articles/2026-04-21-deep-ufed-privacy-phone-analisi-tecnica-operatori'
+// DISABILITATO provvisoriamente 2026-04-21: evidenziava troppe
+// vulnerabilità/limitazioni del Privacy Phone. Il file è conservato
+// nel repo ma non registrato qui, quindi non appare nella lista blog
+// né come pagina pubblica.
+// import deepUfedPrivacyPhoneOperatori from './articles/2026-04-21-deep-ufed-privacy-phone-analisi-tecnica-operatori'
 
 const ALL_ARTICLES: ArticleMeta[] = [
   analisiSolarwinds,
@@ -71,7 +75,7 @@ const ALL_ARTICLES: ArticleMeta[] = [
   deepStrapiNpmSupplyChainRedTeam,
   caseBitcoinDepotHotWallet,
   geoIranCeasefire22Aprile,
-  deepUfedPrivacyPhoneOperatori,
+  // deepUfedPrivacyPhoneOperatori,  // DISABILITATO — vedi nota agli import
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getAllArticles(): ArticleMeta[] {
