@@ -33,6 +33,8 @@ import caseDriftProtocolDprk from './articles/2026-04-16-case-drift-protocol-dpr
 import threatApt28FrostarmadaDns from './articles/2026-04-17-threat-apt28-frostarmada-dns-hijacking-router'
 import deepStrapiNpmSupplyChainRedTeam from './articles/2026-04-17-deep-strapi-npm-supply-chain-red-team'
 import caseBitcoinDepotHotWallet from './articles/2026-04-17-case-bitcoin-depot-hot-wallet-settlement'
+import geoIranCeasefire22Aprile from './articles/2026-04-21-geo-iran-ceasefire-22-aprile-cyber-escalation'
+import deepUfedPrivacyPhoneOperatori from './articles/2026-04-21-deep-ufed-privacy-phone-analisi-tecnica-operatori'
 
 const ALL_ARTICLES: ArticleMeta[] = [
   analisiSolarwinds,
@@ -68,6 +70,8 @@ const ALL_ARTICLES: ArticleMeta[] = [
   threatApt28FrostarmadaDns,
   deepStrapiNpmSupplyChainRedTeam,
   caseBitcoinDepotHotWallet,
+  geoIranCeasefire22Aprile,
+  deepUfedPrivacyPhoneOperatori,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getAllArticles(): ArticleMeta[] {
